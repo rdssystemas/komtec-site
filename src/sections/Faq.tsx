@@ -5,7 +5,7 @@ const perguntas = [
   {
     pergunta: 'Preciso instalar algum programa para usar o sistema?',
     resposta:
-      'Não. O ERP KomTec é 100% web — basta ter um navegador (Chrome, Edge, Firefox) e acesso à internet. Funciona no computador, tablet e celular, sem instalação.',
+      'Não. O ERP KomTec Pro é 100% web — basta ter um navegador (Chrome, Edge, Firefox) e acesso à internet. Funciona no computador, tablet e celular, sem instalação.',
   },
   {
     pergunta: 'O sistema emite Nota Fiscal Eletrônica (NF-e)?',
@@ -35,7 +35,7 @@ const perguntas = [
   {
     pergunta: 'O sistema funciona para qualquer segmento de empresa?',
     resposta:
-      'Sim. O ERP KomTec atende comércio, distribuidoras, prestadores de serviço e indústrias. Os módulos são flexíveis e podem ser configurados conforme a necessidade do seu negócio.',
+      'Sim. O ERP KomTec Pro atende comércio, distribuidoras, prestadores de serviço e indústrias. Os módulos são flexíveis e podem ser configurados conforme a necessidade do seu negócio.',
   },
 ];
 
@@ -46,7 +46,7 @@ export function Faq() {
     <section id="faq" className="py-20 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4">
         <div className="text-center mb-14">
-          <span className="text-brand-700 text-sm font-semibold uppercase tracking-wide">FAQ</span>
+          <span className="text-orange-600 text-sm font-semibold uppercase tracking-wide">FAQ</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
             Perguntas frequentes
           </h2>

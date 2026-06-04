@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Imagens PNG originais (pesadas) — só versionar os .webp otimizados
+public/**/*.png
+src/assets/*.png
+!public/favicon.png
+!public/logo.png
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

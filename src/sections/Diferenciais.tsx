@@ -38,9 +38,9 @@ export function Diferenciais() {
     <section id="diferenciais" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
-          <span className="text-brand-700 text-sm font-semibold uppercase tracking-wide">Por que escolher</span>
+          <span className="text-orange-600 text-sm font-semibold uppercase tracking-wide">Por que escolher</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
-            Diferenciais do ERP KomTec
+            Diferenciais do ERP KomTec Pro
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
             Desenvolvido especialmente para empresas brasileiras que precisam de um sistema simples, seguro e completo.
@@ -52,8 +52,8 @@ export function Diferenciais() {
             const Icon = item.icone;
             return (
               <div key={item.titulo} className="flex gap-4 p-5 rounded-xl hover:bg-gray-50 transition-colors">
-                <div className="w-10 h-10 bg-brand-50 rounded-lg flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5 text-brand-700" />
+                <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center shrink-0">
+                  <Icon className="w-5 h-5 text-orange-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">{item.titulo}</h3>

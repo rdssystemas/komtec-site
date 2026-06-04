@@ -9,7 +9,7 @@ export function Contato() {
     e.preventDefault();
     // Abre WhatsApp com os dados do formulário
     const texto = encodeURIComponent(
-      `Olá! Tenho interesse no ERP KomTec.\n\nNome: ${form.nome}\nEmpresa: ${form.empresa}\nTelefone: ${form.telefone}\n${form.mensagem ? `Mensagem: ${form.mensagem}` : ''}`
+      `Olá! Tenho interesse no ERP KomTec Pro.\n\nNome: ${form.nome}\nEmpresa: ${form.empresa}\nTelefone: ${form.telefone}\n${form.mensagem ? `Mensagem: ${form.mensagem}` : ''}`
     );
     window.open(`https://wa.me/5562993256370?text=${texto}`, '_blank');
     setEnviado(true);
@@ -22,7 +22,7 @@ export function Contato() {
 
           {/* Texto */}
           <div>
-            <span className="text-brand-700 text-sm font-semibold uppercase tracking-wide">Contato</span>
+            <span className="text-orange-600 text-sm font-semibold uppercase tracking-wide">Contato</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
               Fale com nossa equipe
             </h2>
@@ -42,8 +42,8 @@ export function Contato() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-brand-50 rounded-lg flex items-center justify-center">
-                  <Send className="w-5 h-5 text-brand-700" />
+                <div className="w-9 h-9 bg-orange-50 rounded-lg flex items-center justify-center">
+                  <Send className="w-5 h-5 text-orange-600" />
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">E-mail</p>
@@ -62,7 +62,7 @@ export function Contato() {
                 <p className="text-gray-500 text-sm">Nossa equipe vai entrar em contato em breve.</p>
                 <button
                   onClick={() => setEnviado(false)}
-                  className="mt-6 text-brand-700 text-sm font-medium hover:underline"
+                  className="mt-6 text-orange-600 text-sm font-medium hover:underline"
                 >
                   Enviar outra mensagem
                 </button>
@@ -75,7 +75,7 @@ export function Contato() {
                     required
                     type="text"
                     placeholder="Seu nome completo"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
                     value={form.nome}
                     onChange={e => setForm({ ...form, nome: e.target.value })}
                   />
@@ -86,7 +86,7 @@ export function Contato() {
                     required
                     type="text"
                     placeholder="Nome da sua empresa"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
                     value={form.empresa}
                     onChange={e => setForm({ ...form, empresa: e.target.value })}
                   />
@@ -97,7 +97,7 @@ export function Contato() {
                     required
                     type="tel"
                     placeholder="(00) 00000-0000"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
                     value={form.telefone}
                     onChange={e => setForm({ ...form, telefone: e.target.value })}
                   />
@@ -107,14 +107,14 @@ export function Contato() {
                   <textarea
                     rows={3}
                     placeholder="Alguma dúvida ou informação adicional..."
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white resize-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white resize-none"
                     value={form.mensagem}
                     onChange={e => setForm({ ...form, mensagem: e.target.value })}
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-brand-700 hover:bg-brand-800 text-white font-semibold rounded-xl transition-colors text-sm flex items-center justify-center gap-2"
+                  className="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-xl transition-colors text-sm flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Solicitar demonstração via WhatsApp

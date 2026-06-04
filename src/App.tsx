@@ -4,7 +4,6 @@ import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { Hero } from './sections/Hero';
 import { Modulos } from './sections/Modulos';
-import { Screenshots } from './sections/Screenshots';
 import { Diferenciais } from './sections/Diferenciais';
 import { Depoimentos } from './sections/Depoimentos';
 import { Planos } from './sections/Planos';
@@ -18,7 +17,6 @@ export default function App() {
       <main>
         <Hero />
         <Modulos />
-        <Screenshots />
         <Diferenciais />
         <Depoimentos />
         <Planos />

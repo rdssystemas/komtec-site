@@ -1,10 +1,13 @@
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-10">
+    <footer className="bg-orange-950 text-orange-200/70 py-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="ERP KomTec" className="h-7 w-auto brightness-0 invert" />
+            <img src="/logo.png" alt="ERP KomTec Pro" className="h-9 w-auto" />
+            <span className="font-bold text-white text-base leading-none flex items-center gap-1">
+              ERP <span className="text-orange-400">KomTec</span><span className="text-orange-300 text-xs font-semibold self-center">Pro</span>
+            </span>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm">
@@ -19,8 +22,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6 text-center text-xs">
-          <p>© {new Date().getFullYear()} ERP KomTec. Todos os direitos reservados.</p>
+        <div className="border-t border-orange-900 mt-8 pt-6 text-center text-xs">
+          <p>© {new Date().getFullYear()} ERP KomTec Pro. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

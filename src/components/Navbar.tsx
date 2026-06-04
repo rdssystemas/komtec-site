@@ -16,14 +16,14 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <img src="/logo.png" alt="ERP KomTec" className="h-8 w-auto" />
-          <span className="font-bold text-gray-900 text-lg">ERP <span className="text-brand-700">KomTec</span></span>
+          <img src="/logo.png" alt="ERP KomTec Pro" className="h-8 w-auto" />
+          <span className="font-bold text-gray-900 text-lg">ERP <span className="text-orange-600">KomTec</span> <span className="text-orange-500 text-sm font-semibold">Pro</span></span>
         </a>
 
         {/* Links desktop */}
         <nav className="hidden md:flex items-center gap-6">
           {links.map(l => (
-            <a key={l.href} href={l.href} className="text-sm text-gray-600 hover:text-brand-700 font-medium transition-colors">
+            <a key={l.href} href={l.href} className="text-sm text-gray-600 hover:text-orange-600 font-medium transition-colors">
               {l.label}
             </a>
           ))}
@@ -33,7 +33,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#contato"
-            className="px-4 py-2 bg-brand-700 hover:bg-brand-800 text-white text-sm font-semibold rounded-lg transition-colors"
+            className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold rounded-lg transition-colors"
           >
             Solicitar Demo
           </a>
@@ -63,7 +63,7 @@ export function Navbar() {
           ))}
           <a
             href="#contato"
-            className="block w-full text-center px-4 py-2 bg-brand-700 text-white text-sm font-semibold rounded-lg"
+            className="block w-full text-center px-4 py-2 bg-orange-600 text-white text-sm font-semibold rounded-lg"
             onClick={() => setAberto(false)}
           >
             Solicitar Demo

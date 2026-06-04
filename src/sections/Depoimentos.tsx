@@ -33,15 +33,15 @@ const depoimentos = [
 
 export function Depoimentos() {
   return (
-    <section id="depoimentos" className="py-20 bg-brand-900">
+    <section id="depoimentos" className="py-20 bg-orange-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
-          <span className="text-blue-300 text-sm font-semibold uppercase tracking-wide">Depoimentos</span>
+          <span className="text-orange-300 text-sm font-semibold uppercase tracking-wide">Depoimentos</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
             O que nossos clientes dizem
           </h2>
-          <p className="text-blue-200 max-w-xl mx-auto">
-            Empresas que transformaram sua gestão com o ERP KomTec.
+          <p className="text-orange-200 max-w-xl mx-auto">
+            Empresas que transformaram sua gestão com o ERP KomTec Pro.
           </p>
         </div>
 
@@ -51,11 +51,11 @@ export function Depoimentos() {
               key={d.nome}
               className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl p-6 flex flex-col gap-4"
             >
-              <Quote className="w-6 h-6 text-blue-300 shrink-0" />
-              <p className="text-blue-50 text-sm leading-relaxed flex-1">"{d.texto}"</p>
+              <Quote className="w-6 h-6 text-orange-300 shrink-0" />
+              <p className="text-orange-50 text-sm leading-relaxed flex-1">"{d.texto}"</p>
               <div className="border-t border-white/10 pt-4">
                 <p className="text-white font-semibold text-sm">{d.nome}</p>
-                <p className="text-blue-300 text-xs">{d.cargo} — {d.empresa}</p>
+                <p className="text-orange-300 text-xs">{d.cargo} — {d.empresa}</p>
               </div>
             </div>
           ))}
