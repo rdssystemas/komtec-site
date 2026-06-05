@@ -2,43 +2,48 @@ import { CheckCircle } from 'lucide-react';
 
 const planos = [
   {
-    nome: 'Starter',
-    preco: 'Consulte',
-    descricao: 'Ideal para pequenas empresas iniciando a gestão digital.',
+    nome: 'MEI',
+    preco: 'Em breve',
+    descricao: 'Para MEI e autônomos. Gestão completa com NF-e desde o plano inicial.',
     destaque: false,
+    porte: 'Faturamento até R$ 81 mil/ano',
     recursos: [
-      'Até 2 usuários',
+      '1 usuário',
+      'Emissão de NF-e',
+      'Módulo Financeiro',
       'Vendas e Orçamentos',
       'Controle de Estoque',
-      'Cadastro de Clientes',
+      'Importação de XML',
       'Suporte por e-mail',
     ],
   },
   {
     nome: 'Profissional',
-    preco: 'Consulte',
-    descricao: 'Para empresas que precisam de gestão completa e integrada.',
+    preco: 'Em breve',
+    descricao: 'Para micro e pequenas empresas com equipe e volume maiores.',
     destaque: true,
+    porte: 'Faturamento até R$ 360 mil/ano',
     recursos: [
-      'Até 10 usuários',
-      'Todos os módulos Starter',
-      'Emissão de NF-e',
-      'Módulo Financeiro',
-      'Importação de PDF/XML',
+      'Até 5 usuários',
+      'Tudo do plano MEI',
+      'Clientes e Fornecedores',
+      'Compras com importação NF-e (XML/PDF)',
+      'Relatórios gerenciais',
       'Suporte prioritário',
     ],
   },
   {
     nome: 'Empresarial',
-    preco: 'Consulte',
-    descricao: 'Para grupos com múltiplas empresas e alto volume.',
+    preco: 'Em breve',
+    descricao: 'Para empresas de médio porte e grupos com múltiplas filiais.',
     destaque: false,
+    porte: 'Faturamento acima de R$ 360 mil/ano',
     recursos: [
-      'Usuários ilimitados',
+      'Até 20 usuários',
+      'Tudo do plano Profissional',
       'Multi-empresa',
-      'Todos os módulos',
+      'Catálogo de Peças interativo',
       'Dashboard Super Admin',
-      'Catálogo de Peças',
       'Suporte dedicado',
     ],
   },
@@ -54,7 +59,7 @@ export function Planos() {
             Escolha o plano ideal
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            Planos flexíveis que crescem com a sua empresa. Entre em contato para um orçamento personalizado.
+            Todos os planos incluem NF-e e módulo financeiro. A diferença está no porte da sua empresa e no número de usuários.
           </p>
         </div>
 
@@ -76,6 +81,9 @@ export function Planos() {
               <h3 className={`text-xl font-bold mb-1 ${p.destaque ? 'text-white' : 'text-gray-900'}`}>
                 {p.nome}
               </h3>
+              <p className={`text-xs font-medium mb-2 ${p.destaque ? 'text-orange-200' : 'text-orange-600'}`}>
+                {p.porte}
+              </p>
               <p className={`text-sm mb-4 ${p.destaque ? 'text-orange-100' : 'text-gray-500'}`}>
                 {p.descricao}
               </p>

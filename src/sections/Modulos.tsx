@@ -14,7 +14,7 @@ const modulos = [
   {
     icone: Truck,
     nome: 'Compras',
-    descricao: 'Registre pedidos de compra e importe notas fiscais de fornecedores automaticamente via XML. Gerencie aprovações, prazos e controle de entrada no estoque.',
+    descricao: 'Registre pedidos de compra e importe notas fiscais de fornecedores via XML — inclusive de fornecedores MEI. Gerencie aprovações, prazos e controle de entrada no estoque.',
     imagem: '/komtec_comercial.webp',
   },
   {

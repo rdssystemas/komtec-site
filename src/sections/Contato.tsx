@@ -47,7 +47,7 @@ export function Contato() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">E-mail</p>
-                  <p className="text-sm font-medium text-gray-800">contato@erpkomtec.com.br</p>
+                  <p className="text-sm font-medium text-gray-800">komtec.komatsu@gmail.com</p>
                 </div>
               </div>
             </div>

@@ -18,7 +18,7 @@ export function Footer() {
           </div>
 
           <div className="text-sm text-center">
-            <p>contato@erpkomtec.com.br</p>
+            <p>komtec.komatsu@gmail.com</p>
           </div>
         </div>
 
