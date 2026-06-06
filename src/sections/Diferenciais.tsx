@@ -95,7 +95,7 @@ export function Diferenciais() {
                 key={item.titulo}
                 className="group relative rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-600 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-default"
               >
-                {/* Imagem + texto sobrepostos */}
+                {/* Imagem */}
                 <div className="relative h-72 overflow-hidden">
                   <img
                     src={item.imagem}
@@ -105,18 +105,9 @@ export function Diferenciais() {
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
 
-                  {/* Scrim quase transparente só na parte inferior para legibilidade do texto */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-
                   {/* Badge do ícone — topo esquerdo */}
                   <div className={`absolute top-4 left-4 w-10 h-10 rounded-xl flex items-center justify-center border backdrop-blur-sm ${item.destaque}`}>
                     <Icon className={`w-5 h-5 ${item.iconeCorTexto}`} />
-                  </div>
-
-                  {/* Texto sobreposto na parte inferior da imagem */}
-                  <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 pt-8">
-                    <h3 className="font-bold text-white text-lg mb-1 drop-shadow">{item.titulo}</h3>
-                    <p className="text-gray-200/80 text-sm leading-relaxed drop-shadow">{item.descricao}</p>
                   </div>
                 </div>
 

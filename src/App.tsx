@@ -8,6 +8,7 @@ import { Diferenciais } from './sections/Diferenciais';
 import { Depoimentos } from './sections/Depoimentos';
 import { Planos } from './sections/Planos';
 import { Faq } from './sections/Faq';
+import { CtaBanner } from './sections/CtaBanner';
 import { Contato } from './sections/Contato';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
         <Hero />
         <Modulos />
         <Diferenciais />
+        <CtaBanner />
         <Depoimentos />
         <Planos />
         <Faq />

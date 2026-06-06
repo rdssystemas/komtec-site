@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 const links = [
   { label: 'Módulos', href: '#modulos' },
   { label: 'Diferenciais', href: '#diferenciais' },
-  { label: 'Planos', href: '#planos' },
+  { label: 'Falar com Especialista', href: '#planos' },
   { label: 'Contato', href: '#contato' },
 ];
 

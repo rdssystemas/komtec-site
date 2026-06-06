@@ -86,9 +86,6 @@ function ModuloItem({ m, index }: { m: typeof modulos[0]; index: number }) {
         }}
       />
 
-      {/* Gradiente overlay: escuro na esquerda, transparente na direita */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/75 to-gray-950/10" />
-
       {/* Linha divisória sutil no topo */}
       <div className="absolute top-0 left-0 right-0 h-px bg-white/5" />
 
@@ -144,7 +141,7 @@ function ModuloItem({ m, index }: { m: typeof modulos[0]; index: number }) {
 
           {/* Descrição */}
           <p
-            className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md transition-all duration-700 ease-out"
+            className="text-orange-600 text-sm md:text-base leading-relaxed max-w-md transition-all duration-700 ease-out"
             style={{
               transitionDelay: '380ms',
               opacity: visible ? 1 : 0,
