@@ -125,7 +125,7 @@ export function Hero() {
         {/* Card de texto — esquerda, centralizado verticalmente */}
         <div className="flex-1 flex items-start lg:items-center px-6 md:px-14 lg:px-24 pt-6 lg:pt-0">
           <div
-            className="bg-gray-950/70 backdrop-blur-md rounded-2xl p-6 md:p-9 w-full max-w-[480px] border border-white/10 shadow-2xl transition-all duration-500"
+            className="bg-gray-950/3 backdrop-blur-md rounded-2xl p-6 md:p-9 w-full max-w-[480px] border border-white/10 shadow-2xl transition-all duration-500"
             style={{
               opacity: saindo ? 0 : 1,
               transform: saindo ? 'translateY(16px)' : 'translateY(0)',

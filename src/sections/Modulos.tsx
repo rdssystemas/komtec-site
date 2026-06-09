@@ -141,8 +141,9 @@ function ModuloItem({ m, index }: { m: typeof modulos[0]; index: number }) {
 
           {/* Descrição */}
           <p
-            className="text-orange-600 text-sm md:text-base leading-relaxed max-w-md transition-all duration-700 ease-out"
+            className="text-orange-400 text-sm md:text-base leading-relaxed max-w-md transition-all duration-700 ease-out bg-gray-950/3 backdrop-blur-md rounded-xl px-3 py-2"
             style={{
+              textShadow: '0 1px 4px rgba(0,0,0,0.5), 0 2px 10px rgba(0,0,0,0.35)',
               transitionDelay: '380ms',
               opacity: visible ? 1 : 0,
               transform: visible ? 'translateX(0)' : 'translateX(-60px)',
