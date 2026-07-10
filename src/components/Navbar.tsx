@@ -32,7 +32,7 @@ export function Navbar() {
         {/* CTA desktop */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#contato"
+            href="#experimente"
             className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold rounded-lg transition-colors"
           >
             Solicitar Demo
@@ -62,7 +62,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contato"
+            href="#experimente"
             className="block w-full text-center px-4 py-2 bg-orange-600 text-white text-sm font-semibold rounded-lg"
             onClick={() => setAberto(false)}
           >

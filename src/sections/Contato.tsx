@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Send, MessageCircle, Gift, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { trackEvent } from '../lib/analytics';
 
 type Etapa = 'form' | 'confirmando' | 'enviado';
 
@@ -31,6 +32,7 @@ export function Contato() {
     );
     window.open(`https://wa.me/5562993256370?text=${texto}`, '_blank');
     setEtapa('enviado');
+    trackEvent('generate_lead', { origem: 'formulario_contato' });
   };
 
   const handleReiniciar = () => {
@@ -70,7 +72,7 @@ export function Contato() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">E-mail</p>
-                  <p className="text-sm font-medium text-gray-800">komtec.komatsu@gmail.com</p>
+                  <p className="text-sm font-medium text-gray-800">contato@erpkomtec.com.br</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -176,6 +178,10 @@ export function Contato() {
                   Ao enviar, você será redirecionado ao nosso WhatsApp.
                 </p>
                 <p className="text-xs text-gray-400">* Campos obrigatórios</p>
+                <p className="text-xs text-gray-400">
+                  Ao continuar, você concorda com nossa{' '}
+                  <a href="/privacidade" className="text-orange-600 hover:underline">Política de Privacidade</a>.
+                </p>
               </form>
             )}
 

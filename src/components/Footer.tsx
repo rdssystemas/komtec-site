@@ -15,10 +15,11 @@ export function Footer() {
             <a href="#diferenciais" className="hover:text-white transition-colors">Diferenciais</a>
             <a href="#planos" className="hover:text-white transition-colors">Planos</a>
             <a href="#contato" className="hover:text-white transition-colors">Contato</a>
+            <a href="/privacidade" className="hover:text-white transition-colors">Política de Privacidade</a>
           </div>
 
           <div className="text-sm text-center">
-            <p>komtec.komatsu@gmail.com</p>
+            <p>contato@erpkomtec.com.br</p>
           </div>
         </div>
 

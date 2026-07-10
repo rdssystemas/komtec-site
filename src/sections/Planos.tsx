@@ -1,25 +1,9 @@
 import { useState } from 'react';
-import { Phone, Users, Settings, TrendingUp, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
+import { getIcon } from '../data/iconMap';
+import type { PlanosContent } from '../data/defaultContent';
 
-const diferenciais = [
-  {
-    icone: Users,
-    titulo: 'Cada empresa é única',
-    descricao: 'O número de usuários, módulos e necessidades varia. Por isso criamos uma proposta sob medida para o seu perfil.',
-  },
-  {
-    icone: Settings,
-    titulo: 'Implantação assistida',
-    descricao: 'Nossa equipe acompanha a configuração do sistema e o treinamento da sua equipe desde o primeiro dia.',
-  },
-  {
-    icone: TrendingUp,
-    titulo: 'Cresce com você',
-    descricao: 'Comece com o essencial e adicione módulos conforme sua empresa cresce — sem trocar de sistema.',
-  },
-];
-
-export function Planos() {
+export function Planos({ content }: { content: PlanosContent }) {
   const [form, setForm] = useState({ nome: '', telefone: '', horario: '' });
   const [enviado, setEnviado] = useState(false);
 
@@ -35,24 +19,20 @@ export function Planos() {
   return (
     <section id="planos" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Lado esquerdo — texto e diferenciais */}
           <div>
-            <span className="text-orange-600 text-sm font-semibold uppercase tracking-wide">Investimento</span>
+            <span className="text-orange-600 text-sm font-semibold uppercase tracking-wide">{content.subtitulo}</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
-              Proposta personalizada para o seu negócio
+              {content.titulo}
             </h2>
             <p className="text-gray-500 leading-relaxed mb-10">
-              Não acreditamos em tabela de preços genérica. Queremos entender a sua empresa
-              para oferecer o plano certo — com os módulos que você realmente precisa
-              e um investimento que caiba no seu orçamento.
+              {content.texto}
             </p>
 
             <div className="space-y-7">
-              {diferenciais.map(d => {
-                const Icon = d.icone;
+              {content.diferenciais.map(d => {
+                const Icon = getIcon(d.icone);
                 return (
                   <div key={d.titulo} className="flex gap-4">
                     <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center shrink-0">
@@ -68,7 +48,6 @@ export function Planos() {
             </div>
           </div>
 
-          {/* Lado direito — formulário de retorno */}
           <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
@@ -98,31 +77,24 @@ export function Planos() {
                   <div>
                     <label className="block text-xs font-medium text-gray-700 mb-1">Seu nome *</label>
                     <input
-                      required
-                      type="text"
-                      placeholder="Como podemos te chamar?"
+                      required type="text" placeholder="Como podemos te chamar?"
                       className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      value={form.nome}
-                      onChange={e => setForm({ ...form, nome: e.target.value })}
+                      value={form.nome} onChange={e => setForm({ ...form, nome: e.target.value })}
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-medium text-gray-700 mb-1">Telefone / WhatsApp *</label>
                     <input
-                      required
-                      type="tel"
-                      placeholder="(00) 00000-0000"
+                      required type="tel" placeholder="(00) 00000-0000"
                       className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      value={form.telefone}
-                      onChange={e => setForm({ ...form, telefone: e.target.value })}
+                      value={form.telefone} onChange={e => setForm({ ...form, telefone: e.target.value })}
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-medium text-gray-700 mb-1">Melhor horário para ligar</label>
                     <select
                       className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white text-gray-700"
-                      value={form.horario}
-                      onChange={e => setForm({ ...form, horario: e.target.value })}
+                      value={form.horario} onChange={e => setForm({ ...form, horario: e.target.value })}
                     >
                       <option value="">Qualquer horário</option>
                       <option value="Manhã — 8h às 12h">Manhã — 8h às 12h</option>

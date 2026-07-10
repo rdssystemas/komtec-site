@@ -3,6 +3,24 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const telas = [
   {
+    id: 'equipamentos_maquinas',
+    label: 'Gestão de Máquinas Pesadas',
+    arquivo: '/screenshots/komtec_gestao_maquinas_pesadas.jpg',
+    descricao: 'Controle toda a sua frota de máquinas pesadas: histórico, manutenção e abastecimento.',
+  },
+  {
+    id: 'equipamentos_trator',
+    label: 'Trator de Esteiras',
+    arquivo: '/screenshots/komtec_gestao_trator_esteiras.jpg',
+    descricao: 'Gerencie tratores de esteiras com registro de horímetro, componentes e alertas de revisão.',
+  },
+  {
+    id: 'equipamentos_motoniveladora',
+    label: 'Motoniveladora',
+    arquivo: '/screenshots/komtec_gestao_motoniveladora.jpg',
+    descricao: 'Acompanhe o histórico completo de operação e manutenção de motoniveladoras e implementos.',
+  },
+  {
     id: 'comercial',
     label: 'Módulo Comercial',
     arquivo: '/screenshots/komtec_comercial.webp',
@@ -86,7 +104,7 @@ export function Screenshots() {
   const [ativo, setAtivo] = useState(0);
   const [pausado, setPausado] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const goTo = useCallback((index: number) => {
     setTransitioning(true);

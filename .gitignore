@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Ambiente local
+.env
+.env.*
+
 # Imagens PNG originais (pesadas) — só versionar os .webp otimizados
 public/**/*.png
 src/assets/*.png

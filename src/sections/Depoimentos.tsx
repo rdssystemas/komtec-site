@@ -1,52 +1,22 @@
 import { Quote } from 'lucide-react';
+import type { DepoimentosContent } from '../data/defaultContent';
 
-const depoimentos = [
-  {
-    nome: 'Jales Junior',
-    empresa: 'A G M Peças',
-    cargo: 'Proprietário',
-    texto:
-      'O KomTec resolveu o que a gente mais precisava: controle de estoque e emissão de nota fiscal no mesmo lugar. Simples de usar e o suporte atende na hora.',
-  },
-  {
-    nome: 'William Carvalho',
-    empresa: 'Ancora Reposição de Peças',
-    cargo: 'Proprietário',
-    texto:
-      'Antes era tudo no papel e planilha. Com o KomTec a gente faz orçamento, venda e nota fiscal sem complicação. Mudou bastante a rotina aqui na loja.',
-  },
-  {
-    nome: 'Mariano Henrique',
-    empresa: 'Maq Filtro',
-    cargo: 'Proprietário',
-    texto:
-      'Sistema completo e fácil de entender. O que mais gosto é poder acessar de qualquer lugar — fico de olho no movimento mesmo quando não estou na loja.',
-  },
-  {
-    nome: 'Roberson Santos',
-    empresa: 'KomTec Peças',
-    cargo: 'Proprietário',
-    texto:
-      'Desenvolvemos o sistema para resolver os problemas que a gente mesmo enfrentava no dia a dia. Hoje usamos na nossa própria loja e não abrimos mão.',
-  },
-];
-
-export function Depoimentos() {
+export function Depoimentos({ content }: { content: DepoimentosContent }) {
   return (
     <section id="depoimentos" className="py-20 bg-orange-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
           <span className="text-orange-300 text-sm font-semibold uppercase tracking-wide">Depoimentos</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
-            O que nossos clientes dizem
+            {content.titulo}
           </h2>
           <p className="text-orange-200 max-w-xl mx-auto">
-            Empresas que transformaram sua gestão com o ERP KomTec Pro.
+            {content.subtitulo}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {depoimentos.map(d => (
+          {content.items.map(d => (
             <div
               key={d.nome}
               className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl p-6 flex flex-col gap-4"

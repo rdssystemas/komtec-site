@@ -1,45 +1,8 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import type { FaqContent } from '../data/defaultContent';
 
-const perguntas = [
-  {
-    pergunta: 'Preciso instalar algum programa para usar o sistema?',
-    resposta:
-      'Não. O ERP KomTec Pro é 100% web — basta ter um navegador (Chrome, Edge, Firefox) e acesso à internet. Funciona no computador, tablet e celular, sem instalação.',
-  },
-  {
-    pergunta: 'O sistema emite Nota Fiscal Eletrônica (NF-e)?',
-    resposta:
-      'Sim. O sistema possui módulo completo de NF-e integrado à SEFAZ, permitindo emitir, cancelar e consultar notas fiscais diretamente, sem precisar de outro programa.',
-  },
-  {
-    pergunta: 'Os dados da minha empresa ficam misturados com os de outras?',
-    resposta:
-      'Não. Cada empresa tem seus dados completamente isolados em um ambiente exclusivo. Nenhuma empresa acessa ou visualiza informações de outra.',
-  },
-  {
-    pergunta: 'Quantos usuários posso ter no sistema?',
-    resposta:
-      'O número de usuários depende do plano contratado. Temos planos para pequenas empresas (até 2 usuários) até planos empresariais com usuários ilimitados. Consulte-nos para o plano ideal.',
-  },
-  {
-    pergunta: 'Como funciona o suporte técnico?',
-    resposta:
-      'Oferecemos suporte por WhatsApp e e-mail. O atendimento é feito diretamente pela equipe técnica que desenvolveu o sistema, garantindo respostas rápidas e precisas.',
-  },
-  {
-    pergunta: 'É possível importar meus dados de outro sistema?',
-    resposta:
-      'Sim. O sistema suporta importação de produtos via Excel, PDF e XML (NF-e). Para migrações mais complexas, nossa equipe oferece suporte dedicado no processo.',
-  },
-  {
-    pergunta: 'O sistema funciona para qualquer segmento de empresa?',
-    resposta:
-      'Sim. O ERP KomTec Pro atende comércio, distribuidoras, prestadores de serviço e indústrias. Os módulos são flexíveis e podem ser configurados conforme a necessidade do seu negócio.',
-  },
-];
-
-export function Faq() {
+export function Faq({ content }: { content: FaqContent }) {
   const [aberto, setAberto] = useState<number | null>(null);
 
   return (
@@ -48,15 +11,13 @@ export function Faq() {
         <div className="text-center mb-14">
           <span className="text-orange-600 text-sm font-semibold uppercase tracking-wide">FAQ</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
-            Perguntas frequentes
+            {content.titulo}
           </h2>
-          <p className="text-gray-500">
-            Tire suas dúvidas antes de falar com a nossa equipe.
-          </p>
+          <p className="text-gray-500">{content.subtitulo}</p>
         </div>
 
         <div className="space-y-2">
-          {perguntas.map((item, i) => (
+          {content.items.map((item, i) => (
             <div
               key={i}
               className="bg-white border border-gray-200 rounded-xl overflow-hidden"
