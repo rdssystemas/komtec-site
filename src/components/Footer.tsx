@@ -5,14 +5,20 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="ERP KomTec Pro" className="h-9 w-auto" />
-            <span className="font-bold text-white text-base leading-none flex items-center gap-1">
-              ERP <span className="text-orange-400">KomTec</span><span className="text-orange-300 text-xs font-semibold self-center">Pro</span>
-            </span>
+            <div className="flex flex-col leading-tight gap-1">
+              <span className="font-bold text-white text-base leading-none flex items-center gap-1">
+                ERP <span className="text-orange-400">KomTec</span><span className="text-orange-300 text-xs font-semibold self-center">Pro</span>
+              </span>
+              <span className="text-[10px] text-orange-200/50 uppercase tracking-wide">
+                Sistema de Gestão Empresarial – Software as a Service
+              </span>
+            </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <a href="#modulos" className="hover:text-white transition-colors">Módulos</a>
             <a href="#diferenciais" className="hover:text-white transition-colors">Diferenciais</a>
+            <a href="/portfolio" className="hover:text-white transition-colors">Portfólio</a>
             <a href="#planos" className="hover:text-white transition-colors">Planos</a>
             <a href="#contato" className="hover:text-white transition-colors">Contato</a>
             <a href="/privacidade" className="hover:text-white transition-colors">Política de Privacidade</a>

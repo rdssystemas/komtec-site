@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 const links = [
   { label: 'Módulos', href: '#modulos' },
   { label: 'Diferenciais', href: '#diferenciais' },
+  { label: 'Portfólio', href: '/portfolio' },
   { label: 'Falar com Especialista', href: '#planos' },
   { label: 'Contato', href: '#contato' },
 ];
@@ -17,7 +18,10 @@ export function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <img src="/logo.png" alt="ERP KomTec Pro" className="h-8 w-auto" />
-          <span className="font-bold text-gray-900 text-lg">ERP <span className="text-orange-600">KomTec</span> <span className="text-orange-500 text-sm font-semibold">Pro</span></span>
+          <span className="flex flex-col leading-tight">
+            <span className="font-bold text-gray-900 text-lg">ERP <span className="text-orange-600">KomTec</span> <span className="text-orange-500 text-sm font-semibold">Pro</span></span>
+            <span className="hidden sm:block text-[10px] text-gray-400 font-medium uppercase tracking-wide">Sistema de Gestão Empresarial</span>
+          </span>
         </a>
 
         {/* Links desktop */}
