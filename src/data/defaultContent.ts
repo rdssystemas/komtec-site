@@ -327,6 +327,231 @@ A Reforma Tributária é grande e vai se estender por vários anos. O KomTec já
         'Este conteúdo tem caráter informativo e não substitui a orientação do seu contador. A decisão sobre regime tributário (Simples tradicional, Simples Híbrido ou regime regular) deve ser tomada com apoio de um profissional de contabilidade, considerando a realidade específica do seu negócio.',
       publicado: true,
     },
+    {
+      slug: 'cronograma-reforma-tributaria-2026-2033',
+      titulo: 'Reforma Tributária: o cronograma completo, ano a ano, até 2033',
+      resumo:
+        'A reforma não muda tudo de uma vez. Veja o que acontece em cada ano da transição — de 2026 (fase de teste) até 2033 (sistema definitivo) — sem precisar decorar tudo de uma vez.',
+      categoria: 'Fiscal',
+      data: 'Agosto de 2026',
+      tempoLeitura: '5 min de leitura',
+      imagem: '/cronograma-transicao-reforma-tributaria.webp',
+      conteudo: `## Por que a transição é tão longa
+
+Trocar cinco tributos (PIS, COFINS, IPI, ICMS, ISS) por um sistema novo de uma hora para outra quebraria a economia — preços, contratos e sistemas de todo mundo precisam de tempo para se ajustar. Por isso a Emenda Constitucional nº 132/2023 espalhou a mudança ao longo de 8 anos, com os tributos antigos e os novos convivendo em proporções que mudam ano a ano.
+
+## 2026 — ano de teste
+
+CBS começa em 0,9% e IBS em 0,1% (total de 1%) — uma alíquota simbólica, criada só para testar se os sistemas de emissão de nota e de arrecadação estão funcionando. Na prática, esse valor pode ser compensado com o PIS/COFINS que a empresa já deve, então não é para pesar no bolso ainda.
+
+## 2027-2028 — CBS entra em vigor de verdade
+
+A CBS passa a valer com a alíquota real (estimativa de referência em torno de 8,4%) e substitui PIS e COFINS por completo. O IPI é zerado para a maioria dos produtos (exceção: itens da Zona Franca de Manaus, que mantêm incentivo até 2033). É também em 2027 que o Imposto Seletivo entra em vigor.
+
+## 2029-2032 — o IBS sobe, o ICMS e o ISS descem
+
+Começa a transição gradual dos tributos estaduais/municipais: ICMS e ISS caem para 90% do valor atual em 2029, 80% em 2030, 70% em 2031 e 60% em 2032 — enquanto o IBS assume a fatia que vai sobrando a cada ano.
+
+## 2033 — sistema pleno
+
+PIS, COFINS, IPI, ICMS e ISS são extintos de vez. A partir daqui, só existem três tributos sobre consumo no Brasil: IBS, CBS e Imposto Seletivo.
+
+## O que isso significa para o seu dia a dia
+
+Não é preciso memorizar todos os percentuais — o importante é não confundir "ano de teste" (2026) com "já vale para valer", e ficar atento às duas datas que mais mexem com o bolso: 2027 (CBS/Imposto Seletivo em vigor cheio) e 2033 (fim definitivo do sistema antigo). O KomTec acompanha essa transição junto com você, capturando os dados fiscais conforme cada fase entra em vigor.`,
+      fontes: [
+        { label: 'Emenda Constitucional nº 132/2023 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm' },
+        { label: 'Lei Complementar nº 214/2025 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm' },
+        { label: 'Reforma Tributária — Regulamentação (Ministério da Fazenda)', url: 'https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria' },
+      ],
+      aviso:
+        'Os percentuais e datas apresentados são de referência, conforme a legislação vigente até a publicação deste artigo. Prazos e alíquotas podem ser ajustados por leis complementares futuras — confirme sempre a versão mais atual com seu contador.',
+      publicado: true,
+    },
+    {
+      slug: 'split-payment-ibs-cbs',
+      titulo: 'Split Payment: o novo jeito de recolher IBS e CBS no pagamento',
+      resumo:
+        'A partir da reforma, o imposto pode ser separado automaticamente no momento em que o cliente paga — antes mesmo do dinheiro cair na sua conta. Entenda o que muda no fluxo de caixa.',
+      categoria: 'Fiscal',
+      data: 'Agosto de 2026',
+      tempoLeitura: '5 min de leitura',
+      imagem: '/split_payment_reforma_tributaria.webp',
+      conteudo: `## O que é o Split Payment
+
+Hoje, quando você vende algo, recebe o valor total na conta e recolhe o imposto depois — até a data de vencimento, o dinheiro do tributo fica "de passagem" no seu caixa. Com o Split Payment, o próprio meio de pagamento (Pix, cartão, boleto) separa automaticamente a parcela de IBS e CBS no momento em que o pagamento é liquidado, e manda esse valor direto para o governo. A empresa recebe só o valor líquido, já sem o imposto.
+
+## Como funciona por trás dos panos
+
+Em junho de 2026, a Receita Federal e o Comitê Gestor do IBS publicaram o Manual de Integração e a documentação técnica (Swagger) da Plataforma Pública do Split Payment. Ela funciona como um "hub" de comunicação entre bancos/instituições de pagamento e os órgãos arrecadadores — é essa infraestrutura que vai fazer a separação automática do imposto em cada transação eletrônica.
+
+## O que muda no seu fluxo de caixa
+
+- Você deixa de contar com o dinheiro do imposto entre a venda e o vencimento — o chamado "float" tributário desaparece aos poucos, na medida em que o mecanismo entra em vigor.
+- Por outro lado, ganha previsibilidade: nunca mais falta caixa para pagar um imposto que já foi gasto em outra coisa, porque ele já sai separado na hora.
+- A conciliação bancária pode confundir no começo — o extrato vai mostrar um valor líquido menor do que o total da nota fiscal emitida, e isso precisa estar refletido no financeiro da empresa.
+
+## Quem sente primeiro
+
+A implementação acompanha o cronograma geral da reforma (veja nosso artigo sobre o cronograma completo) — o mecanismo vai entrando em operação aos poucos, junto com a virada de 2027, quando a CBS passa a valer com a alíquota cheia.
+
+## Em resumo
+
+O Split Payment não é uma cobrança nova — é uma forma diferente de recolher o imposto que você já paga, só que automatizada no momento do pagamento. O ponto de atenção real é o planejamento de capital de giro: quem hoje usa esse "fôlego" do imposto precisa se preparar para não contar mais com ele.`,
+      fontes: [
+        { label: 'Receita Federal e Comitê Gestor do IBS publicam documentação técnica da Plataforma Pública do Split Payment (Ministério da Fazenda)', url: 'https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/junho/receita-federal-e-comite-gestor-do-ibs-publicam-documentacao-tecnica-da-plataforma-publica-do-split-payment' },
+        { label: 'Receita Federal e CGIBS publicam documentação técnica da Plataforma Pública do Split Payment (Receita Federal)', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/junho/receita-federal-e-cgibs-publicaram-hoje-a-documentacao-tecnica-da-plataforma-publica-do-split-payment' },
+        { label: 'Lei Complementar nº 214/2025 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm' },
+      ],
+      aviso:
+        'O Split Payment ainda está em fase de implementação técnica. Detalhes de prazo e funcionamento podem mudar conforme novos atos normativos forem publicados — acompanhe as atualizações com seu contador ou instituição financeira.',
+      publicado: true,
+    },
+    {
+      slug: 'o-que-nao-muda-reforma-tributaria',
+      titulo: 'Reforma Tributária: o que NÃO muda (evite confusão)',
+      resumo:
+        'Com tanta notícia sobre IBS, CBS e Simples Híbrido, é fácil achar que "tudo" mudou. Veja quais impostos e obrigações continuam exatamente como sempre foram.',
+      categoria: 'Fiscal',
+      data: 'Agosto de 2026',
+      tempoLeitura: '4 min de leitura',
+      imagem: '/o_que_nao_muda.webp',
+      conteudo: `## A reforma tem um escopo bem definido
+
+A Emenda Constitucional nº 132/2023 mexe especificamente nos tributos sobre o consumo de bens e serviços — é aí que entram PIS, COFINS, IPI, ICMS e ISS, substituídos por IBS, CBS e Imposto Seletivo. Tributos que não incidem sobre consumo continuam funcionando exatamente como antes.
+
+## O que continua igual
+
+- Imposto de Renda (Pessoa Física e Jurídica) — inclusive o Lucro Presumido e o Lucro Real continuam existindo como opções de regime, sem relação direta com a reforma do consumo.
+- INSS e demais contribuições sobre a folha de pagamento.
+- IPVA (imposto sobre veículos).
+- IPTU (imposto sobre imóveis urbanos).
+- ITBI (transmissão de imóveis) e ITCMD (herança e doação).
+- Simples Nacional continua existindo como regime — a novidade é só a opção de tratar IBS/CBS separadamente a partir de 2027 (o "Simples Híbrido"), não a extinção do regime.
+
+## Por que essa confusão acontece
+
+A reforma é tão comentada que vira sinônimo de "mudança tributária geral" na conversa do dia a dia — mas o texto da EC 132/2023 e da LC 214/2025 é específico sobre tributos de consumo. Discussões sobre outras reformas (como a do Imposto de Renda) tramitam em projetos completamente separados, com cronogramas próprios.
+
+## Por que isso importa para o seu planejamento
+
+Separar o que muda do que não muda ajuda a não se planejar para o problema errado. Se sua preocupação é IPVA da frota, IPTU do imóvel da empresa ou o Imposto de Renda anual, essas obrigações seguem no calendário e nas regras de sempre — o que exige atenção nova é especificamente a nota fiscal, o cálculo de IBS/CBS e (se aplicável) a decisão sobre o Simples Híbrido.`,
+      fontes: [
+        { label: 'Emenda Constitucional nº 132/2023 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm' },
+        { label: 'Lei Complementar nº 214/2025 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm' },
+      ],
+      publicado: true,
+    },
+    {
+      slug: 'credito-icms-acumulado-transicao',
+      titulo: 'Crédito de ICMS acumulado: o que fazer com o saldo na virada para o IBS',
+      resumo:
+        'Quem compra e vende mercadorias costuma acumular saldo credor de ICMS. Entenda como esse crédito é aproveitado na transição para o novo sistema — e por que vale a pena começar a se organizar cedo.',
+      categoria: 'Fiscal',
+      data: 'Agosto de 2026',
+      tempoLeitura: '5 min de leitura',
+      imagem: '/credito_icms_acumulado.webp',
+      conteudo: `## Por que isso importa para quem revende produtos
+
+Empresas que compram e vendem mercadorias (comércio, distribuidoras, revendas de peças) frequentemente acumulam saldo credor de ICMS — situações em que o crédito das compras é maior que o débito das vendas em determinado período. Com a extinção do ICMS prevista para 2033, esse saldo precisa de uma regra de transição clara.
+
+## Como funciona o aproveitamento
+
+A Lei Complementar nº 214/2025 prevê que, ao final da transição (31 de dezembro de 2032), todo o saldo de ICMS ainda existente passa por um processo de homologação pelos entes federativos (estados). A partir de 1º de janeiro de 2033, as empresas podem protocolar o pedido de homologação desse saldo.
+
+## O prazo é longo — e sem correção até 2033
+
+O crédito acumulado homologado pode ser aproveitado em até 240 parcelas mensais (o equivalente a 20 anos), compensado com o IBS devido, ou ainda ressarcido. A partir de fevereiro de 2033, os valores passam a ser corrigidos pelo IPCA — mas até lá (ou seja, até 2032), não há correção monetária sobre o saldo parado.
+
+## O que isso significa na prática
+
+- Quanto maior o saldo credor acumulado hoje, maior o "capital parado" que só será recuperado ao longo de duas décadas — vale considerar isso no planejamento financeiro de médio prazo.
+- A lei também restringe a transferência de créditos de IBS/CBS para terceiros sem personalidade jurídica própria — ou seja, não é possível simplesmente "vender" o crédito informalmente.
+- Manter a escrituração de ICMS organizada agora facilita (e muito) o processo de homologação lá na frente — histórico bagunçado é a principal causa de saldo credor contestado ou glosado pelo fisco.
+
+## O que fazer agora
+
+Se sua empresa tem saldo credor relevante de ICMS, o momento de conversar com o contador é agora, não em 2032. Entender a origem desse saldo (crédito simples de operações normais vs. crédito acumulado por anomalias do sistema, como substituição tributária) já ajuda a antecipar como ele vai ser tratado na homologação.`,
+      fontes: [
+        { label: 'Lei Complementar nº 214/2025 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm' },
+        { label: 'Emenda Constitucional nº 132/2023 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm' },
+      ],
+      aviso:
+        'As regras de homologação e aproveitamento de créditos acumulados de ICMS ainda podem receber regulamentação complementar até 2033. Este conteúdo é informativo — consulte seu contador para avaliar a situação específica do saldo credor da sua empresa.',
+      publicado: true,
+    },
+    {
+      slug: 'nfe-mudancas-tecnicas-ibs-cbs',
+      titulo: 'Nota Fiscal Eletrônica: o que muda no XML com a Reforma Tributária',
+      resumo:
+        'A NF-e ganhou campos novos e obrigatórios para IBS, CBS e Imposto Seletivo. Entenda o que mudou tecnicamente e o que isso significa para quem emite (e recebe) notas fiscais.',
+      categoria: 'Fiscal',
+      data: 'Agosto de 2026',
+      tempoLeitura: '4 min de leitura',
+      imagem: '/nfe-mudancas-tecnicas-xml.webp',
+      conteudo: `## A Nota Técnica que mudou o layout da NF-e
+
+A Nota Técnica 2025.002, publicada no Portal Nacional da NF-e, define as adequações necessárias nos layouts da NF-e (modelo 55) e da NFC-e (modelo 65) para incluir os novos tributos da Reforma Tributária. Na prática, isso significa novos grupos de campos dentro do XML da nota, além dos campos tradicionais de ICMS, IPI e PIS/COFINS.
+
+## Os dois campos mais importantes
+
+- **CST-IBS/CBS** (Código de Situação Tributária): identifica a situação tributária da operação em relação ao novo sistema — equivalente ao que o CST/CSOSN já faz hoje para ICMS.
+- **cClassTrib** (Código de Classificação Tributária): detalha o enquadramento da operação dentro das regras de IBS/CBS — imunidades, reduções de alíquota, regimes específicos, entre outros.
+
+## Prazos de adaptação
+
+A adaptação dos sistemas emissores passou a ser obrigatória a partir de 3 de agosto de 2026 para empresas do Lucro Presumido e Lucro Real, e até 4 de janeiro de 2027 para empresas do Simples Nacional e MEI — depois desses prazos, notas emitidas sem os campos corretos correm risco de rejeição pela SEFAZ.
+
+## E o DANFE (o PDF da nota)?
+
+Até a publicação deste artigo, a Receita Federal ainda não definiu um layout oficial para exibir os valores de IBS, CBS e Imposto Seletivo no DANFE (o documento impresso/PDF da nota) — os documentos auxiliares seguem em estudo. Por enquanto, essas informações ficam visíveis apenas no XML da nota, não no PDF.
+
+## O que o KomTec já faz com isso
+
+Quando você importa o XML de uma compra cujo fornecedor já emite com esses campos preenchidos, o sistema captura os valores de IBS, CBS e Imposto Seletivo automaticamente — sem precisar digitar nada manualmente. Assim que a Receita definir o layout oficial do DANFE com esses campos, o sistema será atualizado para exibi-los também no PDF.`,
+      fontes: [
+        { label: 'Nota Técnica 2025.002 (Portal Nacional da NF-e)', url: 'https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY%3D' },
+        { label: 'Reforma Tributária do Consumo — Adequações NF-e/NFC-e (Portal Nacional da NF-e)', url: 'https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AklZnck3o6I%3D' },
+        { label: 'Lei Complementar nº 214/2025 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm' },
+      ],
+      publicado: true,
+    },
+    {
+      slug: 'imposto-seletivo-o-que-e',
+      titulo: 'Imposto Seletivo: o "imposto do pecado" da Reforma Tributária',
+      resumo:
+        'Além do IBS e da CBS, a reforma criou um terceiro tributo — que incide só sobre produtos considerados prejudiciais à saúde ou ao meio ambiente. Veja o que é e quem é afetado.',
+      categoria: 'Fiscal',
+      data: 'Agosto de 2026',
+      tempoLeitura: '3 min de leitura',
+      imagem: '/imposto_seletivo.webp',
+      conteudo: `## O que é o Imposto Seletivo
+
+O Imposto Seletivo (IS) é o terceiro tributo criado pela Reforma Tributária, ao lado do IBS e da CBS. Diferente dos outros dois — que incidem de forma ampla sobre o consumo — o IS incide só sobre bens e serviços considerados prejudiciais à saúde ou ao meio ambiente, o que rendeu o apelido popular de "imposto do pecado".
+
+## Quando começa
+
+O Imposto Seletivo entra em vigor em 1º de janeiro de 2027, junto com a virada em que a CBS passa a valer com a alíquota cheia.
+
+## O que ele substitui
+
+Na prática, o Imposto Seletivo assume boa parte do papel hoje ocupado pelo IPI, que vai sendo zerado para a maioria dos produtos a partir de 2027 (com exceção dos itens fabricados na Zona Franca de Manaus, que mantêm o incentivo até 2033).
+
+## Quais produtos entram na lista
+
+Os exemplos mais citados são cigarros e bebidas alcoólicas — mas a regulamentação também prevê a possibilidade de alcançar bens que causem dano ao meio ambiente. As alíquotas específicas ainda estão em regulamentação: as estimativas de referência apontam uma alíquota padrão entre 25% e 26,5% quando o sistema estiver totalmente implementado (2033), mas a legislação complementar segue em debate.
+
+## Isso afeta a sua empresa?
+
+Para a maioria dos negócios de comércio, distribuição de peças e prestação de serviços, o Imposto Seletivo não se aplica diretamente — ele é seletivo por natureza, atingindo uma lista específica de produtos. Vale ficar de olho apenas se sua empresa comercializa algum dos itens que entrarem na lista final regulamentada.`,
+      fontes: [
+        { label: 'Emenda Constitucional nº 132/2023 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm' },
+        { label: 'Lei Complementar nº 214/2025 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm' },
+      ],
+      aviso:
+        'As alíquotas e a lista definitiva de produtos sujeitos ao Imposto Seletivo ainda dependem de regulamentação complementar e podem mudar. Consulte seu contador se sua empresa comercializa itens que possam ser enquadrados.',
+      publicado: true,
+    },
   ],
 };
 
