@@ -86,13 +86,57 @@ export const SECOES_EXTRAS: SecaoExtra[] = [
     fundoEscuro: false,
   },
 
+  // ── Gestão de Pneus ────────────────────────────────────────────────────────
+  {
+    id: 'gestao-de-pneus',
+    tipo: 'texto-imagem',
+    visivel: true,
+    ordem: 2,
+    etiqueta: 'Módulo · Gestão de Pneus',
+    titulo: 'Cada pneu, uma ficha\ncompleta e rastreável',
+    subtitulo: 'Da compra à recauchutagem — controle total da vida útil',
+    texto: 'Cadastre cada pneu com número de fogo, DOT, dimensão e marca. Acompanhe a posição instalada em cada equipamento, registre inspeções de sulco e pressão, e tenha o custo real por hora, quilômetro e tonelada rodada — essencial para frotas e operações agrícolas.',
+    imagem: '/komtec_gestao_pneus_v2.webp',
+    imagemAlt: 'Ficha digital de pneu com análise de custos e inspeção no ERP KomTec Pro',
+    itens: [
+      { titulo: 'Ficha completa por pneu',        descricao: 'Número de fogo, DOT, dimensão e marca — rastreável desde a compra.',                icone: 'FileText' },
+      { titulo: 'Mapa de posição no equipamento', descricao: 'Saiba exatamente qual pneu está instalado em cada posição da máquina ou veículo.', icone: 'MapPin' },
+      { titulo: 'Inspeção de sulco e pressão',    descricao: 'Registre medições a cada inspeção e acompanhe o desgaste ao longo do tempo.',       icone: 'Gauge' },
+      { titulo: 'Histórico de reformas',          descricao: 'Controle recauchutagens e consertos, com vida útil (1ª, 2ª, 3ª vida) de cada pneu.', icone: 'RefreshCw' },
+      { titulo: 'Custo por hora, km e tonelada',  descricao: 'Análise financeira real de cada pneu ao longo de sua vida útil.',                    icone: 'DollarSign' },
+      { titulo: 'Laudo de exame em PDF',          descricao: 'Gere um relatório completo do pneu para auditoria ou repasse ao cliente.',            icone: 'ClipboardList' },
+    ],
+    fundoEscuro: true,
+  },
+
+  // ── Gestão de Pneus — qualquer equipamento ────────────────────────────────
+  {
+    id: 'gestao-de-pneus-qualquer-equipamento',
+    tipo: 'texto-imagem',
+    visivel: true,
+    ordem: 3,
+    etiqueta: 'Módulo · Gestão de Pneus',
+    titulo: 'Do caminhão à\nmotoniveladora, o mesmo controle',
+    subtitulo: 'Uma ficha digital para cada pneu, em cada tipo de equipamento',
+    texto: 'Não importa a máquina — caminhão, motoniveladora, trator ou pá carregadeira. Cada pneu tem sua própria ficha, com medida, sulco e pressão registrados a cada inspeção, para sua frota nunca parar por um problema que poderia ter sido previsto.',
+    imagem: '/komtec_gestao_pneus_dia_v2.webp',
+    imagemAlt: 'Ficha digital de pneu de motoniveladora com inspeção de sulco e pressão no ERP KomTec Pro',
+    imagemLado: 'esquerda',
+    itens: [
+      { titulo: 'Funciona em qualquer equipamento', descricao: 'Motoniveladoras, tratores, caminhões e pás carregadeiras — a mesma ficha digital para qualquer máquina.', icone: 'Truck' },
+      { titulo: 'Status sempre atualizado',          descricao: 'Novo, em uso, em estoque, recapando ou descartado — acompanhe o ciclo de vida completo do pneu.',        icone: 'History' },
+      { titulo: 'Fotos e observações por pneu',      descricao: 'Registre até três fotos e observações — útil para documentar avarias ou desgastes.',                     icone: 'Info' },
+    ],
+    fundoEscuro: true,
+  },
+
   // ── EXEMPLO 2 (desativado): Banner de chamada ─────────────────────────────
   // Para ativar: mude visivel para true
   {
     id: 'cta-os',
     tipo: 'banner-cta',
     visivel: false,
-    ordem: 2,
+    ordem: 4,
     titulo: 'Sua equipe de campo merece um sistema que acompanha o ritmo',
     texto: 'Experimente o módulo de OS gratuitamente por 14 dias.',
     ctaLabel: 'Experimentar grátis',

@@ -5,6 +5,7 @@ const links = [
   { label: 'Módulos', href: '#modulos' },
   { label: 'Diferenciais', href: '#diferenciais' },
   { label: 'Portfólio', href: '/portfolio' },
+  { label: 'Informações', href: '/informacoes' },
   { label: 'Falar com Especialista', href: '#planos' },
   { label: 'Contato', href: '#contato' },
 ];

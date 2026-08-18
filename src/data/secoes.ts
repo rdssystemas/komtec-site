@@ -8,6 +8,7 @@ export const SECOES = {
   depoimentos: true,
   planos: true,
   experimenteGratis: true,
+  informacoesDestaque: true,
   faq: true,
   contato: true,
 } as const;

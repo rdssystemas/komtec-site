@@ -3,9 +3,10 @@ import { SECOES } from '../data/secoes';
 import {
   DEFAULT_HERO, DEFAULT_MODULOS, DEFAULT_DIFERENCIAIS,
   DEFAULT_DEPOIMENTOS, DEFAULT_FAQ, DEFAULT_PLANOS, DEFAULT_CTABANNER,
+  DEFAULT_INFORMACOES,
   type HeroContent, type ModulosContent, type DiferenciaisContent,
   type DepoimentosContent, type FaqContent, type PlanosContent,
-  type CtaBannerContent,
+  type CtaBannerContent, type InformacoesContent,
 } from '../data/defaultContent';
 import { SECOES_EXTRAS, type SecaoExtra } from '../data/secoesExtras';
 
@@ -23,6 +24,7 @@ export interface SiteContent {
   planos: PlanosContent;
   ctabanner: CtaBannerContent;
   secoesExtras: SecaoExtra[];
+  informacoes: InformacoesContent;
 }
 
 function parse<T>(raw: string | undefined, fallback: T): T {
@@ -46,6 +48,7 @@ export function useSiteConteudo(): SiteContent {
     planos: DEFAULT_PLANOS,
     ctabanner: DEFAULT_CTABANNER,
     secoesExtras: SECOES_EXTRAS,
+    informacoes: DEFAULT_INFORMACOES,
   });
 
   useEffect(() => {
@@ -62,6 +65,7 @@ export function useSiteConteudo(): SiteContent {
           planos:       parse(data.planos,       DEFAULT_PLANOS),
           ctabanner:    parse(data.ctabanner,    DEFAULT_CTABANNER),
           secoesExtras: parseArr(data.secoesExtras, SECOES_EXTRAS),
+          informacoes:  parse(data.informacoes,  DEFAULT_INFORMACOES),
         });
       })
       .catch(() => {}); // mantém defaults se backend indisponível

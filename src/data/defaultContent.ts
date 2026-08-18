@@ -112,9 +112,14 @@ export const DEFAULT_MODULOS: ModulosContent = {
           descricao: 'Controle toda a frota de máquinas e veículos: abastecimento diário, horímetro, componentes em árvore e histórico completo por equipamento. Ideal para agropecuária e frotas de máquinas pesadas.',
         },
         {
-          imagem: '/screenshots/komtec_gestao_trator_esteiras.jpg',
+          imagem: '/komtec_comboio_manutencao_v3.webp',
           titulo: 'Manutenção Preventiva',
-          descricao: 'Programe revisões por horímetro ou quilometragem. O sistema alerta automaticamente quando o equipamento se aproxima do prazo — evite paradas inesperadas no campo e reduza o custo de corretivas.',
+          descricao: 'Programe revisões por horímetro ou quilometragem e receba alertas automáticos quando o equipamento se aproxima do prazo. O comboio de manutenção controla o estoque de combustível, lubrificantes e outros fluidos direto no campo.',
+        },
+        {
+          imagem: '/komtec_comboio_dia.webp',
+          titulo: 'Comboio de Manutenção em Campo',
+          descricao: 'Cada veículo de comboio tem um responsável e tanques com saldo controlado por tipo de fluido. Todo abastecimento é registrado por equipamento atendido — sua equipe atende a frota onde ela estiver, sem perder o histórico.',
         },
         {
           imagem: '/screenshots/komtec_gestao_motoniveladora.jpg',
@@ -182,12 +187,7 @@ export interface DepoimentosContent {
 export const DEFAULT_DEPOIMENTOS: DepoimentosContent = {
   titulo: 'O que nossos clientes dizem',
   subtitulo: 'Empresas que transformaram sua gestão com o ERP KomTec Pro.',
-  items: [
-    { nome: 'Jales Junior',     empresa: 'A G M Peças',                cargo: 'Proprietário', texto: 'O KomTec resolveu o que a gente mais precisava: controle de estoque e emissão de nota fiscal no mesmo lugar. Simples de usar e o suporte atende na hora.' },
-    { nome: 'William Carvalho', empresa: 'Ancora Reposição de Peças',  cargo: 'Proprietário', texto: 'Antes era tudo no papel e planilha. Com o KomTec a gente faz orçamento, venda e nota fiscal sem complicação. Mudou bastante a rotina aqui na loja.' },
-    { nome: 'Mariano Henrique', empresa: 'Maq Filtro',                 cargo: 'Proprietário', texto: 'Sistema completo e fácil de entender. O que mais gosto é poder acessar de qualquer lugar — fico de olho no movimento mesmo quando não estou na loja.' },
-    { nome: 'Roberson Santos',  empresa: 'KomTec Peças',               cargo: 'Proprietário', texto: 'Desenvolvemos o sistema para resolver os problemas que a gente mesmo enfrentava no dia a dia. Hoje usamos na nossa própria loja e não abrimos mão.' },
-  ],
+  items: [],
 };
 
 // ── FAQ ───────────────────────────────────────────────────────────────────────
@@ -241,6 +241,95 @@ export const DEFAULT_PLANOS: PlanosContent = {
   ],
 };
 
+// ── Central de Informações ──────────────────────────────────────────────────────
+export interface FonteArtigo {
+  label: string;
+  url: string;
+}
+
+export interface InformacaoArtigo {
+  slug: string;
+  titulo: string;
+  resumo: string;
+  categoria: string;
+  data: string;
+  tempoLeitura: string;
+  // Caminho relativo a /public (ex: '/informacoes-reforma-tributaria.webp'). Vazio = usa o
+  // placeholder visual no lugar da capa.
+  imagem?: string;
+  // Corpo do artigo em markdown leve: linha começando com "## " vira título de
+  // seção, linha começando com "- " vira item de lista, linha em branco separa
+  // parágrafos. Sem suporte a negrito/links dentro do texto.
+  conteudo: string;
+  fontes: FonteArtigo[];
+  aviso?: string;
+  publicado: boolean;
+}
+
+export interface InformacoesContent {
+  items: InformacaoArtigo[];
+}
+
+export const DEFAULT_INFORMACOES: InformacoesContent = {
+  items: [
+    {
+      slug: 'reforma-tributaria-ibs-cbs',
+      titulo: 'Reforma Tributária: o que é IBS/CBS e o que muda para a sua empresa',
+      resumo:
+        'Entenda de forma simples o que são o IBS e a CBS, o que já aparece nas notas fiscais hoje, e o que é o Simples Híbrido — a opção que chega em 2027 para micro e pequenas empresas.',
+      categoria: 'Fiscal',
+      data: 'Agosto de 2026',
+      tempoLeitura: '6 min de leitura',
+      imagem: '/reforma-tributaria-capa.webp',
+      conteudo: `## O que é a Reforma Tributária, em resumo
+
+A Reforma Tributária (Emenda Constitucional nº 132/2023, regulamentada pela Lei Complementar nº 214/2025) está substituindo, aos poucos, cinco tributos que incidem sobre o consumo — PIS, COFINS, IPI, ICMS e ISS — por apenas dois novos: o IBS (Imposto sobre Bens e Serviços, de estados e municípios) e a CBS (Contribuição sobre Bens e Serviços, federal). Existe também o Imposto Seletivo, que incide só sobre alguns produtos específicos (como cigarros e bebidas).
+
+Essa troca não acontece de uma vez. Há um período de transição que vai de 2026 até 2033, com os tributos antigos e os novos convivendo em proporções que mudam ano a ano, até os antigos serem extintos por completo. 2026 é o "ano de teste": CBS começa em 0,9% e IBS em 0,1%, principalmente para calibrar os sistemas antes das alíquotas cheias.
+
+## O que já aparece nas notas fiscais hoje
+
+Desde 2026, fornecedores que já estão na fase de testes da reforma começaram a emitir notas fiscais (NF-e) com os campos de IBS, CBS e Imposto Seletivo preenchidos, além dos tributos tradicionais.
+
+No KomTec, quando você importa uma nota de compra cujo fornecedor já emite nesse formato, o sistema captura automaticamente esses valores e mostra tanto no total da compra quanto em cada item — sem trabalho manual. Notas de fornecedores que ainda não estão na reforma continuam funcionando normalmente, só sem esses campos preenchidos (o que é esperado).
+
+## O Simples Híbrido, a partir de 2027
+
+A partir de 2027, micro e pequenas empresas do Simples Nacional passam a ter a opção de aderir ao chamado Simples Híbrido — um regime que pode mudar bastante o planejamento fiscal do negócio.
+
+Na prática, quem optar pelo Simples Híbrido continua recolhendo os demais tributos pela guia única (o DAS), mas passa a apurar o IBS e a CBS separadamente, pelo regime regular — fora da guia única. A vantagem é poder aproveitar e transferir crédito integral desses tributos aos clientes, algo que o Simples tradicional não permite (nele, o crédito repassado é bem menor).
+
+A janela para decidir foi definida pela Receita Federal (Resolução CGSN nº 186/2026): a opção é feita em setembro de cada ano (a primeira janela foi 1 a 30/09/2026), vale a partir de 1º de janeiro do ano seguinte, e pode ser cancelada até o último dia útil de novembro do mesmo ano — depois disso, fica valendo o ano todo.
+
+## Vale a pena migrar? Depende do seu tipo de cliente
+
+A escolha pelo Simples Híbrido não é só uma conta de matemática tributária — ela depende muito do perfil de quem compra de você:
+
+- Vende para outras empresas (B2B): tende a ser mais beneficiada. Como gera crédito integral de IBS/CBS, seus produtos ficam mais atraentes para compradores que também querem aproveitar esse crédito para reduzir os próprios tributos.
+- Vende direto para o consumidor final (B2C): a transferência de crédito perde relevância, porque o consumidor final não aproveita crédito nenhum. Nesses casos, o Simples tradicional costuma continuar sendo mais simples e vantajoso.
+
+## O que isso exige da sua gestão
+
+Optar pelo Simples Híbrido tende a aumentar o custo operacional e exigir mais organização: escrituração fiscal mais detalhada, controle mais rígido das notas de entrada e saída, e sistemas de gestão atualizados para lidar com essas informações. Também vale considerar uma assessoria contábil que já domine o assunto, para reduzir o risco de erros e aproveitar os créditos corretamente.
+
+É exatamente para isso que o KomTec já está capturando os dados de IBS/CBS desde a importação da nota de compra: quanto mais organizado esse histórico estiver dentro do sistema, mais fácil fica para o seu contador fazer a apuração — seja você optando pelo Simples tradicional, pelo Híbrido, ou pelo regime regular.
+
+## Em resumo
+
+A Reforma Tributária é grande e vai se estender por vários anos. O KomTec já está acompanhando essa transição: hoje, capturando os valores de IBS/CBS que já vêm nas notas fiscais de compra. À medida que a reforma avança, o sistema continuará evoluindo para apoiar a apuração e o compliance fiscal do seu negócio.`,
+      fontes: [
+        { label: 'Emenda Constitucional nº 132/2023 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm' },
+        { label: 'Lei Complementar nº 214/2025 (Planalto)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm' },
+        { label: 'CGSN define prazos de opção pelo Simples Nacional e pelo regime híbrido de IBS/CBS (Receita Federal)', url: 'https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c739e03c-8482-473f-8e82-f38ec3b13637' },
+        { label: 'Reforma Tributária — Regulamentação (Ministério da Fazenda)', url: 'https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria' },
+      ],
+      aviso:
+        'Este conteúdo tem caráter informativo e não substitui a orientação do seu contador. A decisão sobre regime tributário (Simples tradicional, Simples Híbrido ou regime regular) deve ser tomada com apoio de um profissional de contabilidade, considerando a realidade específica do seu negócio.',
+      publicado: true,
+    },
+  ],
+};
+
 // ── CTA Banner ────────────────────────────────────────────────────────────────
 export interface CtaBannerContent {
   etiqueta: string;
@@ -253,7 +342,7 @@ export interface CtaBannerContent {
 export const DEFAULT_CTABANNER: CtaBannerContent = {
   etiqueta: 'Sem fidelidade · Cancele quando quiser',
   titulo: 'Pronto para simplificar a gestão\nda sua empresa?',
-  descricao: 'Escolha um plano e comece hoje — ou fale com nossa equipe para uma demonstração personalizada e gratuita.',
+  descricao: 'Montamos o plano ideal para o seu negócio — fale com nossa equipe ou peça uma demonstração gratuita e sem compromisso.',
   btn1Label: 'Falar com um especialista',
   btn2Label: 'Solicitar demo gratuita',
 };

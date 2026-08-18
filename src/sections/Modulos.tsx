@@ -29,7 +29,7 @@ function ModuloItem({ m, index }: { m: ModulosContent['items'][0]; index: number
         setSlide(s => (s + 1) % slides.length);
         setFading(false);
       }, 400);
-    }, 7000);
+    }, 12000);
     return () => clearInterval(timer);
   }, [slides]);
 

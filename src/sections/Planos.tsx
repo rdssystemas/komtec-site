@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { getIcon } from '../data/iconMap';
 import type { PlanosContent } from '../data/defaultContent';
+import { trackEvent } from '../lib/analytics';
 
 export function Planos({ content }: { content: PlanosContent }) {
   const [form, setForm] = useState({ nome: '', telefone: '', horario: '' });
@@ -14,6 +15,7 @@ export function Planos({ content }: { content: PlanosContent }) {
     );
     window.open(`https://wa.me/5562993256370?text=${texto}`, '_blank');
     setEnviado(true);
+    trackEvent('generate_lead', { origem: 'planos_ligacao' });
   };
 
   return (

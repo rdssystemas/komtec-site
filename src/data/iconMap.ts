@@ -5,6 +5,7 @@ import {
   ClipboardList, Wrench, History, BarChart2, CheckCircle2,
   Star, Clock, MapPin, Mail, Calendar, AlertCircle, Info,
   ArrowRight, ChevronRight, Search, Download, Upload, Lock,
+  Gauge,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -17,6 +18,7 @@ export const ICON_MAP: Record<string, LucideIcon> = {
   ClipboardList, Wrench, History, BarChart2, CheckCircle2,
   Star, Clock, MapPin, Mail, Calendar, AlertCircle, Info,
   ArrowRight, ChevronRight, Search, Download, Upload, Lock,
+  Gauge,
 };
 
 export const ICON_NAMES = Object.keys(ICON_MAP);

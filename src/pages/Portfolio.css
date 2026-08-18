@@ -1,0 +1,440 @@
+@import "../styles/brand-fonts.css";
+
+/* ============ TOKENS ============ */
+.komtec-portfolio{
+  --ink:#2a2620;
+  --ink-dim:#6b6255;
+  --ground:#f3ecdd;
+  --ground-2:#ece2cc;
+  --panel:#fffdf8;
+  --panel-border:#ddcfaa;
+  --amber:#b45309;
+  --amber-bright:#e78a1e;
+  --amber-ink:#7c3a09;
+  --amber-pop:#f59e0b;
+  --stripe-a:#f59e0b;
+  --stripe-b:#211c12;
+  --mono-ink:#5b5140;
+  --shadow:rgba(30,22,8,.14);
+  --good:#3f7d4a;
+  --good-bg:#e4efe0;
+  --wait:#a1631c;
+  --wait-bg:#f4e3c8;
+
+  --font-display:"Big Shoulders Display","Arial Narrow",sans-serif;
+  --font-body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"Consolas",monospace;
+}
+@media (prefers-color-scheme: dark){
+  .komtec-portfolio{
+    --ink:#f1e9d8; --ink-dim:#b6a98d; --ground:#100e0a; --ground-2:#171310;
+    --panel:#1a160f; --panel-border:#3a331f; --amber:#f59e0b; --amber-bright:#ffbb3d;
+    --amber-ink:#ffd27f; --amber-pop:#f59e0b; --stripe-a:#f59e0b; --stripe-b:#100e0a;
+    --mono-ink:#d6c9a3; --shadow:rgba(0,0,0,.55);
+    --good:#7fce8c; --good-bg:#1c2e1d; --wait:#f0b258; --wait-bg:#2e2412;
+  }
+}
+.komtec-portfolio[data-theme="dark"]{
+  --ink:#f1e9d8; --ink-dim:#b6a98d; --ground:#100e0a; --ground-2:#171310;
+  --panel:#1a160f; --panel-border:#3a331f; --amber:#f59e0b; --amber-bright:#ffbb3d;
+  --amber-ink:#ffd27f; --amber-pop:#f59e0b; --stripe-a:#f59e0b; --stripe-b:#100e0a;
+  --mono-ink:#d6c9a3; --shadow:rgba(0,0,0,.55);
+  --good:#7fce8c; --good-bg:#1c2e1d; --wait:#f0b258; --wait-bg:#2e2412;
+}
+.komtec-portfolio[data-theme="light"]{
+  --ink:#2a2620; --ink-dim:#6b6255; --ground:#f3ecdd; --ground-2:#ece2cc;
+  --panel:#fffdf8; --panel-border:#ddcfaa; --amber:#b45309; --amber-bright:#e78a1e;
+  --amber-ink:#7c3a09; --amber-pop:#f59e0b; --stripe-a:#f59e0b; --stripe-b:#211c12;
+  --mono-ink:#5b5140; --shadow:rgba(30,22,8,.14);
+  --good:#3f7d4a; --good-bg:#e4efe0; --wait:#a1631c; --wait-bg:#f4e3c8;
+}
+
+/* ============ BASE (scoped to .komtec-portfolio so it can't leak into the rest of the site) ============ */
+.komtec-portfolio{
+  background:var(--ground); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.6;
+  overflow-x:hidden;
+}
+.komtec-portfolio img,.komtec-portfolio svg{display:block; max-width:100%;}
+.komtec-portfolio .wrap{width:100%; max-width:1180px; margin:0 auto; padding:0 clamp(20px,5vw,56px);}
+.komtec-portfolio a{color:inherit;}
+.komtec-portfolio :focus-visible{outline:3px solid var(--amber-pop); outline-offset:3px;}
+
+.komtec-portfolio h1,.komtec-portfolio h2,.komtec-portfolio h3{
+  font-family:var(--font-display); text-transform:uppercase; margin:0;
+  font-weight:900; letter-spacing:.01em; text-wrap:balance;
+}
+.komtec-portfolio p{margin:0; max-width:62ch;}
+.komtec-portfolio .eyebrow{
+  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--amber-ink); font-weight:600;
+}
+.komtec-portfolio .mono{font-family:var(--font-mono);}
+
+/* hazard stripe rule — used sparingly as a structural divider, not wallpaper */
+.komtec-portfolio .stripe-rule{
+  height:10px;
+  background:repeating-linear-gradient(135deg,var(--stripe-a) 0 18px,var(--stripe-b) 18px 36px);
+  opacity:.9;
+}
+
+/* faint blueprint grid, used only behind the hero */
+.komtec-portfolio .blueprint{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--amber-pop) 1px,transparent 1px),
+    linear-gradient(90deg,var(--amber-pop) 1px,transparent 1px);
+  background-size:42px 42px;
+  opacity:.06;
+  pointer-events:none;
+}
+
+.komtec-portfolio a.cta,.komtec-portfolio button.cta{
+  font-family:var(--font-mono); font-weight:600; font-size:.85rem;
+  letter-spacing:.06em; text-transform:uppercase;
+  padding:.95em 1.6em; border-radius:2px; cursor:pointer;
+  border:2px solid var(--amber-pop); background:var(--amber-pop); color:#1a1408;
+  transition:transform .15s ease, background .15s ease;
+  display:inline-block; text-decoration:none;
+}
+.komtec-portfolio a.cta:hover,.komtec-portfolio button.cta:hover{ transform:translateY(-2px); }
+.komtec-portfolio a.cta.ghost,.komtec-portfolio button.cta.ghost{ background:transparent; color:var(--amber-ink); }
+
+/* ============ HEADER ============ */
+.komtec-portfolio header.top{
+  position:sticky; top:0; z-index:20;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--panel-border);
+}
+.komtec-portfolio .topbar{ display:flex; align-items:center; justify-content:space-between; padding:16px clamp(20px,5vw,56px); }
+.komtec-portfolio .wordmark{ display:flex; align-items:baseline; gap:.4em; font-family:var(--font-display); font-weight:900; font-size:1.4rem; letter-spacing:.02em; text-transform:uppercase; text-decoration:none; }
+.komtec-portfolio .wordmark .dot{ color:var(--amber-pop); }
+.komtec-portfolio .wordmark .tag-erp{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.14em; font-weight:600; color:var(--ink-dim); }
+.komtec-portfolio .wordmark .pro{ font-family:var(--font-mono); font-size:.58rem; letter-spacing:.06em; font-weight:700; color:var(--amber-ink); border:1px solid var(--amber-ink); padding:.2em .42em; border-radius:2px; }
+.komtec-portfolio .topbar nav{ display:flex; gap:28px; font-family:var(--font-mono); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+.komtec-portfolio .topbar nav a{ text-decoration:none; color:var(--ink-dim); }
+.komtec-portfolio .topbar nav a:hover{ color:var(--amber-ink); }
+@media (max-width:760px){ .komtec-portfolio .topbar nav{ display:none; } }
+
+/* ============ HERO ============ */
+.komtec-portfolio .hero{
+  position:relative; background:var(--stripe-b); color:#f4ecd9;
+  padding:clamp(64px,10vw,110px) 0 clamp(56px,8vw,96px);
+  overflow:hidden;
+}
+.komtec-portfolio .hero .wrap{ position:relative; z-index:1; display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(32px,5vw,64px); align-items:center; }
+@media (max-width:900px){ .komtec-portfolio .hero .wrap{ grid-template-columns:1fr; } }
+.komtec-portfolio .hero h1{ font-size:clamp(2.6rem,5.6vw,4.6rem); line-height:.94; color:#faf3e2; margin-top:14px; }
+.komtec-portfolio .hero h1 em{ font-style:normal; color:var(--amber-pop); }
+.komtec-portfolio .hero p.lead{ margin-top:22px; max-width:46ch; color:#d8cbac; font-size:1.08rem; }
+.komtec-portfolio .hero .ctas{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
+.komtec-portfolio .hero .eyebrow{ color:var(--amber-pop); }
+
+/* fake DANFE stub */
+.komtec-portfolio .stub{
+  background:#fbf6ea; color:#241f14; border-radius:3px;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.06);
+  transform:rotate(1.4deg);
+  overflow:hidden;
+  font-family:var(--font-mono);
+}
+.komtec-portfolio .stub .stub-head{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding:16px 18px 12px; border-bottom:1px dashed #cabb92;
+}
+.komtec-portfolio .stub .stub-head .t1{ font-size:.62rem; letter-spacing:.1em; color:#7a6d4c; text-transform:uppercase; }
+.komtec-portfolio .stub .stub-head .t2{ font-family:var(--font-display); font-weight:900; font-size:1.5rem; text-transform:uppercase; letter-spacing:.01em; margin-top:4px; }
+.komtec-portfolio .stub .status{
+  font-size:.66rem; letter-spacing:.08em; font-weight:700; text-transform:uppercase;
+  background:#e4efe0; color:#2c6b39; padding:.35em .7em; border-radius:2px; white-space:nowrap;
+}
+.komtec-portfolio .stub .stub-body{ padding:16px 18px; }
+.komtec-portfolio .stub .row{ display:flex; justify-content:space-between; gap:12px; font-size:.72rem; padding:6px 0; border-bottom:1px solid #eee2c6; color:#3a3320; }
+.komtec-portfolio .stub .row span:first-child{ color:#8b7d58; }
+.komtec-portfolio .stub .chave{ margin-top:14px; font-size:.62rem; letter-spacing:.04em; line-height:1.7; color:#524734; word-break:break-all; }
+.komtec-portfolio .stub .barcode{
+  margin-top:14px; height:34px;
+  background:repeating-linear-gradient(90deg,#241f14 0 2px,transparent 2px 5px, #241f14 5px 6px, transparent 6px 11px);
+  opacity:.85;
+}
+.komtec-portfolio .stub .stub-foot{ padding:10px 18px 16px; font-size:.6rem; color:#9c8f68; letter-spacing:.05em; }
+
+/* ============ SECTION SHELL ============ */
+.komtec-portfolio section{ padding:clamp(56px,9vw,104px) 0; }
+.komtec-portfolio .section-head{ max-width:60ch; margin-bottom:clamp(36px,6vw,56px); }
+.komtec-portfolio .section-head h2{ font-size:clamp(1.9rem,3.6vw,2.9rem); margin-top:10px; }
+.komtec-portfolio .section-head p{ margin-top:16px; color:var(--ink-dim); font-size:1.05rem; }
+
+/* ============ PROBLEMS ============ */
+.komtec-portfolio .problems{ background:var(--ground-2); }
+.komtec-portfolio .problem-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--panel-border); border:1px solid var(--panel-border); }
+@media (max-width:760px){ .komtec-portfolio .problem-grid{ grid-template-columns:1fr; } }
+.komtec-portfolio .problem{ background:var(--panel); padding:28px clamp(20px,3vw,34px); }
+.komtec-portfolio .problem .tag{ font-family:var(--font-mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; }
+.komtec-portfolio .problem .tag.bad{ color:#b5482f; }
+.komtec-portfolio .problem .tag.good{ color:var(--good); }
+.komtec-portfolio .problem .txt{ margin-top:10px; font-size:1.02rem; }
+.komtec-portfolio .problem .txt.dim{ color:var(--ink-dim); text-decoration:line-through; text-decoration-color:#b5482f66; }
+.komtec-portfolio .problem-pair{ display:flex; flex-direction:column; gap:14px; }
+
+/* ============ MODULES ============ */
+.komtec-portfolio .module-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media (max-width:940px){ .komtec-portfolio .module-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .komtec-portfolio .module-grid{ grid-template-columns:1fr; } }
+.komtec-portfolio .card{
+  position:relative; background:var(--panel); border:1px solid var(--panel-border);
+  padding:26px 24px 24px; box-shadow:0 1px 0 var(--panel-border), 0 18px 30px -22px var(--shadow);
+}
+.komtec-portfolio .card .rivet{
+  position:absolute; top:50%; left:-3px; width:8px; height:8px; border-radius:50%; transform:translateY(-50%);
+  background:radial-gradient(circle at 35% 30%, var(--amber-bright), var(--amber-ink) 75%);
+  box-shadow:0 1px 2px rgba(0,0,0,.3);
+}
+.komtec-portfolio .card h3{ font-size:1.5rem; margin-top:6px; letter-spacing:.005em; }
+.komtec-portfolio .card .desc{ margin-top:10px; font-size:.94rem; color:var(--ink-dim); }
+.komtec-portfolio .card .mockup{ margin-top:18px; }
+.komtec-portfolio .card .eyebrow{ display:block; }
+
+/* ============ SHOT (illustrative photo card) ============ */
+.komtec-portfolio .shot{
+  display:block; width:100%; padding:0; margin:0; border:none; background:none;
+  font:inherit; text-align:left; cursor:zoom-in; border-radius:8px;
+  box-shadow:0 1px 0 var(--panel-border), 0 16px 26px -20px var(--shadow);
+}
+.komtec-portfolio .shot-img-wrap{
+  display:block; position:relative; aspect-ratio:16/10; overflow:hidden;
+  border:1px solid var(--panel-border); border-radius:8px; background:var(--ground-2);
+}
+.komtec-portfolio .shot-img-wrap img{
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  transition:transform .4s ease, filter .4s ease;
+}
+.komtec-portfolio .shot-caption{
+  position:absolute; left:0; right:0; bottom:0; padding:16px 12px 8px;
+  background:linear-gradient(0deg, rgba(16,14,10,.82), rgba(16,14,10,0));
+  color:#f4ecd9; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.04em; text-transform:uppercase; font-weight:600;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.komtec-portfolio .shot-expand{
+  position:absolute; top:8px; right:8px; width:30px; height:30px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(16,14,10,.55); color:var(--amber-pop); backdrop-filter:blur(3px);
+  opacity:0; transform:scale(.85); transition:opacity .2s ease, transform .2s ease;
+}
+.komtec-portfolio .shot-expand svg{ width:15px; height:15px; }
+@media (hover:hover){
+  .komtec-portfolio .shot:hover .shot-img-wrap img{ transform:scale(1.05); filter:brightness(1.03); }
+  .komtec-portfolio .shot:hover .shot-expand{ opacity:1; transform:none; }
+  .komtec-portfolio .shot:hover .shot-img-wrap{ border-color:var(--amber-pop); }
+}
+@media (prefers-reduced-motion: reduce){
+  .komtec-portfolio .shot-img-wrap img,.komtec-portfolio .shot-expand{ transition:none; }
+}
+
+/* ============ GALLERY ============ */
+.komtec-portfolio .gallery-wrap{ background:var(--ground-2); }
+.komtec-portfolio .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+@media (max-width:940px){ .komtec-portfolio .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:520px){ .komtec-portfolio .gallery-grid{ grid-template-columns:1fr; } }
+
+/* ============ LIGHTBOX ============ */
+.komtec-portfolio .lightbox{
+  position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+  padding:6vh 5vw; background:rgba(16,14,10,.88); backdrop-filter:blur(6px); cursor:zoom-out;
+  animation:komtec-lightbox-in .18s ease;
+}
+@keyframes komtec-lightbox-in{ from{ opacity:0; } to{ opacity:1; } }
+.komtec-portfolio .lightbox figure{
+  margin:0; max-width:min(1100px,92vw); max-height:88vh; display:flex; flex-direction:column; gap:14px; cursor:default;
+}
+.komtec-portfolio .lightbox img{
+  max-width:100%; max-height:78vh; width:auto; height:auto; object-fit:contain; border-radius:6px;
+  box-shadow:0 40px 80px -20px rgba(0,0,0,.7);
+}
+.komtec-portfolio .lightbox figcaption{
+  font-family:var(--font-mono); font-size:.82rem; letter-spacing:.02em; color:#d8cbac; text-align:center;
+}
+.komtec-portfolio .lightbox-close{
+  position:fixed; top:22px; right:22px; width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#f4ecd9;
+  transition:background .15s ease;
+}
+.komtec-portfolio .lightbox-close:hover{ background:rgba(255,255,255,.18); }
+.komtec-portfolio .lightbox-close svg{ width:20px; height:20px; }
+@media (prefers-reduced-motion: reduce){
+  .komtec-portfolio .lightbox{ animation:none; }
+}
+
+/* ============ FLOW ============ */
+.komtec-portfolio .flow-wrap{ background:var(--stripe-b); color:#f4ecd9; }
+.komtec-portfolio .flow-wrap .eyebrow{ color:var(--amber-pop); }
+.komtec-portfolio .flow-wrap .section-head p{ color:#cbbe9c; }
+.komtec-portfolio .flow{ display:flex; align-items:stretch; gap:0; flex-wrap:wrap; }
+.komtec-portfolio .flow .stage{ flex:1 1 200px; padding:22px 18px; border:1px solid #40371f; position:relative; }
+.komtec-portfolio .flow .stage .n{ font-family:var(--font-mono); font-size:.66rem; color:var(--amber-pop); letter-spacing:.08em; }
+.komtec-portfolio .flow .stage h4{ font-family:var(--font-display); text-transform:uppercase; font-size:1.3rem; margin:8px 0 6px; color:#faf3e2; }
+.komtec-portfolio .flow .stage p{ font-size:.82rem; color:#c9bc9a; }
+.komtec-portfolio .flow .stage:not(:last-child)::after{
+  content:"→"; position:absolute; right:-13px; top:50%; transform:translateY(-50%);
+  color:var(--amber-pop); font-family:var(--font-mono); font-size:1.1rem; z-index:2;
+  background:var(--stripe-b); width:24px; text-align:center;
+}
+@media (max-width:760px){
+  .komtec-portfolio .flow .stage:not(:last-child)::after{ content:"↓"; right:auto; left:50%; top:auto; bottom:-13px; transform:translateX(-50%); }
+}
+
+/* ============ DIFFERENTIATORS ============ */
+.komtec-portfolio .diff-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:28px; }
+.komtec-portfolio .diff{ display:flex; flex-direction:column; gap:10px; }
+.komtec-portfolio .diff .ic{ width:34px; height:34px; color:var(--amber-ink); }
+.komtec-portfolio .diff h4{ font-family:var(--font-display); text-transform:uppercase; font-size:1.15rem; font-weight:700; }
+.komtec-portfolio .diff p{ font-size:.9rem; color:var(--ink-dim); }
+
+/* ============ CTA FINAL ============ */
+.komtec-portfolio .final-cta{ background:linear-gradient(180deg,var(--amber-pop),var(--amber)); color:#1a1408; text-align:left; }
+.komtec-portfolio .final-cta .wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.komtec-portfolio .final-cta h2{ font-size:clamp(1.9rem,4vw,3rem); color:#1a1408; }
+.komtec-portfolio .final-cta p{ margin-top:10px; color:#3d2a0c; font-size:1.02rem; }
+.komtec-portfolio .final-cta a.cta,.komtec-portfolio .final-cta button.cta{ background:#1a1408; border-color:#1a1408; color:#f4ecd9; }
+
+/* ============ BACK TO TOP ============ */
+.komtec-portfolio .back-to-top{
+  position:fixed; bottom:24px; right:24px; z-index:40;
+  height:46px; padding:0 16px 0 14px; display:flex; align-items:center; gap:8px;
+  font-family:var(--font-mono); font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  background:var(--amber-pop); color:#1a1408; border:2px solid var(--stripe-b);
+  cursor:pointer; box-shadow:0 10px 24px -8px rgba(0,0,0,.4);
+  opacity:0; pointer-events:none; transform:translateY(8px);
+  transition:opacity .25s ease, transform .25s ease;
+}
+.komtec-portfolio .back-to-top.visible{ opacity:1; pointer-events:auto; transform:none; }
+.komtec-portfolio .back-to-top:hover{ transform:translateY(-3px); }
+.komtec-portfolio .back-to-top svg{ width:18px; height:18px; flex-shrink:0; }
+@media (prefers-reduced-motion: reduce){
+  .komtec-portfolio .back-to-top{ transition:opacity .01ms; }
+}
+@media print{
+  .komtec-portfolio .back-to-top{ display:none; }
+}
+
+/* ============ FOOTER ============ */
+.komtec-portfolio footer{ background:var(--stripe-b); color:#a8987a; padding:30px 0; }
+.komtec-portfolio footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.04em; }
+.komtec-portfolio footer .wordmark{ color:#f4ecd9; font-size:1.05rem; }
+.komtec-portfolio footer .footer-tagline{ margin-top:8px; max-width:38ch; }
+.komtec-portfolio .footer-contact{ display:flex; flex-direction:column; gap:6px; text-align:right; }
+.komtec-portfolio .footer-contact a{ color:#d8cbac; text-decoration:none; }
+.komtec-portfolio .footer-contact a:hover{ color:var(--amber-pop); }
+@media (max-width:520px){
+  .komtec-portfolio .footer-contact{ text-align:left; }
+}
+
+/* ============ REVEAL ============ */
+.komtec-portfolio .reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
+.komtec-portfolio .reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .komtec-portfolio .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+/* ============ PRINT ============ */
+@media print{
+  @page{ size:A4; margin:12mm; }
+  .komtec-portfolio{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .komtec-portfolio, .komtec-portfolio[data-theme="dark"]{
+    --ink:#201c14; --ink-dim:#5a5140; --ground:#ffffff; --ground-2:#f4efe2;
+    --panel:#ffffff; --panel-border:#c9bb95; --amber:#b45309; --amber-pop:#b45309;
+    --amber-ink:#7c3a09; --stripe-b:#201c14; --good:#2c6b39; --good-bg:#eaf3e6; --wait:#8a5313; --wait-bg:#f6e9cf;
+  }
+  .komtec-portfolio header.top, .komtec-portfolio .hero .ctas, .komtec-portfolio .final-cta a.cta{ display:none; }
+  .komtec-portfolio{ background:#fff; }
+  .komtec-portfolio .hero, .komtec-portfolio .flow-wrap, .komtec-portfolio .final-cta{ background:#fff !important; color:#201c14 !important; }
+  .komtec-portfolio .hero h1, .komtec-portfolio .flow-wrap h4, .komtec-portfolio .flow-wrap h2{ color:#201c14 !important; }
+  .komtec-portfolio .hero p.lead, .komtec-portfolio .flow .stage p, .komtec-portfolio .flow-wrap .section-head p{ color:#5a5140 !important; }
+  .komtec-portfolio .flow .stage{ border-color:#c9bb95; }
+  .komtec-portfolio .flow .stage::after{ background:#fff !important; }
+  .komtec-portfolio .stub{ box-shadow:none; border:1px solid #c9bb95; transform:none; }
+
+  /* ---- Paginação: um assunto por página, sempre. Cada seção-âncora abaixo
+     força início de página nova (break-before:page) e nunca é fragmentada
+     (break-inside:avoid nos cartões). Duas seções só dividem a mesma página
+     quando o conteúdo delas somado já cabe folgado no espaço de uma A4 — isso
+     foi medido caso a caso (ver notas de altura), não deixado a critério do
+     navegador. Resultado: Capa | Problemas | Módulos | Fluxo | Diferenciais+CTA.
+     Módulos e Fluxo eram uma página só antes, mas com 2 assuntos visuais bem
+     diferentes (grade de cartões x tira horizontal de etapas) espremidos pra
+     caber juntos, ficava confuso — separados, cada um pode respirar. */
+  .komtec-portfolio section{ padding:8px 0; }
+  .komtec-portfolio .hero, .komtec-portfolio .flow-wrap{ break-inside:avoid; page-break-inside:avoid; }
+  .komtec-portfolio .problems, .komtec-portfolio #modulos, .komtec-portfolio #fluxo, .komtec-portfolio #diferenciais{
+    break-before:page; page-break-before:always;
+  }
+  .komtec-portfolio .stripe-rule{ display:none; }
+  .komtec-portfolio .section-head{ margin-bottom:14px; break-after:avoid; page-break-after:avoid; }
+  .komtec-portfolio .section-head h2{ font-size:1.5rem; margin-top:4px; }
+  .komtec-portfolio .section-head p{ margin-top:6px; font-size:.82rem; }
+
+  /* ---- Página "Problemas": só ela nessa página (só 4 pares, natural mente
+     curta) — em vez de deixar um vão grande no fim, ela usa uma tipografia
+     mais folgada aqui (só na impressão) pra preencher a página com conforto de
+     leitura, e não porque faltava espaço. */
+  .komtec-portfolio .problems{ padding:20px 0; }
+  .komtec-portfolio .problems .section-head{ margin-bottom:30px; }
+  .komtec-portfolio .problems .section-head h2{ font-size:2.2rem; }
+  .komtec-portfolio .problems .section-head p{ font-size:1.02rem; margin-top:12px; }
+  .komtec-portfolio .problem-grid{ display:grid !important; grid-template-columns:repeat(2,1fr); gap:14px; border:none; background:none; }
+  .komtec-portfolio .problem{ border:1px solid var(--panel-border); padding:30px 30px; }
+  .komtec-portfolio .problem .tag{ font-size:.85rem; }
+  .komtec-portfolio .problem .txt{ margin-top:10px; font-size:1.08rem; }
+  .komtec-portfolio .problem-pair{ gap:18px; }
+  .komtec-portfolio .card, .komtec-portfolio .problem, .komtec-portfolio .diff, .komtec-portfolio .flow{ break-inside:avoid; page-break-inside:avoid; }
+
+  /* ---- Página "Módulos": os 6 cards (todos com foto agora — Financeiro e
+     Estoque ganharam foto igual aos outros 4) em 2 colunas, com folga
+     confortável já que não precisa mais dividir a página com o Fluxo. */
+  .komtec-portfolio .module-grid{ display:grid !important; grid-template-columns:repeat(2,1fr); gap:8px 12px; }
+  .komtec-portfolio .card{ padding:9px 11px 8px; box-shadow:none; }
+  .komtec-portfolio .card h3{ font-size:.92rem; margin-top:2px; line-height:1.2; }
+  .komtec-portfolio .card .desc{ font-size:.7rem; margin-top:4px; line-height:1.32; }
+  .komtec-portfolio .card .mockup{ margin-top:5px; }
+  .komtec-portfolio .card .eyebrow{ font-size:.58rem; }
+  .komtec-portfolio .blueprint{ display:none; }
+  .komtec-portfolio .reveal{ opacity:1 !important; transform:none !important; }
+  .komtec-portfolio .gallery-wrap{ display:none; }
+  .komtec-portfolio .shot{ box-shadow:none; break-inside:avoid; page-break-inside:avoid; }
+  .komtec-portfolio .shot-expand{ display:none; }
+  .komtec-portfolio .shot-caption{ font-size:.55rem; padding:10mm 8px 4px; }
+  .komtec-portfolio .shot-img-wrap{ aspect-ratio:auto; height:42mm; border-radius:3px; border:1px solid var(--panel-border); }
+
+  /* ---- Página "Fluxo": só 4 etapas, então ganham tipografia bem maior que a
+     tela pra preencher a página com conforto de leitura (mesma lógica das
+     páginas "Problemas" e "Diferenciais"). */
+  .komtec-portfolio .flow-wrap{ padding:46px 0; }
+  .komtec-portfolio .flow-wrap .section-head{ margin-bottom:40px; }
+  .komtec-portfolio .flow-wrap .section-head h2{ font-size:2.3rem; }
+  .komtec-portfolio .flow-wrap .section-head p{ font-size:1.05rem; margin-top:12px; }
+  .komtec-portfolio .flow{ margin-top:30px; }
+  .komtec-portfolio .flow .stage{ padding:52px 30px; }
+  .komtec-portfolio .flow .stage h4{ font-size:1.9rem; margin:20px 0 12px; }
+  .komtec-portfolio .flow .stage p{ font-size:1.08rem; }
+
+  /* ---- Página "Diferenciais + CTA final + rodapé": os 8 itens em 2 colunas
+     com tipografia um pouco maior que o mínimo (mesma lógica de "Problemas" —
+     preencher com conforto, não por necessidade), seguidos da chamada final e
+     do rodapé, que são curtos e cabem juntos sem sobrar quase uma página vazia
+     só pra eles. */
+  .komtec-portfolio .diff-grid{ display:grid !important; grid-template-columns:repeat(2,1fr); gap:16px 22px; margin-top:0; }
+  .komtec-portfolio .diff{ gap:8px; }
+  .komtec-portfolio .diff .ic{ width:26px; height:26px; }
+  .komtec-portfolio .diff h4{ font-size:1.02rem; }
+  .komtec-portfolio .diff p{ font-size:.84rem; }
+  .komtec-portfolio #diferenciais .section-head h2{ font-size:1.9rem; }
+  .komtec-portfolio .final-cta{ break-inside:avoid; page-break-inside:avoid; padding-bottom:8px; }
+  .komtec-portfolio .final-cta .wrap{ display:block; }
+  .komtec-portfolio .final-cta h2{ font-size:1.4rem; }
+  .komtec-portfolio .final-cta p{ font-size:.85rem; }
+  .komtec-portfolio footer{ background:#fff !important; color:#5a5140 !important; border-top:1px solid #c9bb95; break-inside:avoid; page-break-inside:avoid; break-before:avoid; page-break-before:avoid; padding:14px 0; }
+  .komtec-portfolio footer .wordmark{ color:#201c14 !important; }
+  .komtec-portfolio .footer-contact a{ color:#5a5140 !important; }
+}

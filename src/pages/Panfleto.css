@@ -1,0 +1,183 @@
+@import "../styles/brand-fonts.css";
+
+.komtec-panfleto{
+  --ink:#2a2620;
+  --ink-dim:#6b6255;
+  --panel:#fffdf8;
+  --panel-border:#ddcfaa;
+  --dark:#211c12;
+  --dark-2:#17130c;
+  --amber:#b45309;
+  --amber-bright:#e78a1e;
+  --amber-ink:#7c3a09;
+  --amber-pop:#f59e0b;
+  --cream:#f4ecd9;
+  --cream-dim:#d8cbac;
+  --good:#3f7d4a;
+  --good-bg:#e4efe0;
+
+  --font-display:"Big Shoulders Display","Arial Narrow",sans-serif;
+  --font-body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"Consolas",monospace;
+
+  font-family:var(--font-body);
+}
+.komtec-panfleto *{ box-sizing:border-box; }
+.komtec-panfleto img,.komtec-panfleto svg{ display:block; max-width:100%; }
+.komtec-panfleto h1,.komtec-panfleto h2{ font-family:var(--font-display); text-transform:uppercase; margin:0; font-weight:900; text-wrap:balance; }
+.komtec-panfleto p{ margin:0; }
+
+/* ============ SCREEN PREVIEW CANVAS ============ */
+@media screen{
+  .komtec-panfleto{
+    background:#4b4d4f; min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; gap:28px;
+    padding:28px 16px 60px;
+  }
+  .komtec-panfleto .page{ box-shadow:0 18px 50px -12px rgba(0,0,0,.55); }
+}
+.komtec-panfleto .toolbar{
+  position:sticky; top:0; z-index:10; width:100%; max-width:210mm;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  background:#2c2e30; color:#e8e2d3; padding:12px 18px; border-radius:6px;
+  font-family:var(--font-mono); font-size:.8rem;
+}
+.komtec-panfleto .toolbar a{ color:#e8e2d3; text-decoration:underline; }
+.komtec-panfleto .toolbar button{
+  font-family:var(--font-mono); font-weight:700; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase;
+  background:var(--amber-pop); color:#1a1408; border:none; border-radius:3px; padding:.7em 1.3em; cursor:pointer;
+}
+.komtec-panfleto .toolbar button:hover{ background:var(--amber-bright); }
+.komtec-panfleto .caption{ font-family:var(--font-mono); font-size:.72rem; color:#c9c2b0; text-align:center; max-width:210mm; }
+
+/* ============ PAGE ============ */
+.komtec-panfleto .page{
+  width:210mm; height:297mm; flex-shrink:0;
+  padding:18mm 16mm; position:relative; overflow:hidden;
+}
+.komtec-panfleto .page:not(:last-of-type){
+  break-after:page; page-break-after:always;
+}
+.komtec-panfleto .page-inner{ position:relative; height:100%; display:flex; flex-direction:column; }
+@media print{
+  .komtec-panfleto{ background:#fff; }
+  .komtec-panfleto .toolbar, .komtec-panfleto .caption{ display:none !important; }
+  .komtec-panfleto .page{ box-shadow:none; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  @page{ size:A4; margin:0; }
+}
+
+/* ============ SHARED: TOP BAR / WORDMARK / EYEBROW ============ */
+.komtec-panfleto .page-top{ display:flex; align-items:center; justify-content:space-between; }
+.komtec-panfleto .wordmark{ display:flex; align-items:baseline; gap:.35em; font-family:var(--font-display); font-weight:900; font-size:15pt; letter-spacing:.02em; text-transform:uppercase; }
+.komtec-panfleto .wordmark.big{ font-size:22pt; }
+.komtec-panfleto .wordmark .dot{ color:var(--amber-pop); }
+.komtec-panfleto .wordmark .tag-erp{ font-family:var(--font-mono); font-size:6.5pt; letter-spacing:.14em; font-weight:600; color:var(--cream-dim); }
+.komtec-panfleto .wordmark.big .tag-erp{ font-size:9pt; }
+.komtec-panfleto .wordmark .pro{ font-family:var(--font-mono); font-size:6pt; letter-spacing:.06em; font-weight:700; color:var(--amber-pop); border:1px solid var(--amber-pop); padding:.2em .4em; border-radius:2px; }
+.komtec-panfleto .wordmark.big .pro{ font-size:8pt; }
+.komtec-panfleto .eyebrow{ font-family:var(--font-mono); font-size:8pt; letter-spacing:.1em; text-transform:uppercase; color:var(--amber-pop); font-weight:600; text-align:right; max-width:70mm; }
+
+.komtec-panfleto .pg-title{ font-size:30pt; line-height:1; margin-top:10mm; color:var(--ink); }
+.komtec-panfleto .pg-subtitle{ margin-top:5mm; font-size:12pt; line-height:1.5; color:var(--ink-dim); max-width:150mm; }
+.komtec-panfleto .pg-modulos .pg-title{ margin-top:6mm; }
+.komtec-panfleto .pg-modulos .pg-subtitle{ margin-top:3mm; }
+
+/* ============ QR CTA (reusable) ============ */
+.komtec-panfleto .qr-cta{
+  display:flex; align-items:center; gap:9mm;
+  background:linear-gradient(90deg,var(--amber-pop),var(--amber)); color:#1a1408;
+  padding:8mm 10mm; border-radius:2px;
+}
+.komtec-panfleto .qr-cta .qr{ width:30mm; height:30mm; background:#fff; padding:2mm; border-radius:2px; flex-shrink:0; }
+.komtec-panfleto .qr-cta .cta-label{ font-family:var(--font-mono); font-size:9pt; letter-spacing:.08em; text-transform:uppercase; opacity:.75; }
+.komtec-panfleto .qr-cta .cta-big{ font-family:var(--font-display); font-weight:900; text-transform:uppercase; font-size:22pt; line-height:1.05; margin-top:1.5mm; }
+.komtec-panfleto .qr-cta .cta-url{ font-family:var(--font-mono); font-size:10.5pt; margin-top:2mm; font-weight:600; }
+.komtec-panfleto .qr-cta.big{ padding:10mm 12mm; }
+.komtec-panfleto .qr-cta.big .qr{ width:36mm; height:36mm; }
+.komtec-panfleto .qr-cta.big .cta-big{ font-size:26pt; }
+
+/* ============ PÁGINA 1 — CAPA ============ */
+.komtec-panfleto .capa{ background:var(--dark); color:var(--cream); }
+.komtec-panfleto .capa .blueprint{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--amber-pop) 1px,transparent 1px),
+    linear-gradient(90deg,var(--amber-pop) 1px,transparent 1px);
+  background-size:9mm 9mm;
+  opacity:.055;
+}
+.komtec-panfleto .capa .eyebrow{ max-width:60mm; }
+
+.komtec-panfleto .capa h1{ font-size:46pt; line-height:.97; color:#faf3e2; margin-top:9mm; }
+.komtec-panfleto .capa h1 em{ font-style:normal; color:var(--amber-pop); }
+.komtec-panfleto .capa .lead{ margin-top:6mm; max-width:170mm; color:var(--cream-dim); font-size:13pt; line-height:1.55; }
+
+.komtec-panfleto .beneficios{ margin-top:10mm; display:grid; grid-template-columns:repeat(3,1fr); gap:7mm; }
+.komtec-panfleto .beneficio{ border-top:.6mm solid var(--amber-pop); padding-top:3.5mm; }
+.komtec-panfleto .beneficio h4{ font-family:var(--font-display); font-weight:700; font-size:12.5pt; text-transform:uppercase; margin:0; color:#faf3e2; }
+.komtec-panfleto .beneficio p{ margin-top:2mm; font-size:9.3pt; line-height:1.45; color:var(--cream-dim); }
+
+.komtec-panfleto .stub{
+  margin-top:10mm; background:#fbf6ea; color:#241f14; border-radius:2px; width:100%;
+  box-shadow:0 8mm 16mm -10mm rgba(0,0,0,.6); font-family:var(--font-mono);
+}
+.komtec-panfleto .stub-head{ display:flex; justify-content:space-between; align-items:flex-start; padding:5.5mm 7mm 4mm; border-bottom:.3mm dashed #cabb92; }
+.komtec-panfleto .stub-head .t1{ font-size:7.3pt; letter-spacing:.08em; color:#7a6d4c; text-transform:uppercase; }
+.komtec-panfleto .stub-head .t2{ font-family:var(--font-display); font-weight:900; font-size:14.5pt; text-transform:uppercase; margin-top:1.2mm; }
+.komtec-panfleto .stub .status{ font-size:7.3pt; letter-spacing:.06em; font-weight:700; text-transform:uppercase; background:var(--good-bg); color:#2c6b39; padding:.3em .6em; border-radius:2px; white-space:nowrap; height:fit-content; }
+.komtec-panfleto .stub-body{ padding:4mm 7mm 5mm; }
+.komtec-panfleto .stub .row{ display:flex; justify-content:space-between; gap:8pt; font-size:7.8pt; padding:1.6mm 0; border-bottom:.3mm solid #eee2c6; color:#3a3320; }
+.komtec-panfleto .stub .row span:first-child{ color:#8b7d58; }
+.komtec-panfleto .stub .barcode{ margin-top:3.5mm; height:7mm; background:repeating-linear-gradient(90deg,#241f14 0 .5mm,transparent .5mm 1.2mm, #241f14 1.2mm 1.5mm, transparent 1.5mm 2.6mm); opacity:.85; }
+
+.komtec-panfleto .capa .qr-cta{ margin-top:auto; }
+
+/* ============ PÁGINA 2 — MÓDULOS ============ */
+.komtec-panfleto .pg-modulos{ background:var(--panel); color:var(--ink); }
+.komtec-panfleto .pg-modulos .page-top{ border-bottom:.4mm solid var(--panel-border); padding-bottom:3mm; }
+.komtec-panfleto .pg-modulos .page-top .wordmark{ color:var(--ink); }
+.komtec-panfleto .pg-modulos .page-top .wordmark .tag-erp{ color:var(--ink-dim); }
+.komtec-panfleto .pg-modulos .eyebrow{ color:var(--amber-ink); }
+
+.komtec-panfleto .mod-grid{ margin-top:auto; margin-bottom:auto; display:grid; grid-template-columns:1fr 1fr; gap:5mm 16mm; }
+.komtec-panfleto .mod{ border-top:.8mm solid var(--amber-pop); padding-top:3mm; }
+.komtec-panfleto .mod.has-foto{ display:flex; flex-direction:column; }
+.komtec-panfleto .mod-shot{ width:100%; height:35mm; object-fit:cover; object-position:center 25%; border-radius:1.5mm; border:.3mm solid var(--panel-border); margin-top:2mm; }
+.komtec-panfleto .mod-text{ min-width:0; }
+.komtec-panfleto .mod h3{ font-family:var(--font-display); font-weight:700; font-size:16pt; text-transform:uppercase; margin:0; }
+.komtec-panfleto .mod p{ margin-top:2mm; font-size:10pt; line-height:1.48; color:var(--ink-dim); }
+
+/* ============ PÁGINA 3 — DIFERENCIAIS ============ */
+.komtec-panfleto .pg-diferenciais{ background:var(--panel); color:var(--ink); }
+.komtec-panfleto .pg-diferenciais .page-top{ border-bottom:.4mm solid var(--panel-border); padding-bottom:5mm; }
+.komtec-panfleto .pg-diferenciais .page-top .wordmark{ color:var(--ink); }
+.komtec-panfleto .pg-diferenciais .page-top .wordmark .tag-erp{ color:var(--ink-dim); }
+.komtec-panfleto .pg-diferenciais .eyebrow{ color:var(--amber-ink); }
+
+.komtec-panfleto .diff-grid{ margin-top:auto; margin-bottom:auto; display:grid; grid-template-columns:1fr 1fr; gap:11mm 14mm; }
+.komtec-panfleto .diff{ display:flex; flex-direction:column; gap:3mm; }
+.komtec-panfleto .diff .ic{ width:11mm; height:11mm; color:var(--amber-ink); }
+.komtec-panfleto .diff h4{ font-family:var(--font-display); font-weight:700; font-size:14.5pt; text-transform:uppercase; margin:0; }
+.komtec-panfleto .diff p{ font-size:10pt; line-height:1.5; color:var(--ink-dim); }
+
+/* ============ PÁGINA 4 — CONTRACAPA ============ */
+.komtec-panfleto .contracapa{ background:var(--dark); color:var(--cream); display:flex; flex-direction:column; }
+.komtec-panfleto .contracapa .eyebrow{ max-width:70mm; }
+
+.komtec-panfleto .flow-strip{
+  margin-top:16mm; display:flex; align-items:center; flex-wrap:wrap; gap:4mm 6mm;
+  font-family:var(--font-mono); font-size:13pt; letter-spacing:.02em;
+}
+.komtec-panfleto .flow-stage{ font-weight:600; color:#faf3e2; }
+.komtec-panfleto .flow-arrow{ color:var(--amber-pop); margin-right:6mm; }
+
+.komtec-panfleto .closing-title{ font-size:32pt; line-height:1; margin-top:14mm; color:#faf3e2; }
+.komtec-panfleto .closing-lead{ margin-top:6mm; font-size:12.5pt; line-height:1.5; color:var(--cream-dim); max-width:150mm; display:block; }
+
+.komtec-panfleto .contracapa .qr-cta{ margin-top:12mm; }
+
+.komtec-panfleto .contact-block{
+  margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8mm;
+  border-top:.4mm solid #40371f; padding-top:8mm;
+}
+.komtec-panfleto .contact-lines{ font-family:var(--font-mono); font-size:10.5pt; line-height:1.9; color:var(--cream-dim); text-align:right; }

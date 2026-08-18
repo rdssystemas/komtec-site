@@ -16,8 +16,10 @@ dist-ssr
 .env
 .env.*
 
-# Imagens PNG originais (pesadas) — só versionar os .webp otimizados
+# Imagens originais pesadas (PNG/JPG) — só versionar os .webp otimizados
 public/**/*.png
+public/**/*.jpg
+public/**/*.jpeg
 src/assets/*.png
 !public/favicon.png
 !public/logo.png
