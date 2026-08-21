@@ -18,8 +18,12 @@ import { InformacoesDestaque } from './sections/InformacoesDestaque';
 import { PoliticaPrivacidade } from './pages/PoliticaPrivacidade';
 import { CentralInformacoes } from './pages/CentralInformacoes';
 import { InformacaoDetalhe } from './pages/InformacaoDetalhe';
+import { DicasIndex } from './pages/DicasIndex';
+import { DicasModulo } from './pages/DicasModulo';
+import { DicaDetalhe } from './pages/DicaDetalhe';
 import { CookieConsent } from './components/CookieConsent';
 import { useSiteConteudo } from './hooks/useSiteConteudo';
+import { DEFAULT_DICAS } from './data/dicasContent';
 
 // Carregado sob demanda: a página tem fontes e CSS próprios (~150KB) que não
 // devem entrar no bundle principal do site.
@@ -42,6 +46,19 @@ export default function App() {
   if (window.location.pathname.startsWith('/informacoes/')) {
     const slug = window.location.pathname.replace('/informacoes/', '').replace(/\/$/, '');
     return <InformacaoDetalhe content={informacoes} slug={slug} />;
+  }
+
+  if (window.location.pathname === '/dicas') {
+    return <DicasIndex content={DEFAULT_DICAS} />;
+  }
+
+  if (window.location.pathname.startsWith('/dicas/')) {
+    const partes = window.location.pathname.replace('/dicas/', '').replace(/\/$/, '').split('/');
+    const [moduloId, slug] = partes;
+    if (slug) {
+      return <DicaDetalhe content={DEFAULT_DICAS} moduloId={moduloId} slug={slug} />;
+    }
+    return <DicasModulo content={DEFAULT_DICAS} moduloId={moduloId} />;
   }
 
   if (window.location.pathname === '/portfolio') {
