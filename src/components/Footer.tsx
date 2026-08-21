@@ -16,12 +16,12 @@ export function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="#modulos" className="hover:text-white transition-colors">Módulos</a>
-            <a href="#diferenciais" className="hover:text-white transition-colors">Diferenciais</a>
+            <a href="/#modulos" className="hover:text-white transition-colors">Módulos</a>
+            <a href="/#diferenciais" className="hover:text-white transition-colors">Diferenciais</a>
             <a href="/portfolio" className="hover:text-white transition-colors">Portfólio</a>
             <a href="/informacoes" className="hover:text-white transition-colors">Informações</a>
-            <a href="#planos" className="hover:text-white transition-colors">Planos</a>
-            <a href="#contato" className="hover:text-white transition-colors">Contato</a>
+            <a href="/#planos" className="hover:text-white transition-colors">Planos</a>
+            <a href="/#contato" className="hover:text-white transition-colors">Contato</a>
             <a href="/privacidade" className="hover:text-white transition-colors">Política de Privacidade</a>
           </div>
 

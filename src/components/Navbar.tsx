@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { label: 'Módulos', href: '#modulos' },
-  { label: 'Diferenciais', href: '#diferenciais' },
+  { label: 'Módulos', href: '/#modulos' },
+  { label: 'Diferenciais', href: '/#diferenciais' },
   { label: 'Portfólio', href: '/portfolio' },
   { label: 'Informações', href: '/informacoes' },
-  { label: 'Falar com Especialista', href: '#planos' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Falar com Especialista', href: '/#planos' },
+  { label: 'Contato', href: '/#contato' },
 ];
 
 export function Navbar() {
@@ -17,7 +17,7 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="ERP KomTec Pro" className="h-8 w-auto" />
           <span className="flex flex-col leading-tight">
             <span className="font-bold text-gray-900 text-lg">ERP <span className="text-orange-600">KomTec</span> <span className="text-orange-500 text-sm font-semibold">Pro</span></span>
@@ -37,7 +37,7 @@ export function Navbar() {
         {/* CTA desktop */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#experimente"
+            href="/#experimente"
             className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold rounded-lg transition-colors"
           >
             Solicitar Demo
@@ -67,7 +67,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#experimente"
+            href="/#experimente"
             className="block w-full text-center px-4 py-2 bg-orange-600 text-white text-sm font-semibold rounded-lg"
             onClick={() => setAberto(false)}
           >
