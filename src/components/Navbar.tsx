@@ -7,6 +7,7 @@ const links = [
   { label: 'Portfólio', href: '/portfolio' },
   { label: 'Informações', href: '/informacoes' },
   { label: 'Dicas', href: '/dicas' },
+  { label: 'Ajuda', href: '/ajuda' },
   { label: 'Falar com Especialista', href: '/#planos' },
   { label: 'Contato', href: '/#contato' },
 ];

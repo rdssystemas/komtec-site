@@ -27,6 +27,9 @@ import { DEFAULT_DICAS } from './data/dicasContent';
 
 // Carregado sob demanda: a página tem fontes e CSS próprios (~150KB) que não
 // devem entrar no bundle principal do site.
+const AjudaIndex = lazy(() => import('./pages/AjudaIndex').then(m => ({ default: m.AjudaIndex })));
+const AjudaModulo = lazy(() => import('./pages/AjudaModulo').then(m => ({ default: m.AjudaModulo })));
+const AjudaArtigo = lazy(() => import('./pages/AjudaArtigo').then(m => ({ default: m.AjudaArtigo })));
 const Portfolio = lazy(() => import('./pages/Portfolio').then(m => ({ default: m.Portfolio })));
 const Panfleto = lazy(() => import('./pages/Panfleto').then(m => ({ default: m.Panfleto })));
 const PanfletoParceiros = lazy(() => import('./pages/PanfletoParceiros').then(m => ({ default: m.PanfletoParceiros })));
@@ -59,6 +62,28 @@ export default function App() {
       return <DicaDetalhe content={DEFAULT_DICAS} moduloId={moduloId} slug={slug} />;
     }
     return <DicasModulo content={DEFAULT_DICAS} moduloId={moduloId} />;
+  }
+
+  if (window.location.pathname === '/ajuda') {
+    return (
+      <Suspense fallback={null}>
+        <AjudaIndex />
+      </Suspense>
+    );
+  }
+
+  if (window.location.pathname.startsWith('/ajuda/')) {
+    const partes = window.location.pathname.replace('/ajuda/', '').replace(/\/$/, '').split('/');
+    const [categoriaId, artigoId] = partes;
+    return (
+      <Suspense fallback={null}>
+        {artigoId ? (
+          <AjudaArtigo categoriaId={categoriaId} artigoId={artigoId} />
+        ) : (
+          <AjudaModulo categoriaId={categoriaId} />
+        )}
+      </Suspense>
+    );
   }
 
   if (window.location.pathname === '/portfolio') {
