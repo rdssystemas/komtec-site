@@ -177,6 +177,30 @@ Aprovar o pedido é só metade do caminho — o controle de verdade fecha quando
 O módulo de Compras organiza aprovações e prazos de cada pedido, e conecta a entrada no estoque diretamente à compra aprovada — assim o pedido só é dado como concluído quando o que chegou realmente confere com o que foi pedido.`,
           publicado: true,
         },
+        {
+          slug: 'devolucao-compra-nfe-sem-dor-de-cabeca',
+          titulo: 'Devolução de compra ao fornecedor: por que fazer pela nota fiscal certa',
+          resumo: 'Devolver peça ou insumo pro fornecedor sem nota fiscal de devolução deixa estoque e fiscal desencontrados. Veja por que a devolução formal evita esse rastro perdido.',
+          data: 'Setembro de 2026',
+          tempoLeitura: '3 min de leitura',
+          imagem: '/komtec_devolucao_compra.webp',
+          conteudo: `## Devolver sem nota fiscal parece mais rápido — até não ser
+
+Quando o produto chega errado, com defeito ou fora do combinado, é tentador só separar a caixa e ligar pro fornecedor combinando "peço a troca depois". No papel isso parece mais rápido do que emitir uma nota fiscal — mas deixa dois rastros importantes sem fechar: o estoque continua mostrando aquele item como se ele ainda estivesse lá, e o fiscal não tem como comprovar formalmente que a mercadoria voltou pro fornecedor.
+
+## A devolução informal vira problema semanas depois
+
+O item devolvido informalmente costuma sumir do controle: o estoque físico bate menos do que o sistema mostra, e se o fornecedor demorar — ou esquecer — de dar baixa do lado dele, ninguém tem como provar que a devolução realmente aconteceu. Isso complica tanto uma cobrança indevida quanto uma eventual fiscalização.
+
+## Cada devolução merece rastro, mesmo pra compra sem nota estruturada no sistema
+
+Nem toda devolução parte de uma compra bem cadastrada — às vezes é um insumo comprado há tempo, numa nota que nunca chegou a entrar no sistema formalmente. Mesmo nesse caso, vale existir um jeito de emitir a devolução avulsa, citando a nota original, pra manter o rastro fiscal completo mesmo fora do fluxo padrão.
+
+## Como o KomTec ajuda nisso
+
+O módulo de Compras tem um botão "Gerar devolução" direto na tela da compra, que já leva os itens certos pra montar a NF-e de devolução pro fornecedor — e, pra nota que nunca entrou no sistema, dá pra emitir a devolução avulsa informando fornecedor e a chave da NF-e original. Quando a devolução é autorizada, o estoque já é baixado automaticamente, sem ajuste manual.`,
+          publicado: true,
+        },
       ],
     },
     {
@@ -258,6 +282,30 @@ Comparativo não é só para achar problema — também mostra rápido quem est�
 O Dashboard de Vendas traz um comparativo de desempenho entre vendedores, separando o perfil interno do vendedor de rota, para uma comparação mais justa e decisões melhor embasadas.`,
           publicado: true,
         },
+        {
+          slug: 'bipar-produto-codigo-barras-venda-mais-rapida',
+          titulo: 'Bipar em vez de buscar: como o código de barras agiliza a venda',
+          resumo: 'Procurar produto digitando nome ou código na correria do balcão é onde mais se perde tempo — e mais se erra o item. Veja por que bipar resolve isso na largada.',
+          data: 'Setembro de 2026',
+          tempoLeitura: '3 min de leitura',
+          imagem: '/komtec_scanner_codigo_barras.webp',
+          conteudo: `## Buscar por nome é rápido só quando o catálogo é pequeno
+
+Com poucas dezenas de produtos, digitar o nome ou parte dele pra achar o item funciona bem. Mas conforme o catálogo cresce — produtos parecidos, variações de medida, códigos internos parecidos — a busca por texto vira um dos pontos onde mais se perde tempo no balcão, e onde mais se erra o item parecido.
+
+## Bipar elimina a ambiguidade do "qual desses é o certo"
+
+O código de barras identifica o produto exato, sem depender de quem está vendendo escolher certo entre itens parecidos na tela. Isso importa tanto pra agilidade — sem digitar, sem rolar lista — quanto pra precisão, principalmente com o cliente esperando no balcão.
+
+## Caixa fechada não devia significar bipar um por um
+
+Quando o produto sai em caixa fechada — várias unidades do mesmo item — bipar cada unidade individualmente é um trabalho desnecessário. O código da caixa (DUN-14) já identifica quantas unidades tem dentro, então bipar ele uma vez só devia lançar a quantidade certa de uma vez.
+
+## Como o KomTec ajuda nisso
+
+Orçamento e Venda aceitam leitor de código de barras USB ou a câmera do próprio celular pra adicionar item — é só bipar. E bipar o código da caixa (DUN-14) já soma automaticamente a quantidade certa de unidades, sem precisar bipar uma por uma.`,
+          publicado: true,
+        },
       ],
     },
     {
@@ -337,6 +385,30 @@ Conciliação bem feita significa que todo lançamento tem uma origem clara e um
 ## Como o KomTec ajuda nisso
 
 O módulo Financeiro permite conciliar lançamentos e acompanhar a saúde financeira da empresa em tempo real dentro do próprio sistema — reduzindo a necessidade de uma planilha paralela para "ter certeza" do que já está registrado.`,
+          publicado: true,
+        },
+        {
+          slug: 'baixa-automatica-boleto-asaas-webhook',
+          titulo: 'Boleto pago sem alguém conferir: como a baixa automática evita atraso',
+          resumo: 'Esperar alguém consultar o banco e dar baixa manual no boleto pago é um passo que sempre atrasa. Veja por que a baixa automática fecha essa lacuna.',
+          data: 'Setembro de 2026',
+          tempoLeitura: '3 min de leitura',
+          imagem: '/komtec_boleto_baixa_automatica.webp',
+          conteudo: `## Baixa manual depende de alguém checar no momento certo
+
+Quando a baixa do boleto pago depende de alguém entrar no extrato ou no painel do banco, comparar com o que está em aberto e marcar como pago no sistema, esse passo vira uma tarefa recorrente que compete com o resto do dia — e é fácil ficar um ou dois dias atrasada sem que ninguém perceba.
+
+## O atraso na baixa gera cobrança em cima de quem já pagou
+
+Cliente que já pagou e continua aparecendo como inadimplente no sistema — mesmo que só por alguns dias — gera constrangimento desnecessário: cobrança automática dispara, régua de cobrança avança, e a empresa acaba pedindo desculpa por um atraso que era só do controle interno, não do cliente.
+
+## Automatizar isso fecha o ciclo no mesmo dia
+
+Receber a confirmação de pagamento direto do banco/emissor, no momento em que o pagamento acontece, elimina a espera por alguém consultar manualmente — a parcela já nasce baixada, sem intervenção.
+
+## Como o KomTec ajuda nisso
+
+Para boletos emitidos via Asaas, o sistema recebe automaticamente o aviso de pagamento (webhook) assim que o cliente paga, e já marca a parcela correspondente como paga no Financeiro — sem precisar conferir e baixar manualmente.`,
           publicado: true,
         },
       ],
@@ -742,6 +814,30 @@ Assim como as parcelas geradas automaticamente na venda evitam esquecer de cobra
 ## Como o KomTec ajuda nisso
 
 O módulo de Nota Fiscal Eletrônica envia o DANFE por e-mail automaticamente ao cliente assim que a nota é autorizada — sem depender de alguém lembrar de fazer esse envio manualmente.`,
+          publicado: true,
+        },
+        {
+          slug: 'nfse-reforma-tributaria-ibs-cbs-nbs',
+          titulo: 'NFS-e e Reforma Tributária: o que muda na nota de serviço',
+          resumo: 'A Reforma Tributária também chega na nota de serviço, com campos e código novos. Veja o que é IBS, CBS e NBS na prática, e por que vale se preparar antes do prazo virar obrigação.',
+          data: 'Setembro de 2026',
+          tempoLeitura: '4 min de leitura',
+          imagem: '/komtec_nfse_reforma_tributaria.webp',
+          conteudo: `## A Reforma não é só sobre nota de produto
+
+Boa parte da atenção da Reforma Tributária foi pra NF-e de produto, mas a nota de serviço (NFS-e) também entra nessa transição — com campos fiscais novos que passam a conviver com o ISS tradicional durante o período de transição.
+
+## IBS e CBS substituem, aos poucos, os tributos atuais
+
+O IBS (Imposto sobre Bens e Serviços, de estados/municípios) e a CBS (Contribuição Social sobre Bens e Serviços, federal) vão substituindo gradualmente tributos como ISS, PIS e Cofins. Durante a transição, é comum a nota precisar registrar tanto o tributo atual quanto os novos — errar o preenchimento nesse período específico é mais fácil do que parece.
+
+## NBS é o "NCM dos serviços" — e tem mais de 800 opções
+
+Assim como todo produto tem um código NCM, todo serviço agora precisa de um código NBS (Nomenclatura Brasileira de Serviços) pra classificação fiscal. Com mais de 800 códigos possíveis, encontrar manualmente o certo pra cada tipo de serviço prestado é trabalhoso e sujeito a erro.
+
+## Como o KomTec ajuda nisso
+
+A NFS-e já emite com os campos de IBS e CBS exigidos pela Reforma Tributária, e tem busca automática entre os mais de 800 códigos de NBS — assim não é preciso decorar nem procurar manualmente qual código se aplica a cada serviço.`,
           publicado: true,
         },
       ],
