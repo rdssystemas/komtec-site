@@ -3602,9 +3602,9 @@ export const AJUDA_CONTENT: AjudaContent = {
         "⚠️ As credenciais (Secret Key e Recipient ID) não vêm no suporte comum da maquininha ou do aplicativo — é preciso pedir acesso ao **Connect 2.0** direto pela Stone, pelo formulário **partner.stone.com.br/formulario** (é um cadastro de parceria de tecnologia, não um chamado de suporte). A Stone avalia e entra em contato com os próximos passos.",
         "Acesse **Configurações → Minha Empresa** e role até a seção **Maquininhas de Cartão**.",
         "Clique em **Nova Maquininha**.",
-        "Escolha o **Provedor** (hoje só a Stone processa cobrança de verdade — as demais operadoras já aparecem na lista, mas ainda não cobram).",
+        "Escolha o **Provedor** (hoje só a Stone processa cobrança de verdade — Cielo, Rede, GetNet e PagBank/PagSeguro já aparecem na lista, com campos de credencial pra deixar preenchido, mas ainda não cobram).",
         "Preencha o **Apelido** (ex: \"Caixa 1\") e o **Número de Série** impresso na maquininha.",
-        "💡 Não precisa ter a Secret Key em mãos ainda pra salvar — dá pra cadastrar só com apelido e número de série, e completar a chave depois quando a Stone aprovar o acesso. Sem a chave, o cadastro fica salvo mas não consegue cobrar ainda.",
+        "💡 Não precisa ter a Secret Key (Stone) ou o token de integração (demais operadoras) em mãos ainda pra salvar — dá pra cadastrar só com apelido e número de série, e completar a credencial depois. Sem a credencial, o cadastro fica salvo mas não consegue cobrar ainda.",
         "Clique em **Salvar Maquininha**.",
         "💡 Dá pra cadastrar mais de uma maquininha — na hora de cobrar, o sistema pergunta qual delas vai receber a cobrança."
       ]
