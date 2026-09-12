@@ -1,4 +1,4 @@
-// Gerado a partir de komtec-frontend/src/data/ajuda.json em 2026-09-11.
+// Gerado a partir de komtec-frontend/src/data/ajuda.json em 2026-09-12.
 // Ao atualizar a Central de Ajuda do sistema, sincronizar aqui também (ver CLAUDE.md).
 
 export interface AjudaArtigo {
@@ -3590,6 +3590,37 @@ export const AJUDA_CONTENT: AjudaContent = {
         "Os botões **Produto / Equipamento / Patrimônio** filtram por tipo de bem.",
         "Clique em qualquer linha de Produto ou Equipamento pra ir direto à tela de detalhe dele. Linhas de Patrimônio não têm tela de detalhe própria — a edição é feita em **Patrimônio → Bens Cadastrados**.",
         "⚠️ Pra um Equipamento aparecer com o local certo nessa lista, ele precisa ter o campo **Centro de Custo** preenchido no cadastro dele (Editar Equipamento) — equipamentos antigos podem estar sem esse campo até serem atualizados."
+      ]
+    },
+    {
+      "id": "configuracoes-maquininha-cartao",
+      "categoria": "configuracoes",
+      "titulo": "Como cadastrar a maquininha de cartão?",
+      "tags": ["maquininha", "cartão", "cartao", "stone", "pos", "pix", "débito", "credito", "pagamento", "cobrar"],
+      "passos": [
+        "⚠️ A maquininha Stone precisa estar registrada num **CNPJ**, não em CPF de pessoa física. Se ela foi comprada/registrada no CPF de alguém, é preciso transferir o cadastro pra um CNPJ junto à Stone antes de seguir — sem isso, a Stone não libera as credenciais.",
+        "⚠️ As credenciais (Secret Key e Recipient ID) não vêm no suporte comum da maquininha ou do aplicativo — é preciso pedir acesso ao **Connect 2.0** direto pela Stone, pelo formulário **partner.stone.com.br/formulario** (é um cadastro de parceria de tecnologia, não um chamado de suporte). A Stone avalia e entra em contato com os próximos passos.",
+        "Acesse **Configurações → Minha Empresa** e role até a seção **Maquininhas de Cartão**.",
+        "Clique em **Nova Maquininha**.",
+        "Escolha o **Provedor** (hoje só a Stone processa cobrança de verdade — as demais operadoras já aparecem na lista, mas ainda não cobram).",
+        "Preencha o **Apelido** (ex: \"Caixa 1\") e o **Número de Série** impresso na maquininha.",
+        "💡 Não precisa ter a Secret Key em mãos ainda pra salvar — dá pra cadastrar só com apelido e número de série, e completar a chave depois quando a Stone aprovar o acesso. Sem a chave, o cadastro fica salvo mas não consegue cobrar ainda.",
+        "Clique em **Salvar Maquininha**.",
+        "💡 Dá pra cadastrar mais de uma maquininha — na hora de cobrar, o sistema pergunta qual delas vai receber a cobrança."
+      ]
+    },
+    {
+      "id": "vendas-cobrar-maquininha",
+      "categoria": "vendas",
+      "titulo": "Como cobrar o cliente com cartão na maquininha?",
+      "tags": ["maquininha", "cartão", "cartao", "cobrar", "débito", "credito", "pix", "stone", "pagamento", "título", "financeiro"],
+      "passos": [
+        "Com uma maquininha já cadastrada e com a Secret Key preenchida (veja \"Como cadastrar a maquininha de cartão?\"), abra a **venda** ou o **título** da venda no Financeiro.",
+        "Na seção Pagamento (venda) ou no menu **Ações** da parcela em aberto (Financeiro), clique em **Cobrar na Maquininha**.",
+        "Escolha a maquininha (se só tiver uma, já vem selecionada), a forma de pagamento — **Débito**, **Crédito** ou **Pix** — e, se for crédito, o número de parcelas.",
+        "Clique em **Cobrar**. A cobrança é enviada pra maquininha na hora.",
+        "⚠️ Isso só dispara a cobrança — não confirma o pagamento na hora. Aguarde o cliente concluir na maquininha (inserir o cartão ou escanear o QR Code do Pix).",
+        "✅ Assim que o pagamento é confirmado, a parcela é baixada automaticamente, sem precisar fazer nada. Se quiser confirmar antes, use o botão **Verificar status** que aparece ao lado."
       ]
     }
   ]
