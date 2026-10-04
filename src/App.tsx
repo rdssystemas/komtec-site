@@ -34,6 +34,7 @@ const Portfolio = lazy(() => import('./pages/Portfolio').then(m => ({ default: m
 const Panfleto = lazy(() => import('./pages/Panfleto').then(m => ({ default: m.Panfleto })));
 const PanfletoParceiros = lazy(() => import('./pages/PanfletoParceiros').then(m => ({ default: m.PanfletoParceiros })));
 const PanfletoOS = lazy(() => import('./pages/PanfletoOS').then(m => ({ default: m.PanfletoOS })));
+const NossaHistoria = lazy(() => import('./pages/NossaHistoria').then(m => ({ default: m.NossaHistoria })));
 
 export default function App() {
   const { secoes, hero, modulos, diferenciais, depoimentos, faq, planos, ctabanner, secoesExtras, informacoes } = useSiteConteudo();
@@ -82,6 +83,14 @@ export default function App() {
         ) : (
           <AjudaModulo categoriaId={categoriaId} />
         )}
+      </Suspense>
+    );
+  }
+
+  if (window.location.pathname.replace(/\/$/, '') === '/nossa-historia') {
+    return (
+      <Suspense fallback={null}>
+        <NossaHistoria />
       </Suspense>
     );
   }

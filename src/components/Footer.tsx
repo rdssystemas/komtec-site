@@ -19,6 +19,7 @@ export function Footer() {
             <a href="/#modulos" className="hover:text-white transition-colors">Módulos</a>
             <a href="/#diferenciais" className="hover:text-white transition-colors">Diferenciais</a>
             <a href="/portfolio" className="hover:text-white transition-colors">Portfólio</a>
+            <a href="/nossa-historia" className="hover:text-white transition-colors">Nossa História</a>
             <a href="/informacoes" className="hover:text-white transition-colors">Informações</a>
             <a href="/dicas" className="hover:text-white transition-colors">Dicas</a>
             <a href="/ajuda" className="hover:text-white transition-colors">Ajuda</a>
