@@ -60,7 +60,49 @@ const ETAPAS: Etapa[] = [
   },
 ];
 
+const MARCOS = [
+  { ano: '1988', texto: 'Primeiro emprego, com máquinas pesadas' },
+  { ano: '2007', texto: 'Controle de manutenção nas obras' },
+  { ano: '2018', texto: 'Nasce a KomTec Peças' },
+  { ano: 'Hoje', texto: 'ERP KomTec Pro na nuvem' },
+];
+
+const MISSAO =
+  'Simplificar a gestão de empresas com um sistema feito por quem viveu o dia a dia da operação, com atendimento próximo e de verdade.';
+
+const VISAO =
+  'Ser referência em gestão para empresas de equipamentos, peças e serviços no Brasil, levando o controle do papel e do disquete para a nuvem, de forma acessível.';
+
+const VALORES: { titulo: string; texto: string }[] = [
+  {
+    titulo: 'Experiência de campo',
+    texto: 'Cada funcionalidade do sistema nasce de um problema real da operação.',
+  },
+  {
+    titulo: 'Atendimento próximo',
+    texto: 'Tratamos cada cliente da forma como gostaríamos de ser atendidos.',
+  },
+  {
+    titulo: 'Foco na necessidade do cliente',
+    texto: 'Ouvimos, entendemos a rotina de cada empresa e evoluímos o sistema a partir do que ela realmente precisa.',
+  },
+  {
+    titulo: 'Honestidade e transparência',
+    texto: 'Preço claro, sem letras miúdas e sem prometer o que o sistema não faz.',
+  },
+  {
+    titulo: 'Simplicidade',
+    texto: 'Telas e linguagem pensadas para quem usa o sistema no dia a dia, sem jargão técnico.',
+  },
+];
+
 export function NossaHistoria() {
+  useEffect(() => {
+    if (window.location.hash === '#missao') {
+      document.getElementById('missao')?.scrollIntoView();
+    }
+  }, []);
+
   useEffect(() => {
     document.title = PAGE_TITLE;
     return () => {
@@ -72,18 +114,36 @@ export function NossaHistoria() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <header className="bg-gradient-to-br from-orange-950 via-orange-900 to-orange-800 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <a href="/" className="text-orange-300 text-sm font-medium hover:text-white transition-colors">← Voltar ao início</a>
-          <span className="block text-xs font-semibold text-orange-300 uppercase tracking-widest mt-6">
-            Nossa História
-          </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-white mt-3 max-w-3xl leading-tight">
-            De lavador de máquinas a criador de um ERP
-          </h1>
-          <p className="text-orange-200/80 mt-4 max-w-xl text-base md:text-lg">
-            38 anos ao lado dos equipamentos pesados.
-          </p>
+      <header className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-orange-100 to-amber-50 border-b border-orange-100 pt-28 pb-16 md:pt-36 md:pb-24">
+        <div aria-hidden className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-orange-200/40 blur-3xl" />
+        <div aria-hidden className="absolute -bottom-32 -right-20 w-96 h-96 rounded-full bg-amber-200/40 blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-4">
+          <a href="/" className="text-orange-700 text-sm font-medium hover:text-orange-900 transition-colors">← Voltar ao início</a>
+
+          <div className="text-center mt-8 md:mt-10">
+            <span className="inline-block text-xs font-semibold text-orange-700 bg-white/70 border border-orange-200 rounded-full px-4 py-1.5 uppercase tracking-widest">
+              Nossa História
+            </span>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mt-6 max-w-4xl mx-auto leading-tight tracking-tight">
+              Do canteiro de obras à{' '}
+              <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
+                criação de um ERP
+              </span>
+            </h1>
+            <p className="text-gray-600 mt-5 max-w-2xl mx-auto text-lg md:text-xl">
+              38 anos ao lado dos equipamentos pesados.
+            </p>
+          </div>
+
+          <dl className="mt-12 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {MARCOS.map(marco => (
+              <div key={marco.ano} className="rounded-2xl bg-white/80 border border-orange-100 shadow-sm px-4 py-5 text-center">
+                <dt className="text-2xl md:text-3xl font-extrabold text-orange-600">{marco.ano}</dt>
+                <dd className="text-sm text-gray-600 mt-1">{marco.texto}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </header>
 
@@ -109,6 +169,36 @@ export function NossaHistoria() {
             </li>
           ))}
         </ol>
+
+        <section id="missao" className="mt-20 scroll-mt-24">
+          <span className="block text-xs font-semibold text-orange-700 uppercase tracking-widest">
+            Quem somos
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-8">Missão, Visão e Valores</h2>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-orange-100 bg-white p-6 md:p-8 shadow-sm">
+              <h3 className="text-sm font-semibold text-orange-700 uppercase tracking-wide mb-3">Missão</h3>
+              <p className="text-gray-800 text-lg leading-relaxed">{MISSAO}</p>
+            </div>
+            <div className="rounded-2xl border border-orange-100 bg-white p-6 md:p-8 shadow-sm">
+              <h3 className="text-sm font-semibold text-orange-700 uppercase tracking-wide mb-3">Visão</h3>
+              <p className="text-gray-800 text-lg leading-relaxed">{VISAO}</p>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-2xl bg-orange-50 border border-orange-100 p-6 md:p-8">
+            <h3 className="text-sm font-semibold text-orange-700 uppercase tracking-wide mb-6">Valores</h3>
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {VALORES.map(valor => (
+                <li key={valor.titulo} className="rounded-xl bg-white border-l-4 border-orange-400 p-4 shadow-sm">
+                  <p className="text-gray-900 font-semibold">{valor.titulo}</p>
+                  <p className="text-gray-600 mt-1 leading-relaxed">{valor.texto}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         <section className="mt-16 rounded-2xl bg-orange-50 border border-orange-100 p-8 md:p-10">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Do disquete à nuvem</h2>

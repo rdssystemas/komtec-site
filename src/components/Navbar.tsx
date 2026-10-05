@@ -8,8 +8,8 @@ const links = [
   { label: 'Informações', href: '/informacoes' },
   { label: 'Dicas', href: '/dicas' },
   { label: 'Ajuda', href: '/ajuda' },
-  { label: 'Falar com Especialista', href: '/#planos' },
   { label: 'Contato', href: '/#contato' },
+  { label: 'Nossa História', href: '/nossa-historia' },
 ];
 
 export function Navbar() {
