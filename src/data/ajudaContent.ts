@@ -78,12 +78,6 @@ export const AJUDA_CONTENT: AjudaContent = {
       "descricao": "Emissão da nota fiscal de serviço (NFS-e) pela Ordem de Serviço ou avulsa: configuração, envio à prefeitura, recusas, e-mail e cancelamento."
     },
     {
-      "id": "catalogos",
-      "label": "Catálogos de Peças",
-      "icone": "📚",
-      "descricao": "Como usar e localizar peças no catálogo."
-    },
-    {
       "id": "importacao",
       "label": "Importação de Dados",
       "icone": "📥",
@@ -1714,49 +1708,6 @@ export const AJUDA_CONTENT: AjudaContent = {
         "✅ O valor do crédito é calculado sozinho e o texto \"PERMITE O APROVEITAMENTO DO CREDITO DE ICMS NO VALOR DE R$ ... NOS TERMOS DO ARTIGO 23 DA LC 123\" entra automático nas informações complementares.",
         "💡 Não precisa digitar esse texto nas observações. Se já estiver digitado, o sistema troca pelo calculado para não duplicar.",
         "⚠️ Sem a alíquota preenchida, o sistema não deixa transmitir a nota com CSOSN 101."
-      ]
-    },
-    {
-      "id": "catalogos-usar",
-      "categoria": "catalogos",
-      "titulo": "Como usar o catálogo de peças?",
-      "tags": [
-        "catálogo",
-        "peças",
-        "diagrama",
-        "código",
-        "marca"
-      ],
-      "passos": [
-        "No menu lateral, clique em **Catálogos**.",
-        "Selecione a **marca** do equipamento (Komatsu, Caterpillar, Hyundai, etc.).",
-        "Escolha o modelo específico na lista.",
-        "O catálogo abre com o diagrama do equipamento.",
-        "**Para encontrar uma peça:** clique diretamente na peça no diagrama ou use a lista lateral.",
-        "Ao clicar em uma peça, o código é destacado.",
-        "Clique em **Copiar código** para usar em um orçamento ou pedido.",
-        "Use os botões de zoom (+ e -) ou o scroll do mouse para ampliar o diagrama.",
-        "Use os botões de rotação para girar o diagrama 90° se necessário."
-      ]
-    },
-    {
-      "id": "catalogos-codigo",
-      "categoria": "catalogos",
-      "titulo": "Como encontrar o código de uma peça no catálogo?",
-      "tags": [
-        "código",
-        "peça",
-        "catálogo",
-        "buscar",
-        "komatsu",
-        "caterpillar"
-      ],
-      "passos": [
-        "Abra o catálogo do equipamento correspondente.",
-        "Se você sabe o número da peça na lista lateral (ex: item 15), clique nele — o sistema destaca a peça no diagrama.",
-        "Se não sabe o número, observe o diagrama e clique na região onde a peça se localiza.",
-        "O código aparece em destaque. Clique em **Copiar** para copiar para a área de transferência.",
-        "💡 O código copiado pode ser colado diretamente no campo de busca de produtos ao criar um orçamento."
       ]
     },
     {
@@ -3444,24 +3395,6 @@ export const AJUDA_CONTENT: AjudaContent = {
         "Confira as datas, preencha as horas e o **Odômetro chegada** e clique em **Salvar**.",
         "💡 Tudo continua editável — se a rota foi diferente (ex.: passou em outro cliente no caminho), é só alterar os campos antes de salvar.",
         "💡 Nas **Despesas de viagem**, o campo **Cidade/UF** também já vem com a cidade do local de atendimento."
-      ]
-    },
-    {
-      "id": "catalogo-carrinho-os",
-      "categoria": "catalogos",
-      "titulo": "Como levar peças do catálogo direto para uma OS?",
-      "tags": [
-        "carrinho",
-        "catálogo",
-        "adicionar na OS",
-        "copiar peça",
-        "diagrama"
-      ],
-      "passos": [
-        "No catálogo, clique no **+** ao lado de cada peça (no diagrama ou na lista) pra adicioná-la ao carrinho.",
-        "Clique no ícone do carrinho pra ver os itens escolhidos e ajustar quantidades.",
-        "No menu de ações do carrinho, escolha **Inserir na OS existente** (e selecione a OS em campo) ou **Criar OS com essas peças**.",
-        "💡 Sempre que o código da peça bater com um produto já cadastrado no estoque, a peça já entra vinculada — é isso que depois permite gerar a venda dela pela OS."
       ]
     },
     {
