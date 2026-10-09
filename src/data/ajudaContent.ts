@@ -186,6 +186,29 @@ export const AJUDA_CONTENT: AjudaContent = {
       ]
     },
     {
+      "id": "vendas-bandeja-servicos",
+      "categoria": "vendas",
+      "titulo": "Como adicionar vários serviços de uma vez no orçamento?",
+      "tags": [
+        "bandeja",
+        "vários serviços",
+        "adicionar serviços",
+        "arrastar",
+        "marcar",
+        "orçamento",
+        "mão de obra",
+        "serviço"
+      ],
+      "passos": [
+        "No orçamento, clique em **Bandeja de serviços**, ao lado do botão **+ Novo Item**.",
+        "Abre um painel do lado direito com todos os serviços cadastrados. Use a **busca** ou as **categorias** para filtrar.",
+        "Marque os serviços e clique em **Adicionar selecionados**, ou arraste um serviço para fora da bandeja, em cima do orçamento.",
+        "💡 Se você adicionar um serviço que já está no orçamento, a quantidade dele aumenta em vez de criar uma linha repetida.",
+        "💡 Na aba **Revisões** você adiciona todos os serviços e peças de uma revisão de uma vez (ex: Revisão 500h). Se o campo **Modelo** do orçamento estiver preenchido, as revisões desse modelo aparecem primeiro.",
+        "✅ Os serviços entram com o valor do cadastro. Para cobrar outro valor desse cliente, é só editar o item no orçamento."
+      ]
+    },
+    {
       "id": "vendas-dashboard-vendedor",
       "categoria": "vendas",
       "titulo": "Como funciona o painel do Vendedor e o comparativo entre vendedores?",
@@ -202,6 +225,28 @@ export const AJUDA_CONTENT: AjudaContent = {
         "O painel mostra vendas de hoje e do mês, quantidade de clientes na carteira, situação dos orçamentos (abertos, aprovados, perdidos) e o faturamento próprio dos últimos 12 meses em gráfico.",
         "💡 Administrador, Gerente e Financeiro podem comparar todos os vendedores: no Dashboard geral, use o botão de comparativo para ver vendas, orçamentos e carteira lado a lado, por mês.",
         "✅ \"Vendas fora da carteira\" no comparativo mostra quando um vendedor vendeu para um cliente que está na carteira de outro vendedor."
+      ]
+    },
+    {
+      "id": "orcamentos-codigo-exibido",
+      "categoria": "vendas",
+      "titulo": "Como escolher qual código da peça aparece no orçamento do cliente?",
+      "tags": [
+        "código",
+        "código equivalente",
+        "código original",
+        "código interno",
+        "referência",
+        "part number",
+        "orçamento",
+        "trocar código"
+      ],
+      "passos": [
+        "Ao adicionar ou editar um item do orçamento, procure a faixa **Código no Orçamento**.",
+        "Escolha **Código Interno** (o seu código), **Código Original** (o do fabricante) ou **Código Equivalente**.",
+        "O código que vai aparecer para o cliente fica escrito ao lado dos botões.",
+        "💡 A escolha vale para a tela, a impressão, o PDF enviado por e-mail e a venda gerada a partir do orçamento.",
+        "⚠️ Se o botão estiver apagado, o produto não tem esse código no cadastro. Preencha o campo no cadastro do produto e escolha o produto de novo no item."
       ]
     },
     {
@@ -260,6 +305,66 @@ export const AJUDA_CONTENT: AjudaContent = {
         "Ao importar o XML de uma compra cujo fornecedor já emite na Reforma Tributária, os campos de **IBS**, **CBS** e **Imposto Seletivo** são preenchidos automaticamente na compra e nos itens.",
         "💡 Para uma compra antiga (importada antes desses campos existirem), abra a compra e clique no botão de reprocessar ao lado do XML — o sistema relê o XML já salvo e preenche os valores, sem mudar estoque ou financeiro.",
         "✅ Para atualizar várias compras de uma vez, use o botão **Reforma Tributária** na lista de Compras — ele reprocessa todas as compras que têm XML salvo mas ainda não têm esses campos preenchidos."
+      ]
+    },
+    {
+      "id": "nfe-carta-correcao",
+      "categoria": "nfe",
+      "titulo": "Como faço uma Carta de Correção e mando para o cliente?",
+      "tags": [
+        "carta de correção",
+        "carta de correcao",
+        "cc-e",
+        "cce",
+        "corrigir nota",
+        "nota autorizada",
+        "erro na nota",
+        "dacce",
+        "xml da carta",
+        "enviar carta",
+        "inscrição estadual"
+      ],
+      "passos": [
+        "Na lista de notas fiscais, clique em **Ações** na nota autorizada e escolha **Emitir carta de correção** (ou, no detalhe da nota, **Outras ações** > **Carta de correção**).",
+        "Escreva o que está sendo corrigido (mínimo de 15 caracteres) e clique em **Enviar CC-e**.",
+        "⚠️ A carta não pode mudar valores, impostos, quantidade, o cliente da nota nem a data de emissão. Nesses casos é preciso cancelar e emitir outra nota.",
+        "✅ Quando aparecer **CC-e registrada**, o cliente recebe por e-mail o PDF da nota com a carta no final, mais o XML da carta e o da nota, com cópia para o e-mail da empresa.",
+        "Depois da carta, o **download do DANFE** e o **Enviar por e-mail** da nota já saem com a carta mais recente no final do PDF — não precisa fazer nada diferente. No detalhe da nota, a seção **Cartas de Correção** mostra o histórico e o **XML** de cada carta.",
+        "💡 Se fizer mais de uma carta na mesma nota, a mais recente vale: escreva nela todas as correções, não só a nova.",
+        "💡 Carta que não aparece na lista (feita antes desta função existir)? Use **Consultar status no SEFAZ** no detalhe da nota: o sistema busca a carta na SEFAZ e ela passa a aparecer."
+      ]
+    },
+    {
+      "id": "nfe-corrigir-endereco-cliente-ibge",
+      "categoria": "nfe",
+      "titulo": "A nota foi recusada por falta de endereço, código da cidade ou Inscrição Estadual do cliente. Como corrijo?",
+      "tags": [
+        "codigo ibge",
+        "ibge",
+        "municipio",
+        "cidade",
+        "endereço",
+        "bairro",
+        "cep",
+        "rejeitada",
+        "recusada",
+        "destinatario",
+        "dados do cliente",
+        "atualizar cadastro",
+        "inscrição estadual",
+        "ie",
+        "produtor rural"
+      ],
+      "passos": [
+        "Abra a nota fiscal que deu o erro (ela fica como rascunho ou **Rejeitada**).",
+        "**Opção 1 — corrigir só na nota:** na seção **Dados do Cliente**, preencha o campo que faltou (por exemplo **Cód. IBGE Município**, com 7 dígitos) e clique em **Salvar rascunho**.",
+        "**Opção 2 — corrigir no cadastro do cliente:** abra o cliente em outra aba, edite o endereço, preencha o campo que faltou e salve. Volte na nota e recarregue a página: os campos que estavam vazios na nota são completados sozinhos com o cadastro. Para trocar também o que já estava preenchido, clique em **Atualizar dados do cadastro**, em **Dados do Cliente**.",
+        "✅ Ao transmitir, o sistema também completa sozinho, com o cadastro do cliente, o que ainda estiver vazio na nota (como a Inscrição Estadual ou o código IBGE).",
+        "💡 A opção 2 é a melhor: o cadastro fica certo e as próximas notas desse cliente já saem corretas.",
+        "💡 O código IBGE de Goiânia é **5208707**. Para outras cidades, pesquise \"código IBGE\" seguido do nome da cidade.",
+        "💡 Produtor rural (pessoa física) com Inscrição Estadual: no cadastro do cliente, adicione um **Estabelecimento** com a IE e a UF da fazenda. Ao clicar em **Atualizar dados do cadastro**, a nota passa a sair com essa IE.",
+        "⚠️ Em nota gerada a partir de uma venda, o nome e o CPF/CNPJ do cliente não podem ser trocados na nota — só a Inscrição Estadual, o contato e o endereço.",
+        "✅ Depois de corrigir, transmita a nota de novo."
       ]
     },
     {
@@ -443,6 +548,27 @@ export const AJUDA_CONTENT: AjudaContent = {
       ]
     },
     {
+      "id": "produtos-clonar",
+      "categoria": "produtos",
+      "titulo": "Como cadastrar um produto parecido aproveitando outro (clonar)?",
+      "tags": [
+        "clonar",
+        "copiar",
+        "duplicar",
+        "produto parecido",
+        "outra marca",
+        "código original",
+        "código equivalente"
+      ],
+      "passos": [
+        "Na lista de **Produtos**, abra o menu do produto que serve de base e clique em **Clonar**.",
+        "Ajuste o que for diferente: **Descrição**, **Código original**, **Código equivalente**, **Marca**, **Valor de custo** e **IPI**.",
+        "💡 O resto (NCM, categoria, tributação, unidade) é copiado igual ao produto de origem.",
+        "⚠️ Se mudar o **Código original**, o código de barras não é copiado, porque é outra peça.",
+        "✅ O novo produto é criado com estoque zerado e um código interno próprio."
+      ]
+    },
+    {
       "id": "produtos-ficha-tecnica",
       "categoria": "produtos",
       "titulo": "Como cadastrar a ficha técnica de um produto fabricado?",
@@ -569,10 +695,12 @@ export const AJUDA_CONTENT: AjudaContent = {
         "No menu lateral, clique em **Clientes** e depois em **Novo Cliente**.",
         "Selecione o tipo: **Pessoa Física** (CPF) ou **Pessoa Jurídica** (CNPJ).",
         "Preencha o nome, CPF ou CNPJ e os dados de contato (telefone, e-mail).",
+        "⚠️ O sistema confere os números do CPF e do CNPJ e não deixa salvar um documento inválido. O novo CNPJ com letras (ex: 12.ABC.345/01DE-35) também é aceito.",
         "Preencha o **Endereço** completo — necessário para emitir Nota Fiscal.",
         "Informe a **Inscrição Estadual** se o cliente for empresa contribuinte do ICMS.",
         "Clique em **Salvar**.",
-        "✅ O cliente já estará disponível para ser selecionado em orçamentos e vendas."
+        "✅ O cliente já estará disponível para ser selecionado em orçamentos e vendas.",
+        "💡 Cadastrou como Pessoa Física e o cliente é uma empresa? Abra o cadastro, clique em **Editar**, troque o tipo para **Pessoa Jurídica**, preencha o CNPJ e a razão social e salve. Endereços, contatos, vendas e OS continuam ligados ao mesmo cliente."
       ]
     },
     {
@@ -667,7 +795,7 @@ export const AJUDA_CONTENT: AjudaContent = {
         "produtos"
       ],
       "passos": [
-        "No menu lateral, clique em **Vendas** e depois em **Novo Orçamento**.",
+        "No menu lateral, clique em **Vendas**, depois no botão **Novo** (no alto da lista) e escolha **Orçamento**.",
         "Selecione o **Cliente**. Se ainda não estiver cadastrado, cadastre-o antes.",
         "Clique em **Adicionar Item** para incluir os produtos do orçamento.",
         "Para cada item: selecione o produto, informe a quantidade e confirme o preço.",
@@ -816,7 +944,8 @@ export const AJUDA_CONTENT: AjudaContent = {
         "sem orçamento"
       ],
       "passos": [
-        "No menu lateral, clique em **Vendas → Nova Venda**.",
+        "No menu lateral, clique em **Vendas**, depois no botão **Novo** (no alto da lista) e escolha **Venda**.",
+        "💡 Se a ideia é só passar preço para o cliente, escolha **Orçamento** — ele pode virar venda depois.",
         "Selecione o cliente.",
         "Adicione os produtos clicando em **Adicionar Item**.",
         "Confirme a forma de pagamento e condição.",
@@ -1369,7 +1498,7 @@ export const AJUDA_CONTENT: AjudaContent = {
         "Se a nota veio de uma venda do sistema, o aviso mostra o botão **Reemitir NF-e**: ele cria a nova nota já usando a mesma venda, pronta para revisar e emitir.",
         "✅ Como é apenas correção do procedimento (a mercadoria não é uma venda nova), o **Reemitir NF-e** reaproveita o título financeiro já existente — não gera cobrança duplicada no contas a receber.",
         "Se a nota ainda não tiver sido cancelada, avalie se é o caso de cancelar (dentro do prazo) antes de emitir a nova.",
-        "💡 O aviso de recusa pode demorar para aparecer no sistema: ele chega automaticamente pela sincronização com a SEFAZ, que roda a cada ~1h. Se precisar checar na hora, peça para a equipe rodar 'Rebuscar histórico' na tela de Compras."
+        "💡 O aviso de recusa chega sozinho pela sincronização com a SEFAZ, que roda a cada ~1h. Para checar na hora, abra a nota e clique em **Consultar SEFAZ**: se o cliente já registrou a recusa, o aviso aparece na mesma hora."
       ]
     },
     {
@@ -1561,6 +1690,30 @@ export const AJUDA_CONTENT: AjudaContent = {
         "Escolha se quer buscar por **Venda** ou por **Nota Fiscal**, digite o número ou o nome do cliente/destinatário e clique no resultado desejado.",
         "✅ Ao vincular, o sistema cria automaticamente a despesa de frete e o título financeiro (a pagar para a transportadora), do mesmo jeito que faz na vinculação automática.",
         "💡 Se a nota fiscal ainda não existir, vincule direto pela Venda — quando a NF-e for emitida depois, o vínculo já vai estar registrado."
+      ]
+    },
+    {
+      "id": "nfe-credito-icms-simples-csosn-101",
+      "categoria": "nfe",
+      "titulo": "Como emitir a nota permitindo o cliente aproveitar o crédito de ICMS?",
+      "tags": [
+        "csosn 101",
+        "crédito de icms",
+        "aproveitamento de crédito",
+        "artigo 23",
+        "lc 123",
+        "simples nacional",
+        "cst",
+        "nota recusada",
+        "alíquota de crédito"
+      ],
+      "passos": [
+        "Use quando o cliente (normalmente empresa do regime normal) pede para aproveitar o crédito de ICMS da sua nota.",
+        "Na tela da NF-e, na coluna **Sit. Tributária** do item, escolha **101**.",
+        "Aparece o campo **Alíquota de crédito de ICMS (CSOSN 101)**: informe a alíquota do mês que a contabilidade passar (ex.: 2,75). O sistema lembra a última usada.",
+        "✅ O valor do crédito é calculado sozinho e o texto \"PERMITE O APROVEITAMENTO DO CREDITO DE ICMS NO VALOR DE R$ ... NOS TERMOS DO ARTIGO 23 DA LC 123\" entra automático nas informações complementares.",
+        "💡 Não precisa digitar esse texto nas observações. Se já estiver digitado, o sistema troca pelo calculado para não duplicar.",
+        "⚠️ Sem a alíquota preenchida, o sistema não deixa transmitir a nota com CSOSN 101."
       ]
     },
     {
@@ -2640,6 +2793,75 @@ export const AJUDA_CONTENT: AjudaContent = {
       ]
     },
     {
+      "id": "servicos-manuais-revisoes",
+      "categoria": "servicos",
+      "titulo": "Como criar as revisões da máquina a partir do manual?",
+      "tags": [
+        "manual",
+        "manuais",
+        "manual de operação e manutenção",
+        "manual de oficina",
+        "gerar revisões",
+        "tabela de manutenção",
+        "plano de manutenção",
+        "quadro de manutenção",
+        "peças de desgaste",
+        "óleo",
+        "balde",
+        "pdf"
+      ],
+      "passos": [
+        "No menu **Serviços**, clique em **Manuais**.",
+        "⚠️ Se **Manuais** não aparece no menu, o módulo **Manuais e Revisões** ainda não foi liberado para sua empresa — fale com a KomTec.",
+        "Cadastre primeiro os óleos que você compra em balde, na parte **Óleos em balde**: o **Código** (ex: KOM04E), a **Descrição na revisão**, **Como aparece no manual** (ex: 15W40, EO15W40) e os **Litros por balde**.",
+        "Em **Enviar manual**, informe o **Modelo** (ex: PC200-8), escolha o **Tipo** e selecione o PDF. Clique em **Enviar**.",
+        "💡 Manual que serve para mais de um modelo: separe com barra, ex: **PC300-8/PC350-8**.",
+        "No manual de **Operação e Manutenção**, abre a tela da **tabela de manutenção**: a página do manual fica à esquerda e a grade à direita. O sistema já abre nas páginas das tabelas (peças de desgaste, lubrificantes e quadro de manutenção).",
+        "💡 Se o sistema não achou as páginas (manual escaneado, por exemplo), digite o número da página em cima da imagem e use **Marcar página** para voltar a ela depois.",
+        "Na grade, digite uma linha para cada peça ou óleo trocado: **Código**, **Descrição**, **Qtd** e em **A cada (h)** o intervalo de troca (250, 500, 1000...). A linha em branco no fim já vira uma linha nova quando você começa a digitar.",
+        "Para óleo, escolha a unidade **L**, coloque os litros em **Qtd** e escolha o óleo em **Óleo em balde** — a revisão sai em baldes fechados (19,5 L num balde de 20 L = 1 balde).",
+        "💡 Marque **1ª troca** quando o manual manda trocar só nas primeiras horas (ex: filtro da transmissão na 250h). A troca periódica do mesmo item vai em outra linha, sem marcar.",
+        "Clique em **Gerar revisões**. O sistema salva a tabela e cria as revisões de 250h a 5000h como **Rascunho**.",
+        "⚠️ Rascunho não aparece na bandeja da OS nem do orçamento. Confira na tela **Revisões** (botão **rascunhos para conferir**) e publique.",
+        "Para publicar, clique em **Publicar** dentro da revisão, no ícone verde da lista, ou em **Publicar** na linha do manual (publica todas de uma vez).",
+        "💡 A tabela fica salva: dá para corrigir e clicar em **Gerar revisões** de novo. Isso troca só os rascunhos daquele manual — revisões já publicadas e as cadastradas à mão não são mexidas.",
+        "✅ O manual de **Oficina** fica guardado para consulta: clique no nome do arquivo para abrir o PDF."
+      ]
+    },
+    {
+      "id": "servicos-pacotes",
+      "categoria": "servicos",
+      "titulo": "Como cadastrar uma revisão, como a de 500 horas?",
+      "tags": [
+        "pacote",
+        "pacote de serviço",
+        "revisão",
+        "revisão 500 horas",
+        "manutenção preventiva",
+        "kit de serviço",
+        "plano de manutenção",
+        "peças sugeridas",
+        "filtros",
+        "bandeja"
+      ],
+      "passos": [
+        "No menu, abra **Serviços** e clique em **Revisões**.",
+        "Clique em **Nova Revisão**.",
+        "Preencha o **Nome** (ex: Revisão 500h WA200-5). Se quiser, informe também o **Modelo do equipamento** e o **Intervalo (horas)**.",
+        "💡 Quando a OS tem um equipamento do mesmo modelo, essa revisão aparece primeiro na bandeja, com o selo **deste equipamento**.",
+        "No campo **Adicionar serviço ou peça cadastrada**, busque e clique nos serviços e peças que fazem parte da revisão. Ajuste a **Qtd** de cada um.",
+        "💡 Peça que não está cadastrada nos seus produtos (ex: um filtro que você compra só quando precisa)? Use **Ou peça sem cadastro**, com o código da peça e a descrição.",
+        "⚠️ Peça sem cadastro vai para a aba Peças da OS, mas não entra no orçamento, porque o orçamento só aceita itens cadastrados.",
+        "💡 Em **Horas trabalhadas (mão de obra)** informe quantas horas a revisão leva. O **Valor da mão de obra** é calculado sozinho: horas × valor da hora cadastrado em Configurações da Empresa.",
+        "💡 Prefere um preço fechado? Digite direto no **Valor da mão de obra** — ele fica marcado como **Valor fixo** e não muda mais com as horas. Para voltar ao cálculo, clique em **usar (horas × valor da hora)**.",
+        "✅ Na OS e no orçamento, a mão de obra entra em horas trabalhadas (quantidade = horas, valor = valor da hora) ou pelo valor fixo, e continua editável para cada cliente.",
+        "Use as setas para deixar os itens na ordem que preferir e clique em **Salvar**.",
+        "💡 Ao abrir uma revisão da lista, ela aparece só para consulta. Para mudar algo, clique em **Editar**; **Cancelar** descarta as alterações.",
+        "💡 Na lista de revisões, o ícone de PDF baixa a lista do que será substituído (para levar à oficina ou mandar ao cliente), e o outro ícone baixa todas as revisões do mesmo modelo num PDF só. O PDF não mostra valores.",
+        "✅ O valor de cada item vem sempre do cadastro atual. Se você mudar o preço de um serviço, a revisão já usa o preço novo."
+      ]
+    },
+    {
       "id": "os-criar",
       "categoria": "ordens-servico",
       "titulo": "Como criar uma Ordem de Serviço?",
@@ -2698,8 +2920,11 @@ export const AJUDA_CONTENT: AjudaContent = {
       ],
       "passos": [
         "Abra a OS desejada em **Serviços → Ordens de serviço** e clique em **Editar**.",
-        "Clique no botão verde **Concluir OS**.",
-        "Descreva detalhadamente **o que foi executado** no campo obrigatório.",
+        "Depois de clicar em **Iniciar Atendimento**, vá na última aba, **Relatório**, preencha o **Serviço realizado** e a **Correção da falha** e clique em **Salvar**.",
+        "⚠️ O botão verde **Concluir OS** só aparece depois que esses dois campos estiverem preenchidos **e salvos** — enquanto isso, a aba Relatório mostra um aviso do que falta. O relatório também não salva sem eles.",
+        "Clique no botão verde **Concluir OS**, no alto da tela, na mesma linha das abas.",
+        "Preencha o **Serviço realizado** com o que foi executado no atendimento e a **Correção da falha** (obrigatória).",
+        "💡 No relatório em PDF os campos saem nesta ordem: **Sintomas / Reclamação**, **Serviço Realizado**, **Causa Efetiva**, **Correção Realizada** e **Pendências**.",
         "Informe o **KM de retorno**, **horas trabalhadas** e **horas de deslocamento**.",
         "Use o campo **Observação interna** para registrar custos (combustível, pedágio, pernoite) — este campo não aparece no relatório do cliente.",
         "Clique em **Confirmar**. A OS passa para o status **Concluída**.",
@@ -2869,6 +3094,33 @@ export const AJUDA_CONTENT: AjudaContent = {
       ]
     },
     {
+      "id": "os-bandeja-servicos",
+      "categoria": "ordens-servico",
+      "titulo": "Como adicionar vários serviços de uma vez na OS?",
+      "tags": [
+        "bandeja",
+        "vários serviços",
+        "adicionar serviços",
+        "arrastar",
+        "marcar",
+        "revisão",
+        "pacote",
+        "caneta",
+        "serviço de valor fixo"
+      ],
+      "passos": [
+        "Abra a OS e vá na aba de **Serviços**.",
+        "Clique em **Bandeja**. Abre um painel do lado direito com todos os serviços cadastrados.",
+        "Use a **busca** ou toque em uma **categoria** para encontrar os serviços mais rápido.",
+        "Para adicionar, escolha a forma que preferir: marque os serviços e clique em **Adicionar selecionados**, ou arraste um serviço para fora da bandeja, em cima da OS.",
+        "💡 Se você arrastar um serviço que está marcado, todos os marcados vão juntos.",
+        "💡 No celular ou tablet, arraste para o lado (com o dedo ou a caneta). Arrastar para cima e para baixo só rola a lista.",
+        "✅ Os serviços entram na OS com o valor do cadastro, e o selo **já adicionado** aparece na bandeja para você não lançar em dobro sem querer.",
+        "💡 Na aba **Revisões** da bandeja você adiciona uma revisão inteira de uma vez: os serviços vão para a aba Serviços e as peças para a aba Peças. As revisões do modelo do equipamento da OS aparecem primeiro. Toque na setinha da revisão para ver o que vem nela antes de adicionar.",
+        "💡 O valor pode ser ajustado depois na própria OS ou na tela **Revisar Faturamento**."
+      ]
+    },
+    {
       "id": "os-revisar-faturamento",
       "categoria": "ordens-servico",
       "titulo": "Como ajustar as horas, o km ou o valor da hora cobrados de uma OS antes de gerar o demonstrativo?",
@@ -2899,7 +3151,7 @@ export const AJUDA_CONTENT: AjudaContent = {
         "Para dar desconto em um item específico, use o mini seletor **%**/**R$** logo abaixo da quantidade daquele item (horas trabalhadas, deslocamento ou km) e informe o valor.",
         "Para dar um desconto sobre o total do serviço em vez de item a item, use o bloco **Desconto geral (opcional)**, escolhendo **%** (percentual) ou **R$** (valor fixo).",
         "⚠️ Os dois tipos de desconto são excludentes: assim que você informa um desconto em algum item, o bloco de desconto geral fica bloqueado (e vice-versa). Zere os valores do que não quiser usar para liberar o outro.",
-        "💡 Se a OS tiver **serviços de valor fixo** lançados na aba Peças e Serviços (ex: revisar bomba hidráulica), eles aparecem automaticamente nesta lista, já somados ao total — não precisam ser revisados aqui.",
+        "💡 Se a OS tiver **serviços de valor fixo** lançados (ex: revisar bomba hidráulica), eles aparecem automaticamente nesta lista, já somados ao total. Você pode alterar o **valor** e a **quantidade** de cada um aqui mesmo — por exemplo, para cobrar o preço combinado com aquele cliente — sem voltar na OS.",
         "Clique em **Salvar e voltar à OS**.",
         "✅ O valor revisado — já com o desconto aplicado — passa a ser usado tanto no Demonstrativo de Valores quanto na NFS-e gerada a partir dessa OS.",
         "💡 Se você não revisar, o sistema usa os valores reais automaticamente — e só some a hora de deslocamento se o interruptor **Cobrar hora viajada do cliente** (em Minha Empresa) estiver desativado."
@@ -2928,7 +3180,7 @@ export const AJUDA_CONTENT: AjudaContent = {
       ],
       "passos": [
         "Na tela **Concluir OS** (acessada pelo técnico ao finalizar o atendimento), as informações ficam organizadas em 3 abas: **Relatório**, **Observações Internas** e **Assinaturas**.",
-        "Preencha o **Relatório** normalmente (sintomas, causa, correção, pendências etc.) e, se precisar, anote custos/combustível/pedágio na aba **Observações Internas**.",
+        "Preencha o **Relatório** normalmente (sintomas, serviço realizado, causa, correção, pendências etc.) e, se precisar, anote custos/combustível/pedágio na aba **Observações Internas**.",
         "⚠️ A aba **Observações Internas** é só para a equipe da empresa — não aparece no relatório entregue ao cliente nem fica visível na aba de Assinaturas. As despesas de viagem com valores também não aparecem mais nesta tela — ficam só na tela **Despesas de Viagem**, separada. Assim é seguro entregar o celular/tablet para o cliente assinar sem mostrar valores internos.",
         "Na aba **Assinaturas**, o técnico assina primeiro em **Técnico Responsável**.",
         "Do lado do responsável pelo equipamento, escolha a **situação do cliente**: **Cliente assinou**, **Cliente não quis assinar** ou **Cliente não está presente**.",
@@ -3166,6 +3418,32 @@ export const AJUDA_CONTENT: AjudaContent = {
         "O campo abre em tela cheia e tenta girar o aparelho pra paisagem automaticamente — dá bem mais espaço horizontal pra assinar com o dedo.",
         "⚠️ Alguns aparelhos (principalmente iPhone) não deixam o site girar a tela sozinho — nesse caso a área de assinatura continua grande, só sem girar; se preferir, gire o celular manualmente.",
         "Assine, confira e toque em **Usar assinatura** pra confirmar, ou **Cancelar** pra descartar e tentar de novo."
+      ]
+    },
+    {
+      "id": "os-deslocamento-preenchido",
+      "categoria": "ordens-servico",
+      "titulo": "Como lançar o deslocamento (ida e volta) na OS sem digitar tudo de novo?",
+      "tags": [
+        "deslocamento",
+        "trecho",
+        "viagem",
+        "ida e volta",
+        "km",
+        "odômetro",
+        "destino",
+        "cidade",
+        "uf",
+        "registros"
+      ],
+      "passos": [
+        "Abra a OS, vá na aba **Registros** e escolha **Deslocamento**. Clique em **Adicionar**.",
+        "No **primeiro trecho (ida)** o sistema já preenche a cidade de saída com a cidade da sua empresa e o **Destino** com o **local de atendimento** informado na criação da OS (local, cidade e UF).",
+        "Nos **trechos seguintes**, a saída já vem com a cidade, a UF, o local e o **odômetro** de onde o trecho anterior chegou.",
+        "✅ Se o trecho anterior chegou no local de atendimento, o novo trecho é tratado como **volta**: o destino já vem com o ponto de partida do primeiro trecho.",
+        "Confira as datas, preencha as horas e o **Odômetro chegada** e clique em **Salvar**.",
+        "💡 Tudo continua editável — se a rota foi diferente (ex.: passou em outro cliente no caminho), é só alterar os campos antes de salvar.",
+        "💡 Nas **Despesas de viagem**, o campo **Cidade/UF** também já vem com a cidade do local de atendimento."
       ]
     },
     {
@@ -3742,14 +4020,53 @@ export const AJUDA_CONTENT: AjudaContent = {
       "id": "vendas-cobrar-maquininha",
       "categoria": "vendas",
       "titulo": "Como cobrar o cliente com cartão na maquininha?",
-      "tags": ["maquininha", "cartão", "cartao", "cobrar", "débito", "credito", "pix", "stone", "pagamento", "título", "financeiro"],
+      "tags": [
+        "maquininha",
+        "cartão",
+        "cartao",
+        "cobrar",
+        "débito",
+        "credito",
+        "pix",
+        "stone",
+        "pagamento",
+        "título",
+        "financeiro"
+      ],
       "passos": [
-        "Com uma maquininha já cadastrada e com a Secret Key preenchida (veja \"Como cadastrar a maquininha de cartão?\"), abra a **venda** ou o **título** da venda no Financeiro.",
+        "Com uma maquininha já cadastrada (veja \"Como cadastrar a maquininha de cartão?\"), abra a **venda** ou o **título** da venda no Financeiro.",
         "Na seção Pagamento (venda) ou no menu **Ações** da parcela em aberto (Financeiro), clique em **Cobrar na Maquininha**.",
         "Escolha a maquininha (se só tiver uma, já vem selecionada), a forma de pagamento — **Débito**, **Crédito** ou **Pix** — e, se for crédito, o número de parcelas.",
         "Clique em **Cobrar**. A cobrança é enviada pra maquininha na hora.",
         "⚠️ Isso só dispara a cobrança — não confirma o pagamento na hora. Aguarde o cliente concluir na maquininha (inserir o cartão ou escanear o QR Code do Pix).",
         "✅ Assim que o pagamento é confirmado, a parcela é baixada automaticamente, sem precisar fazer nada. Se quiser confirmar antes, use o botão **Verificar status** que aparece ao lado."
+      ]
+    },
+    {
+      "id": "vendas-etiqueta-envio",
+      "categoria": "vendas",
+      "titulo": "Como imprimir a etiqueta para colar na caixa que vai pela transportadora?",
+      "tags": [
+        "etiqueta de envio",
+        "etiqueta transportadora",
+        "remetente",
+        "destinatário",
+        "despachar",
+        "embalagem",
+        "retirada",
+        "quem vai retirar",
+        "autorização de retirada",
+        "etiqueta A4"
+      ],
+      "passos": [
+        "Abra a venda (ou a nota fiscal) e clique em **Etiqueta de Envio**.",
+        "Os dados da sua empresa (remetente) e do cliente (destinatário) já vêm preenchidos. Se a venda tem nota fiscal, o endereço do destinatário vem da nota.",
+        "Se o cliente mandou outra pessoa buscar a mercadoria, marque **Outra pessoa vai retirar a mercadoria** e preencha o nome, o documento, o contato e a cidade onde ela vai retirar.",
+        "Confira **Transportadora**, **Volumes** e o número da nota no bloco Transporte — tudo pode ser alterado.",
+        "💡 O que você mudar em **Remetente (sua empresa)** — como e-mail ou slogan — fica guardado neste navegador para as próximas etiquetas. Para voltar aos dados da Configuração da Empresa, clique em **Restaurar**.",
+        "Clique em **Baixar PDF** para salvar ou em **Imprimir** para mandar direto para a impressora.",
+        "⚠️ A logo e o slogan que aparecem ao fundo vêm da **Configuração da Empresa**. Se a logo não aparecer, cadastre-a lá.",
+        "✅ A etiqueta sai em folha A4, pronta para colar na embalagem."
       ]
     }
   ]
