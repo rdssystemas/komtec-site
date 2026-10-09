@@ -75,7 +75,7 @@ export const AJUDA_CONTENT: AjudaContent = {
       "id": "nfse",
       "label": "NFS-e (Nota de Serviço)",
       "icone": "🧾",
-      "descricao": "Emissão de nota fiscal de serviço (NFS-e) direto da Ordem de Serviço."
+      "descricao": "Emissão da nota fiscal de serviço (NFS-e) pela Ordem de Serviço ou avulsa: configuração, envio à prefeitura, recusas, e-mail e cancelamento."
     },
     {
       "id": "catalogos",
@@ -1037,9 +1037,57 @@ export const AJUDA_CONTENT: AjudaContent = {
         "Na tela de detalhes da NFS-e, clique em **Assinar DPS** para gerar e assinar digitalmente o Documento Provisório de Serviço.",
         "Com o status **DPS assinada**, clique em **Enviar ao SEFIN** para transmitir ao portal nacional de NFS-e.",
         "⚠️ O envio eletrônico exige certificado digital A1 configurado na empresa e que o município seja aderente ao Padrão Nacional NFS-e (nfse.gov.br).",
+        "⚠️ Se a prefeitura recusar, a nota fica como **Rejeitada** e o motivo aparece em vermelho no topo. Clique em **Editar**, corrija o campo indicado, salve e clique de novo em **Assinar DPS** e **Enviar ao SEFIN**.",
+        "💡 Se a tela ficar aguardando a resposta, clique em **Atualizar** para buscar a situação da nota no portal nacional.",
         "✅ Após autorização, a NFS-e recebe número, chave de acesso e código de verificação, e um e-mail com o DANFSe e o XML é enviado automaticamente para os e-mails cadastrados do cliente.",
         "Clique em **Baixar PDF** a qualquer momento para gerar a DANFSe (Documento Auxiliar da NFS-e), com QR code para consulta de autenticidade — funciona mesmo em rascunho, antes do envio.",
         "💡 Se o cliente não quer nota fiscal, não tem problema — a Venda e o título financeiro já foram gerados no primeiro passo, mesmo sem emitir a NFS-e. Use o botão **Enviar por E-mail** na tela da Venda para mandar o PDF da venda ao cliente."
+      ]
+    },
+    {
+      "id": "nfse-avulsa",
+      "categoria": "nfse",
+      "titulo": "Como emitir uma nota fiscal de serviço sem Ordem de Serviço nem Venda?",
+      "tags": [
+        "nfse avulsa",
+        "nota fiscal de serviço sem os",
+        "nota avulsa",
+        "serviço fora do sistema",
+        "faturar sem ordem de serviço",
+        "nfse manual"
+      ],
+      "passos": [
+        "Use essa opção quando o serviço já foi todo controlado fora do sistema (ex: histórico digitado em planilha) e você não quer redigitar tudo como Ordem de Serviço só para poder faturar.",
+        "Acesse **Serviços → Notas fiscais de serviço** e clique em **Nova** e escolha **NFS-e Avulsa**.",
+        "Busque e selecione o **cliente** (tomador do serviço), descreva o **serviço prestado** e informe o **valor**. A **competência** é opcional — se deixar em branco, usa o mês atual.",
+        "Clique em **Criar rascunho**. O sistema já preenche automaticamente os dados do prestador (sua empresa) e do tomador (cliente selecionado) com base no cadastro dele.",
+        "💡 Revise os mesmos campos de qualquer NFS-e antes de emitir: **Alíquota ISS**, **Código de Tributação Nacional**, **Local de Prestação** e **Município Incidência ISSQN** — eles vêm com o padrão configurado na empresa, mas confirme com seu contador se esse serviço específico precisa de algo diferente.",
+        "Depois de revisar, clique em **Assinar DPS** e depois **Enviar ao SEFIN**, igual ao fluxo normal de NFS-e.",
+        "⚠️ Essa nota não gera Venda nem título financeiro automaticamente (diferente do fluxo por OS) — se o cliente ainda não pagou, lance o título manualmente em **Financeiro**."
+      ]
+    },
+    {
+      "id": "nfse-retencoes-federais",
+      "categoria": "nfse",
+      "titulo": "Como informar na nota de serviço o PIS, COFINS e IR retidos pelo cliente?",
+      "tags": [
+        "retenção",
+        "retencao",
+        "pis",
+        "cofins",
+        "irrf",
+        "imposto de renda retido",
+        "csll",
+        "retenções federais",
+        "tomador retém",
+        "situação tributária pis cofins"
+      ],
+      "passos": [
+        "Na tela da NFS-e, vá até a seção **Retenções Federais (opcional)**.",
+        "Preencha os valores retidos pelo cliente em **IRRF retido**, **PIS** e **COFINS**, conforme ele informou.",
+        "Quando houver PIS ou COFINS, escolha também a **Situação Tributária do PIS/COFINS** e o **Tipo de Retenção do PIS/COFINS/CSLL** — na dúvida, confirme com a contabilidade.",
+        "⚠️ Se preencher PIS ou COFINS sem escolher a **Situação Tributária do PIS/COFINS**, o sistema não deixa assinar a DPS e mostra um aviso — sem ela os valores não seriam declarados na nota.",
+        "✅ O IRRF retido pode ser informado sozinho, sem precisar da situação do PIS/COFINS."
       ]
     },
     {
@@ -1052,19 +1100,35 @@ export const AJUDA_CONTENT: AjudaContent = {
         "aliquota iss",
         "serie dps",
         "codigo tributacao",
+        "codigo municipal",
+        "ctribmun",
+        "tabela correlacao",
         "configurar",
         "numero inicial nfse",
-        "continuar numeração"
+        "continuar numeração",
+        "nbs",
+        "ibs",
+        "cbs",
+        "preencher ibs cbs",
+        "simples nacional",
+        "percentual tributos",
+        "certificado"
       ],
       "passos": [
         "Acesse **Configurações → Empresa** e localize a seção **NFS-e (Nota Fiscal de Serviço)**.",
         "Preencha a **Inscrição Municipal** da empresa junto à prefeitura.",
-        "Informe o **Código de Tributação Nacional padrão** (ex: 14.01.01 para manutenção/revisão).",
-        "Informe a **Alíquota ISS** padrão do seu município (ex: 5%).",
+        "Informe o **Código de Tributação Nacional padrão** (ex: 14.01.01 para manutenção/revisão; 01.05.01 para licenciamento de software).",
+        "Informe o **Código Tributação Municipal padrão**: é o código da prefeitura que corresponde ao código nacional, tirado da tabela de correlação do portal da prefeitura (em Goiânia: ISS.net → Downloads). Ex.: 01.05.01 em Goiânia = **105**.",
+        "⚠️ O código municipal não é o nacional com outros números — se estiver errado, a prefeitura recusa a nota dizendo que o código \"não existe ou não é administrado pelo município\".",
+        "Informe o **NBS padrão** (Nomenclatura Brasileira de Serviços). Ele é **obrigatório** em toda nota de serviço — sem ele o sistema não deixa assinar.",
+        "Informe a **Alíquota ISS** padrão — a que o seu contador indicar para o seu serviço e município.",
+        "Se a empresa é do Simples Nacional, informe o **% Tot. Tributos SN padrão** (a alíquota efetiva do Simples; ex.: 6% na primeira faixa do Anexo III) e o **Regime de Apuração pelo SN**. Sem o percentual a prefeitura recusa a nota.",
+        "Em **Preencher IBS/CBS na NFS-e?**, escolha a resposta padrão. Empresas do Simples Nacional e MEI podem deixar **Não** até 01/01/2027.",
+        "💡 Se escolheu **Sim**, use em **Cód. Indicador Operação IBS/CBS padrão** o código que combina com o seu serviço. Para licenciamento de software (01.05) é **100501**; se o código não combinar, a prefeitura recusa dizendo que os códigos \"precisam estar correlacionados\".",
         "Defina a **Série da DPS** (padrão: 1 — verifique com a prefeitura se há exigência específica).",
         "💡 Se você já emitia NFS-e por outro sistema, preencha **Número inicial da DPS** com o próximo número a ser usado (ex: se a última foi a 352, informe 353). Esse número é próprio da sua empresa/CNPJ — não tem relação com o número de DPS de notas de outras empresas.",
-        "⚠️ Certifique-se de que o município está cadastrado no Padrão Nacional NFS-e em nfse.gov.br.",
-        "✅ Com esses dados preenchidos, o botão **Emitir NFS-e** ficará disponível na tela da Venda gerada a partir de uma OS de serviço concluída."
+        "⚠️ É preciso ter o **certificado digital A1** da empresa cadastrado e o município aderente ao Padrão Nacional NFS-e (nfse.gov.br).",
+        "✅ Com esses dados preenchidos, toda nota nova já vem com esses valores — você só confere e emite."
       ]
     },
     {
@@ -1077,19 +1141,83 @@ export const AJUDA_CONTENT: AjudaContent = {
         "cbs",
         "nbs",
         "nomenclatura brasileira de serviços",
-        "imposto seletivo"
+        "imposto seletivo",
+        "preencher ibs cbs",
+        "sim ou não",
+        "não informar ibs",
+        "mei",
+        "simples nacional"
       ],
       "passos": [
-        "A NFS-e já emite com os campos do grupo **IBS/CBS** exigidos pela Reforma Tributária, preenchidos automaticamente com base na configuração fiscal da empresa e do serviço prestado.",
-        "O campo **NBS (Nomenclatura Brasileira de Serviços)** é opcional por enquanto — use a busca no campo pra encontrar o código certo entre as mais de 800 opções, digitando parte da descrição do serviço.",
+        "Na nota de serviço existe a pergunta **Preencher as informações IBS/CBS?** — a mesma do emissor nacional do governo.",
+        "Com **Não**, a nota sai sem nenhuma informação de IBS/CBS. Para empresas do Simples Nacional e MEI isso é permitido até 01/01/2027.",
+        "Com **Sim**, a nota leva os códigos de IBS/CBS (Indicador da Operação, CST e Classificação). Os valores são calculados pelo governo — você só escolhe os códigos.",
+        "💡 Para não ter que escolher em toda nota, defina a resposta padrão em **Configurações → Empresa**, seção NFS-e, campo **Preencher IBS/CBS na NFS-e?**.",
+        "⚠️ Com **Sim**, os códigos precisam combinar com o serviço — senão a prefeitura recusa dizendo que os códigos \"precisam estar correlacionados\". Na dúvida, confirme com o seu contador.",
+        "💡 Com **Não**, só o IBS/CBS sai da nota: o **ISS**, o **NBS** e o **percentual aproximado dos tributos** continuam sendo informados normalmente.",
+        "O campo **NBS (Nomenclatura Brasileira de Serviços)** é **obrigatório** em toda nota, com **Sim** ou com **Não** no IBS/CBS. Use a busca no campo para encontrar o código certo entre as mais de 800 opções, digitando parte da descrição do serviço.",
         "💡 Não é preciso decorar nem saber de cor o código NBS — comece a digitar e o sistema mostra as opções que combinam.",
         "⚠️ Esses campos só valem pra municípios já aderentes ao Padrão Nacional NFS-e (nfse.gov.br) — em município fora do padrão nacional, a nota continua no formato tradicional (sem IBS/CBS/NBS)."
       ]
     },
     {
+      "id": "nfse-nota-recusada-prefeitura",
+      "categoria": "nfse",
+      "titulo": "O que fazer quando a prefeitura recusa a nota de serviço?",
+      "tags": [
+        "nfse",
+        "rejeitada",
+        "recusada",
+        "erro",
+        "prefeitura",
+        "sefin",
+        "código municipal",
+        "percentual tributos",
+        "correlacionados",
+        "simples nacional",
+        "nbs"
+      ],
+      "passos": [
+        "Abra a nota em **Serviços → Notas**. Nota recusada fica com status **Rejeitada**, e o motivo dado pela prefeitura aparece em vermelho no topo da tela.",
+        "Clique em **Editar**, corrija o que o motivo indica e clique em **Salvar NFS-e**. Depois clique em **Assinar DPS** e **Enviar ao SEFIN** de novo.",
+        "**\"Código de tributação não existe ou não é administrado pelo município\"**: o **Código Tributação Municipal** está errado. Ele vem da tabela de correlação da prefeitura e não é o código nacional com outros números (ex.: 01.05.01 em Goiânia = 105).",
+        "**\"Para ME/EPP é preciso informar o valor ou percentual dos tributos\"**: falta o **% Tot. Tributos SN**. Preencha na nota e também em **Configurações → Empresa** para as próximas.",
+        "**\"Códigos precisam estar correlacionados\"**: o **Indicador da Operação** do IBS/CBS não combina com o serviço e o NBS. Peça o código certo ao contador ou, se a empresa é do Simples, marque **Não** em **Preencher as informações IBS/CBS?**.",
+        "**\"Situação perante o Simples Nacional não confere\"**: o regime tributário da empresa em **Configurações → Empresa** está diferente do cadastro na Receita. Confira com o contador.",
+        "**\"Série da DPS inválida\"**: a prefeitura só aceita algumas séries. Confirme com a prefeitura ou com o contador qual série usar e ajuste em **Configurações → Empresa**.",
+        "⚠️ Antes de enviar, o próprio sistema já avisa quando falta o **NBS**, o **percentual dos tributos** do Simples ou a **Situação Tributária do PIS/COFINS** com valores retidos — assim a nota nem chega a ser recusada.",
+        "✅ Depois de corrigir a configuração da empresa, as próximas notas já saem certas."
+      ]
+    },
+    {
+      "id": "nfse-reenviar-email-visualizar",
+      "categoria": "nfse",
+      "titulo": "Como reenviar a nota de serviço por e-mail ou ver o PDF?",
+      "tags": [
+        "nfse",
+        "reenviar e-mail",
+        "enviar nota",
+        "danfse",
+        "pdf",
+        "visualizar nota",
+        "xml",
+        "opções"
+      ],
+      "passos": [
+        "Em **Serviços → Notas**, use as setas do mês para escolher o período e a pesquisa para achar a nota pelo cliente, pelo número ou pela OS.",
+        "💡 A coluna **Nº NFS-e** mostra o número real da nota dado pela prefeitura. A coluna **Origem** diz se a nota veio de uma OS ou se é **Avulsa**. Nota que ainda não foi autorizada aparece como **rascunho** em qualquer mês.",
+        "Clique em **Opções** na linha da nota.",
+        "**Visualizar PDF** abre o DANFSe (o documento da nota) numa aba nova, pronto para imprimir.",
+        "**Enviar e-mail** manda o DANFSe e o arquivo XML da nota para os e-mails cadastrados do cliente. Só aparece em nota **Autorizada**.",
+        "💡 O e-mail já vai sozinho quando a nota é autorizada. Use **Enviar e-mail** quando o cliente pedir de novo ou quando você corrigir o e-mail no cadastro dele.",
+        "⚠️ Se o cliente não tiver e-mail cadastrado, o sistema avisa. Cadastre o e-mail na ficha do cliente e envie de novo.",
+        "✅ Uma mensagem confirma para quais endereços o e-mail foi enviado. A sua empresa recebe uma cópia."
+      ]
+    },
+    {
       "id": "nfse-cancelar-descartar",
       "categoria": "nfse",
-      "titulo": "Como cancelar ou descartar uma NFS-e?",
+      "titulo": "Como cancelar ou excluir uma nota de serviço?",
       "tags": [
         "nfse",
         "cancelar nfs-e",
@@ -1102,11 +1230,12 @@ export const AJUDA_CONTENT: AjudaContent = {
         "estornar nota de serviço"
       ],
       "passos": [
-        "Abra a NFS-e em **Serviços → Notas** e clique nela para ver os detalhes.",
-        "**Descartar** (rascunho, DPS assinada ainda não enviada, ou rejeitada): clique em **Descartar**. A NFS-e é removida de vez e a OS/Venda de origem fica livre para gerar uma nova. Use quando errou algo antes de transmitir, ou quando a nota foi rejeitada e você vai refazer do zero.",
+        "Abra a NFS-e em **Serviços → Notas** e clique nela para ver os detalhes — ou, na listagem, clique em **Opções** na linha da nota e escolha **Cancelar no SEFIN** (abre a nota já com o formulário de cancelamento).",
+        "**Excluir** (nota que nunca foi autorizada: rascunho, DPS assinada ainda não enviada, rejeitada, ou cancelada só no sistema): no menu **Opções** da listagem ou no detalhe, clique em **Excluir**. A NFS-e é removida e a OS/Venda de origem fica livre para gerar uma nova.",
         "**Cancelar** (nota já autorizada): clique em **Cancelar no SEFIN**, escolha o **Motivo do cancelamento** (Erro na emissão, Serviço não prestado ou Outros) e escreva a justificativa.",
         "⚠️ Para nota autorizada, a justificativa precisa ter no mínimo **15 caracteres** — o contador da linha mostra quanto falta.",
         "💡 Cancele no **mesmo mês da competência** sempre que possível: assim a nota não entra na apuração do ISS e não gera imposto. Cancelamento fora do prazo da prefeitura pode não ser aceito pelo webservice.",
+        "⚠️ Nota autorizada nunca pode ser excluída, só cancelada — ela já existe na prefeitura.",
         "✅ Depois de cancelada, a NFS-e fica com status **Cancelada** e deixa de valer; a OS/Venda pode receber uma nova emissão."
       ]
     },
