@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Send, MessageCircle, Gift, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { trackEvent } from '../lib/analytics';
+import { RedesSociais } from '../components/RedesSociais';
 
 type Etapa = 'form' | 'confirmando' | 'enviado';
 
@@ -84,6 +85,11 @@ export function Contato() {
                   <p className="text-sm font-medium text-gray-800">Promoções especiais no seu aniversário</p>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-gray-100">
+              <p className="text-xs text-gray-400 mb-3">Acompanhe nas redes sociais</p>
+              <RedesSociais className="text-gray-400 [&_a:hover]:text-orange-600" iconClassName="w-6 h-6" />
             </div>
           </div>
 

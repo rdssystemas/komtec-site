@@ -23,6 +23,8 @@ public/**/*.jpeg
 src/assets/*.png
 !public/favicon.png
 !public/logo.png
+!public/og-image.png
+!public/og/*.jpg
 
 # Editor directories and files
 .vscode/*

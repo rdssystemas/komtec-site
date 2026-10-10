@@ -1,3 +1,5 @@
+import { RedesSociais } from './RedesSociais';
+
 export function Footer() {
   return (
     <footer className="bg-orange-950 text-orange-200/70 py-10">
@@ -30,8 +32,9 @@ export function Footer() {
             <a href="/privacidade" className="hover:text-white transition-colors">Política de Privacidade</a>
           </div>
 
-          <div className="text-sm text-center">
+          <div className="text-sm text-center flex flex-col items-center gap-3">
             <p>contato@erpkomtec.com.br</p>
+            <RedesSociais className="[&_a:hover]:text-white" />
           </div>
         </div>
 
