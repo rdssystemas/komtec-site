@@ -218,6 +218,8 @@ export const DEFAULT_FAQ: FaqContent = {
     { pergunta: 'Como funciona o suporte técnico?',                         resposta: 'Oferecemos suporte por WhatsApp e e-mail. O atendimento é feito diretamente pela equipe técnica que desenvolveu o sistema, garantindo respostas rápidas e precisas.' },
     { pergunta: 'É possível importar meus dados de outro sistema?',         resposta: 'Sim. O sistema suporta importação de produtos via Excel, PDF e XML (NF-e). Para migrações mais complexas, nossa equipe oferece suporte dedicado no processo.' },
     { pergunta: 'O sistema funciona para qualquer segmento de empresa?',    resposta: 'Sim. O ERP KomTec Pro atende comércio, distribuidoras, prestadores de serviço e indústrias. Os módulos são flexíveis e podem ser configurados conforme a necessidade do seu negócio.' },
+    { pergunta: 'O sistema ajuda a encontrar licitações?',                  resposta: 'Sim. O módulo Licitações procura todos os dias os editais abertos no Portal Nacional de Contratações Públicas (PNCP), em todo o Brasil, e mostra só os que têm itens ligados ao ramo da sua empresa. Cada edital recebe uma nota de aderência e você pode receber as novas oportunidades por e-mail.' },
+    { pergunta: 'O sistema mostra quais documentos o edital exige?',        resposta: 'Sim. Com um clique o sistema lê o edital e lista as exigências de habilitação (certidões, atestados, balanço e outras), com o trecho de cada uma, e você marca o que já tem. A proposta continua sendo enviada na plataforma indicada pelo órgão — o sistema mostra o link.' },
   ],
 };
 
