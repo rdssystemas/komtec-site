@@ -3,6 +3,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 import { getIcon } from '../data/iconMap';
 import type { PlanosContent } from '../data/defaultContent';
 import { trackEvent } from '../lib/analytics';
+import { saudacaoWhatsApp } from '../lib/origemVisita';
 
 export function Planos({ content }: { content: PlanosContent }) {
   const [form, setForm] = useState({ nome: '', telefone: '', horario: '' });
@@ -11,7 +12,7 @@ export function Planos({ content }: { content: PlanosContent }) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const texto = encodeURIComponent(
-      `Olá! Gostaria de conhecer uma proposta do ERP KomTec.\n\nNome: ${form.nome}\nTelefone: ${form.telefone}${form.horario ? `\nMelhor horário: ${form.horario}` : ''}`
+      `${saudacaoWhatsApp()} Gostaria de conhecer uma proposta do ERP KomTec.\n\nNome: ${form.nome}\nTelefone: ${form.telefone}${form.horario ? `\nMelhor horário: ${form.horario}` : ''}`
     );
     window.open(`https://wa.me/5562993256370?text=${texto}`, '_blank');
     setEnviado(true);
@@ -119,7 +120,7 @@ export function Planos({ content }: { content: PlanosContent }) {
                 <div className="mt-4 pt-4 border-t border-gray-100 text-center">
                   <p className="text-xs text-gray-400 mb-2">Prefere pelo WhatsApp agora?</p>
                   <a
-                    href="https://wa.me/5562993256370"
+                    href={`https://wa.me/5562993256370?text=${encodeURIComponent(saudacaoWhatsApp())}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-medium text-green-600 hover:text-green-700"

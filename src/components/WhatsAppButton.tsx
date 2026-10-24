@@ -1,9 +1,10 @@
-const WHATSAPP_URL = 'https://wa.me/5562993256370?text=Ol%C3%A1!%20Tenho%20interesse%20no%20ERP%20KomTec%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.';
+import { saudacaoWhatsApp } from '../lib/origemVisita';
 
 export function WhatsAppButton() {
+  const texto = `${saudacaoWhatsApp()} Tenho interesse no ERP KomTec e gostaria de mais informações.`;
   return (
     <a
-      href={WHATSAPP_URL}
+      href={`https://wa.me/5562993256370?text=${encodeURIComponent(texto)}`}
       target="_blank"
       rel="noopener noreferrer"
       title="Fale conosco no WhatsApp"
