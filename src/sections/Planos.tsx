@@ -3,7 +3,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 import { getIcon } from '../data/iconMap';
 import type { PlanosContent } from '../data/defaultContent';
 import { trackEvent } from '../lib/analytics';
-import { saudacaoWhatsApp } from '../lib/origemVisita';
+import { registrarCliqueWhatsApp, saudacaoWhatsApp } from '../lib/origemVisita';
 
 export function Planos({ content }: { content: PlanosContent }) {
   const [form, setForm] = useState({ nome: '', telefone: '', horario: '' });
@@ -14,6 +14,7 @@ export function Planos({ content }: { content: PlanosContent }) {
     const texto = encodeURIComponent(
       `${saudacaoWhatsApp()} Gostaria de conhecer uma proposta do ERP KomTec.\n\nNome: ${form.nome}\nTelefone: ${form.telefone}${form.horario ? `\nMelhor horário: ${form.horario}` : ''}`
     );
+    registrarCliqueWhatsApp();
     window.open(`https://wa.me/5562993256370?text=${texto}`, '_blank');
     setEnviado(true);
     trackEvent('generate_lead', { origem: 'planos_ligacao' });
@@ -121,6 +122,7 @@ export function Planos({ content }: { content: PlanosContent }) {
                   <p className="text-xs text-gray-400 mb-2">Prefere pelo WhatsApp agora?</p>
                   <a
                     href={`https://wa.me/5562993256370?text=${encodeURIComponent(saudacaoWhatsApp())}`}
+                    onClick={registrarCliqueWhatsApp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-medium text-green-600 hover:text-green-700"

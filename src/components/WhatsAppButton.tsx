@@ -1,10 +1,11 @@
-import { saudacaoWhatsApp } from '../lib/origemVisita';
+import { registrarCliqueWhatsApp, saudacaoWhatsApp } from '../lib/origemVisita';
 
 export function WhatsAppButton() {
   const texto = `${saudacaoWhatsApp()} Tenho interesse no ERP KomTec e gostaria de mais informações.`;
   return (
     <a
       href={`https://wa.me/5562993256370?text=${encodeURIComponent(texto)}`}
+      onClick={registrarCliqueWhatsApp}
       target="_blank"
       rel="noopener noreferrer"
       title="Fale conosco no WhatsApp"

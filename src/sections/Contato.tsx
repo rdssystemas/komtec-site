@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Send, MessageCircle, Gift, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { trackEvent } from '../lib/analytics';
 import { RedesSociais } from '../components/RedesSociais';
-import { saudacaoWhatsApp } from '../lib/origemVisita';
+import { registrarCliqueWhatsApp, saudacaoWhatsApp } from '../lib/origemVisita';
 
 type Etapa = 'form' | 'confirmando' | 'enviado';
 
@@ -32,6 +32,7 @@ export function Contato() {
     const texto = encodeURIComponent(
       `${saudacaoWhatsApp()} Tenho interesse no ERP KomTec Pro.\n\nNome: ${form.nome}\nCPF: ${form.cpf}\nNascimento: ${formatarData(form.dataNascimento)}\nTelefone: ${form.telefone}\nE-mail: ${form.email}${form.ofertasAniversario ? '\n✅ Aceita receber ofertas especiais no aniversário' : ''}`
     );
+    registrarCliqueWhatsApp();
     window.open(`https://wa.me/5562993256370?text=${texto}`, '_blank');
     setEtapa('enviado');
     trackEvent('generate_lead', { origem: 'formulario_contato' });
