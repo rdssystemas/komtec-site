@@ -1,3 +1,4 @@
+import { registrarCliqueRede } from '../lib/origemVisita';
 // Ícones de marca desenhados aqui: o lucide-react 1.x não traz mais logos de empresas.
 export const REDES_SOCIAIS = [
   {
@@ -24,6 +25,7 @@ export function RedesSociais({ className = '', iconClassName = 'w-5 h-5' }: { cl
           aria-label={`ERP KomTec Pro no ${rede.nome}`}
           title={rede.nome}
           className="transition-colors"
+          onClick={() => registrarCliqueRede(rede.nome)}
         >
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={iconClassName}>
             <path d={rede.path} />

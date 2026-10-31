@@ -1,7 +1,7 @@
 /**
  * De onde a visita veio: etiqueta utm_source no link (rádio, Instagram, Facebook) ou, sem ela, o site
  * anterior (document.referrer). Guardada na sessão para valer em qualquer página, usada para abrir o
- * WhatsApp já dizendo a origem e contada no banco (visitas e cliques no WhatsApp por origem).
+ * WhatsApp já dizendo a origem e contada no banco (visitas, cliques no WhatsApp e toques no Instagram/Facebook por origem).
  * Só contadores anônimos: nada de quem visitou sai do navegador.
  */
 const ORIGENS: Record<string, string> = {
@@ -61,7 +61,7 @@ export function saudacaoWhatsApp(): string {
 }
 
 /** Conta no banco uma vez por sessão e origem. */
-function contar(tipo: 'VISITA' | 'WHATSAPP') {
+function contar(tipo: 'VISITA' | 'WHATSAPP' | 'INSTAGRAM' | 'FACEBOOK') {
   const origem = origemVisita();
   const marca = `komtec_contado_${tipo}_${origem}`;
   if (lerSessao(marca)) return;
@@ -76,3 +76,4 @@ function contar(tipo: 'VISITA' | 'WHATSAPP') {
 
 export const registrarVisita = () => contar('VISITA');
 export const registrarCliqueWhatsApp = () => contar('WHATSAPP');
+export const registrarCliqueRede = (rede: 'Instagram' | 'Facebook') => contar(rede === 'Instagram' ? 'INSTAGRAM' : 'FACEBOOK');
