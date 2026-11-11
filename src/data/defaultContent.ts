@@ -280,6 +280,78 @@ export interface InformacoesContent {
 export const DEFAULT_INFORMACOES: InformacoesContent = {
   items: [
     {
+      slug: 'goias-pagamento-eletronico-vinculado-nfe',
+      titulo: 'Goiás: cartão e Pix vinculados à nota fiscal — quem precisa e a partir de quando',
+      resumo:
+        'A SEFAZ-GO passou a exigir que pagamentos com cartão e Pix fiquem ligados à NF-e e à NFC-e. Veja o calendário por faturamento, o que entra, o que fica de fora (inclusive boleto) e o que fazer quando o cliente paga depois.',
+      categoria: 'Fiscal',
+      data: 'Novembro de 2026',
+      tempoLeitura: '5 min de leitura',
+      imagem: '/komtec_nfe.webp',
+      conteudo: `## O que mudou
+
+A Instrução Normativa nº 1.608/2025-GSE, da Secretaria da Economia de Goiás, determina que o pagamento eletrônico de uma venda fique vinculado à nota fiscal dessa venda. Na prática, a maquininha, o TEF ou o Pix precisam conversar diretamente com o sistema que emite a nota, sem ninguém digitar nada à mão no meio do caminho.
+
+A regra vale para vendas de mercadorias com NF-e (modelo 55) ou NFC-e (modelo 65), para contribuintes de ICMS estabelecidos em Goiás.
+
+## Quais formas de pagamento entram
+
+- Cartão de crédito, débito, cartão de loja (private label) e cartão pré-pago.
+- Pix.
+- Demais instrumentos de pagamento eletrônico reconhecidos pelo Sistema de Pagamentos Brasileiro.
+
+A palavra boleto não aparece no texto da Instrução Normativa. Venda paga por boleto, dinheiro ou cheque continua sendo emitida como sempre: basta informar a forma de pagamento correta na nota.
+
+## A partir de quando
+
+O prazo depende da receita bruta de 2024, somando todos os estabelecimentos da empresa em Goiás:
+
+- Acima de R$ 4,8 milhões, supermercados, postos de combustível e farmácias: desde 01/11/2025.
+- Acima de R$ 4,8 milhões, demais atividades: desde 01/06/2026.
+- De R$ 360 mil a R$ 4,8 milhões: desde 01/11/2026.
+- Até R$ 360 mil: a partir de 01/02/2027.
+
+O calendário já foi alterado três vezes em 2026 (IN 1.619, IN 1.623 e IN 1.644). As datas acima são as da redação em vigor em novembro de 2026. Muitos textos na internet ainda trazem as datas antigas — na dúvida, vale o texto oficial da SEFAZ-GO.
+
+## Quem fica de fora
+
+- O MEI.
+- Operações em que não se emite documento fiscal.
+- Vendas com a Nota Fiscal Fácil (NFF).
+- Vendas com entrega e pagamento em domicílio (delivery).
+- Vendas não presenciais feitas por site ou plataforma de venda (loja virtual, marketplace).
+
+Atenção: venda fechada por WhatsApp ou telefone não está nessa lista de exceções. E mesmo nos casos dispensados, a nota continua tendo que trazer a forma de pagamento preenchida corretamente.
+
+## E quando o cliente paga depois da nota?
+
+É o caso comum da venda a prazo: a nota sai hoje e o Pix ou o cartão entram dias depois. Para isso existe o Evento de Conciliação Financeira (ECONF), definido na Nota Técnica 2024.002 do Portal Nacional da NF-e. Ele é enviado depois, ligado à nota já autorizada, com os dados do pagamento recebido.
+
+Até 31/12/2026 a SEFAZ-GO permite que esse evento seja enviado de forma não integrada, ou seja, informado no sistema mesmo sem a maquininha estar conectada a ele (art. 6º-A, incluído pela IN 1.640/2026).
+
+## O que não pode mais
+
+A Instrução Normativa proíbe manter no atendimento ao público equipamento que registre pagamento de venda de mercadoria sem vínculo com a nota fiscal. Em outras palavras: a maquininha avulsa, que não conversa com o sistema emissor, deixa de atender a regra quando chegar o prazo da sua empresa.
+
+## Resumo rápido por forma de pagamento
+
+- Boleto, dinheiro ou cheque: nada muda; informar a forma de pagamento correta na nota.
+- Cartão ou Pix pago antes de emitir a nota: os dados do pagamento vão dentro da própria nota.
+- Cartão ou Pix pago depois de emitir a nota: enviar o Evento de Conciliação Financeira ligado à nota.
+
+## Como o KomTec atende
+
+Na emissão da NF-e, o bloco Dados do pagamento recebe as informações do comprovante (instituição, bandeira, código de autorização, data do pagamento), e o sistema confere data e CNPJ antes de transmitir. Para pagamentos recebidos depois, a tela da nota autorizada tem a Conciliação financeira, que envia o ECONF à SEFAZ sem sair do sistema.`,
+      fontes: [
+        { label: 'Instrução Normativa nº 1.608/2025-GSE, texto consolidado (Secretaria da Economia de Goiás)', url: 'https://appasp.economia.go.gov.br/legislacao/arquivos/Secretario/IN/IN_1608_2025.htm' },
+        { label: 'Índice de Instruções Normativas do Secretário da Economia (SEFAZ-GO)', url: 'https://appasp.economia.go.gov.br/legislacao/arquivos/Indices/Indice_Instrucao_Normativa_GSF.htm' },
+        { label: 'Notas Técnicas da NF-e, incluindo a NT 2024.002 — Conciliação Financeira (Portal Nacional da NF-e)', url: 'https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY%3D' },
+      ],
+      aviso:
+        'Conteúdo informativo, conferido no texto oficial da SEFAZ-GO em 11/11/2026. O calendário já mudou várias vezes; confirme com seu contador a faixa de faturamento da sua empresa e o enquadramento das suas vendas.',
+      publicado: true,
+    },
+    {
       slug: 'reforma-tributaria-ibs-cbs',
       titulo: 'Reforma Tributária: o que é IBS/CBS e o que muda para a sua empresa',
       resumo:
