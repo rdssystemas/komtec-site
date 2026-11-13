@@ -42,7 +42,7 @@ export function Depoimentos({ content, mostrarGaleria }: { content: DepoimentosC
             {mostrarGaleria ? content.titulo : 'Compartilhe sua experiência'}
           </h2>
           <p className="text-orange-200 max-w-xl mx-auto">
-            {mostrarGaleria ? content.subtitulo : 'Já usa o ERP KomTec? Conte pra gente como está sendo.'}
+            {mostrarGaleria ? content.subtitulo : 'Já usa o ERP KomTec Pro? Conte pra gente como está sendo.'}
           </p>
         </div>
 
@@ -130,7 +130,7 @@ function FormularioDepoimento() {
 
   return (
     <form onSubmit={enviar} className="max-w-xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
-      <p className="text-white font-semibold text-center mb-2">Conte sua experiência com o ERP KomTec</p>
+      <p className="text-white font-semibold text-center mb-2">Conte sua experiência com o ERP KomTec Pro</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <input required placeholder="Seu nome" className={inputCls} value={form.nome} onChange={campo('nome')} />
         <input required placeholder="Empresa" className={inputCls} value={form.empresa} onChange={campo('empresa')} />

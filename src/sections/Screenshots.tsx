@@ -64,7 +64,7 @@ const telas = [
   },
   {
     id: 'suporte_ia',
-    label: 'Suporte com IA',
+    label: 'Central de Ajuda',
     arquivo: '/screenshots/komtec_suporte_ia.webp',
     descricao: 'Suporte inteligente com assistência por inteligência artificial integrada.',
   },

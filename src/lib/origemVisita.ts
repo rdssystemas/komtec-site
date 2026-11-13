@@ -9,7 +9,7 @@ const ORIGENS: Record<string, string> = {
   instagram: 'pelo Instagram',
   facebook: 'pelo Facebook',
   google: 'pela busca do Google',
-  'site-erp': 'pelo site do ERP KomTec',
+  'site-erp': 'pelo site do ERP KomTec Pro',
 };
 
 /** Outros nomes que podem vir na etiqueta. */

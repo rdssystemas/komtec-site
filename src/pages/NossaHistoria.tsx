@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { BackToTop } from '../components/BackToTop';
 
-const SITE_TITLE = 'ERP KomTec — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
+const SITE_TITLE = 'ERP KomTec Pro — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
 const PAGE_TITLE = 'Nossa História — ERP KomTec Pro';
 
 interface Etapa {

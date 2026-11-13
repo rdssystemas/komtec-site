@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './PanfletoParceiros.css';
 
-const SITE_TITLE = 'ERP KomTec — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
+const SITE_TITLE = 'ERP KomTec Pro — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
 const PAGE_TITLE = 'ERP KomTec Pro — Programa de Parceiros';
 
 const BENEFICIOS = [

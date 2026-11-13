@@ -171,7 +171,7 @@ export function Contato() {
                     onChange={e => setForm({ ...form, ofertasAniversario: e.target.checked })}
                   />
                   <label htmlFor="ofertasAniversario" className="text-xs text-gray-700 leading-relaxed cursor-pointer">
-                    Desejo receber <span className="font-semibold text-orange-700">ofertas especiais no meu aniversário</span> e comunicações sobre promoções exclusivas do ERP KomTec.
+                    Desejo receber <span className="font-semibold text-orange-700">ofertas especiais no meu aniversário</span> e comunicações sobre promoções exclusivas do ERP KomTec Pro.
                   </label>
                 </div>
 

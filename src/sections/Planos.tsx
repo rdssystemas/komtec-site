@@ -12,7 +12,7 @@ export function Planos({ content }: { content: PlanosContent }) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const texto = encodeURIComponent(
-      `${saudacaoWhatsApp()} Gostaria de conhecer uma proposta do ERP KomTec.\n\nNome: ${form.nome}\nTelefone: ${form.telefone}${form.horario ? `\nMelhor horário: ${form.horario}` : ''}`
+      `${saudacaoWhatsApp()} Gostaria de conhecer uma proposta do ERP KomTec Pro.\n\nNome: ${form.nome}\nTelefone: ${form.telefone}${form.horario ? `\nMelhor horário: ${form.horario}` : ''}`
     );
     registrarCliqueWhatsApp();
     window.open(`https://wa.me/5562993256370?text=${texto}`, '_blank');

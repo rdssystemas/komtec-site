@@ -73,7 +73,7 @@ export const SECOES_EXTRAS: SecaoExtra[] = [
     texto: 'Abra, acompanhe e encerre ordens de serviço com histórico completo de peças utilizadas, técnico responsável, tempo de execução e custos. Integrado ao estoque, financeiro e emissão de NFS-e.',
     // Troque pelo screenshot real da tela de OS quando tiver
     imagem: '/screenshots/komtec_comercial.webp',
-    imagemAlt: 'Tela de Ordem de Serviço do ERP KomTec',
+    imagemAlt: 'Tela de Ordem de Serviço do ERP KomTec Pro',
     imagemLado: 'direita',
     itens: [
       { titulo: 'Abertura e acompanhamento em tempo real',    icone: 'ClipboardList' },

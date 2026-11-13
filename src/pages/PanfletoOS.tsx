@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './PanfletoOS.css';
 
-const SITE_TITLE = 'ERP KomTec — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
+const SITE_TITLE = 'ERP KomTec Pro — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
 const PAGE_TITLE = 'ERP KomTec Pro — Ordens de Serviço';
 
 const BENEFICIOS = [

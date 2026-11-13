@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Portfolio.css';
 
-const SITE_TITLE = 'ERP KomTec — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
+const SITE_TITLE = 'ERP KomTec Pro — Sistema de Gestão Empresarial Online | Vendas, NF-e, Estoque';
 const PORTFOLIO_TITLE = 'ERP KomTec Pro — Portfólio';
 
 type ShotInfo = { src: string; label: string; caption: string };
@@ -23,7 +23,7 @@ const GALLERY: ShotInfo[] = [
   SHOTS.equipamentos,
   SHOTS.os,
   SHOTS.estoque,
-  { src: '/komtec_suporte_ia.webp', label: 'Suporte IA', caption: 'Suporte inteligente com IA' },
+  { src: '/komtec_suporte_ia.webp', label: 'Central de Ajuda', caption: 'Ajuda dentro de cada tela' },
 ];
 
 function Shot({ shot, onOpen }: { shot: ShotInfo; onOpen: (shot: ShotInfo) => void }) {
